@@ -47,10 +47,18 @@ no shell script or CI automation for this.
 cd my-plugin
 git submodule add <this-repo> refs/modsharp-catalog
 ```
-Then reference it from your plugin's `CLAUDE.md`:
-```
-ModSharp API: @refs/modsharp-catalog/catalog/_index.md
-```
+
+Quickest way to wire it into the plugin's `CLAUDE.md` — open Claude Code
+in the plugin repo and say:
+
+> Follow `refs/modsharp-catalog/init.md`
+
+`init.md` is an interactive setup runbook. It asks which preset (Full /
+Minimal / Custom) you want, then inserts the corresponding block into
+your plugin's `CLAUDE.md` between well-known markers so a later re-run
+can update it cleanly.
+
+For the manual path, copy the snippet from `docs/usage.md` by hand.
 
 ## Language policy
 All hand-written content in this repo — `CLAUDE.md`, `README.md`,

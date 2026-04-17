@@ -23,7 +23,16 @@ The catalog is large. Some files are small and worth loading into
 context at session start (`@path` references); others are big and
 should only be read on demand.
 
-Recommended snippet to paste into the plugin's `CLAUDE.md`:
+**Quickest path** — in the plugin repo, tell Claude Code:
+
+> Follow `refs/modsharp-catalog/init.md`
+
+That runbook asks which preset you want (Full / Minimal / Custom),
+then inserts the correct block into your `CLAUDE.md` between
+`<!-- BEGIN modsharp-catalog integration -->` / `<!-- END ... -->`
+markers so a later re-run can update it in place.
+
+**Manual path** — if you prefer to paste it yourself, use this snippet:
 
 ```markdown
 ## ModSharp reference material
