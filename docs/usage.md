@@ -49,3 +49,11 @@ git clone --recurse-submodules <plugin-repo-url>
 
 `--recurse-submodules` を忘れないこと。
 `git config --global submodule.recurse true` で自動化可能。
+
+## 備考: ローカルパスからの submodule テスト
+動作確認のためにローカルファイルシステム上のrepoを submodule として追加したい場合、
+modern git は `file://` 経由のクローンを既定で拒否する。ワンショットで許可するには:
+```bash
+git -c protocol.file.allow=always submodule add /path/to/modsharp-catalog refs/modsharp-catalog
+```
+通常運用(GitHub などのリモートURL)ではこの設定は不要。

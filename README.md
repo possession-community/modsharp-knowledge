@@ -15,6 +15,16 @@ ModSharp (CS2/Source2 C# modding framework) のAPIカタログと開発知見集
 - `gotchas.md` - ハマりどころ集(手動メンテ)
 - `CLAUDE.md` - Claude Code向けの更新手順書
 
+## カタログ規模 (最新生成時点)
+- Projects: 26 (Sharp.Shared / Sharp.Core / Sharp.Generator(.Sdk) / Sharp.Extensions.* / Sharp.Modules.*)
+- Public Types: **1197** (うち Source Generator 由来: **64**)
+- Public Methods: 9213
+- Namespaces: 54
+- プラグイン開発で最重要な `Sharp.Shared` は 1073 型 / 21 namespace
+
+Source Generator 由来 64 型の一覧は `catalog/indexes/generated-types.md`。
+protobuf メッセージの入れ子 `*.Types` がここに集約される。
+
 ## セットアップ (新マシン初回)
 ```bash
 git clone --recurse-submodules <this-repo>
