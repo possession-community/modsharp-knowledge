@@ -1,59 +1,86 @@
-# 使い方
+# Usage
 
-## 更新運用
-更新は Claude Code セッションで手動実行する。
-シェルスクリプトや CI 自動化は意図的に設けていない。
+## Update workflow
+Catalog updates happen inside a Claude Code session. No shell scripts
+or CI automation are provided on purpose.
 
-### 更新手順
-1. `modsharp-catalog` ディレクトリで Claude Code を起動
-2. 「カタログを更新して」等と指示する
-3. Claude Code が `CLAUDE.md` の手順に従って自動で実行する
-4. 変更内容を確認してコミット
+1. Open a Claude Code session in this repository.
+2. Tell Claude "update the catalog" (or something equivalent).
+3. Claude Code follows `CLAUDE.md` and runs the commands itself.
+4. Review the diff and commit.
 
-## プラグインプロジェクトからの参照
+## Consuming the catalog from a plugin project
 
-### submoduleとして追加
+### 1. Add as a submodule
 ```bash
 cd my-plugin
 git submodule add <this-repo-url> refs/modsharp-catalog
 git commit -m "Add ModSharp catalog reference"
 ```
 
-### プラグイン側 CLAUDE.md に参照を追加
-```markdown
-## 参照資料
-ModSharp開発時は以下を参照:
-- APIカタログ: @refs/modsharp-catalog/catalog/_index.md
-- 検証済みパターン: refs/modsharp-catalog/patterns/
-- ハマりどころ: @refs/modsharp-catalog/gotchas.md
+### 2. Reference it from the plugin's `CLAUDE.md`
+The catalog is large. Some files are small and worth loading into
+context at session start (`@path` references); others are big and
+should only be read on demand.
 
-## ワークフロー
-1. _index.md で該当namespaceを特定
-2. projects/Sharp.Shared/namespaces/ を読む
-3. Source Generator生成型(エンティティ等)も同じく参照可能
-4. patterns/ に類似例がないか確認
-5. 実装前に gotchas.md をチェック
+Recommended snippet to paste into the plugin's `CLAUDE.md`:
+
+```markdown
+## ModSharp reference material
+
+Always-on context (loaded at session start via `@`):
+- @refs/modsharp-catalog/catalog/_index.md   — top-level index
+- @refs/modsharp-catalog/gotchas.md          — small, always worth keeping hot
+
+Browse on demand (do NOT auto-load with `@`):
+- refs/modsharp-catalog/catalog/projects/Sharp.Shared/_index.md
+- refs/modsharp-catalog/catalog/projects/Sharp.Shared/namespaces/
+- refs/modsharp-catalog/catalog/indexes/
+- refs/modsharp-catalog/patterns/
+
+## Workflow when touching ModSharp APIs
+1. Start from @refs/modsharp-catalog/catalog/_index.md to find the right project.
+2. Read `refs/modsharp-catalog/catalog/projects/Sharp.Shared/_index.md` to locate the namespace.
+3. Read the relevant `namespaces/<Namespace>.md` file for type signatures.
+4. Check `refs/modsharp-catalog/patterns/` for a verified precedent before writing new code.
+5. Scan `@refs/modsharp-catalog/gotchas.md` before committing anything non-trivial.
 ```
 
-### 更新の取り込み
-プラグイン側で必要になったタイミングで:
+### Which files to reference — cheat sheet
+
+| File / directory | Typical size | `@`-load? | Notes |
+|---|---|---|---|
+| `catalog/_index.md` | small | **Yes** | Top-level index, always useful |
+| `gotchas.md` | small | **Yes** | Worth keeping hot |
+| `catalog/projects/Sharp.Shared/_index.md` | medium | No | Link and let Claude read on demand |
+| `catalog/projects/Sharp.Shared/namespaces/*.md` | **large** (`_global.md` exceeds 60k lines) | **Never** | Auto-loading will blow context |
+| `catalog/indexes/entry-points.md` | medium | Optional | Useful to pin during scaffolding |
+| `catalog/indexes/generated-types.md` | medium | Optional | Useful when working with protobuf / generated code |
+| `patterns/` | small per file | Directory ref | Claude reads individual patterns as needed |
+
+A plugin consumer only needs the submodule. The generator tool at
+`~/tools/ModSharpApiCatalog` is required for **updating** the catalog,
+not for **consuming** it.
+
+### 3. Pull catalog updates into the plugin
+When the plugin wants a fresher catalog:
 ```bash
 git submodule update --remote refs/modsharp-catalog
 git commit -am "Update catalog reference"
 ```
 
-## 新マシンでのclone
+## Cloning on a new machine
 ```bash
 git clone --recurse-submodules <plugin-repo-url>
 ```
+Don't forget `--recurse-submodules`. You can make it the default with
+`git config --global submodule.recurse true`.
 
-`--recurse-submodules` を忘れないこと。
-`git config --global submodule.recurse true` で自動化可能。
-
-## 備考: ローカルパスからの submodule テスト
-動作確認のためにローカルファイルシステム上のrepoを submodule として追加したい場合、
-modern git は `file://` 経由のクローンを既定で拒否する。ワンショットで許可するには:
+## Note: testing submodule wiring against a local path
+Modern git refuses `file://` submodule clones by default. When wiring
+this catalog into a throwaway test project on the same filesystem,
+allow it for that single command:
 ```bash
 git -c protocol.file.allow=always submodule add /path/to/modsharp-catalog refs/modsharp-catalog
 ```
-通常運用(GitHub などのリモートURL)ではこの設定は不要。
+HTTPS-hosted submodules don't need this.

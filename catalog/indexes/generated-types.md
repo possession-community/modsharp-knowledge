@@ -1,7 +1,7 @@
-# Source Generator 生成型
+# Source-generator-emitted types
 
-ModSharpのSource Generatorが生成した公開型の一覧。
-エンティティ情報など、プラグイン開発で頻繁に使われる。
+Public types produced by ModSharp's Source Generators.
+Includes protobuf message stubs and entity metadata that plugins routinely consume.
 
 ## Sharp.Shared (64)
 

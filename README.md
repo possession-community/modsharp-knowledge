@@ -1,56 +1,66 @@
 # ModSharp Catalog
 
-ModSharp (CS2/Source2 C# modding framework) のAPIカタログと開発知見集約リポジトリ。
+API catalog and curated development knowledge for ModSharp
+(CS2 / Source 2 C# modding framework).
 
-## 目的
-- AIアシスタント(Claude Code等)がModSharp APIを把握し適切に提案できるようにする
-- Source Generatorで生成されるエンティティ情報等を含めた完全なAPIビューを提供する
-- 動作検証済みの使用パターンを集約する
-- ハマりどころを記録し再発を防ぐ
+## Purpose
+- Let AI assistants (Claude Code and similar) see the full public API of ModSharp so their suggestions stay grounded in what actually exists
+- Provide a complete view that includes Source-Generator-emitted types (protobuf stubs, entity metadata, etc.)
+- Collect verified usage patterns
+- Record gotchas to stop the same mistakes from recurring
 
-## ディレクトリ
-- `external/modsharp/` - ModSharp本体 (submodule, commit固定)
-- `catalog/` - 自動生成APIカタログ (Source Generator出力も含む)
-- `patterns/` - 検証済み使用パターン(手動メンテ)
-- `gotchas.md` - ハマりどころ集(手動メンテ)
-- `CLAUDE.md` - Claude Code向けの更新手順書
+## Layout
+- `external/modsharp/` — ModSharp source as a pinned git submodule
+- `catalog/` — auto-generated API catalog (includes Source Generator output)
+- `patterns/` — verified usage patterns, maintained by hand
+- `gotchas.md` — gotchas / pitfalls, maintained by hand
+- `CLAUDE.md` — the runbook Claude Code follows when updating the catalog
+- `docs/usage.md` — how to consume this catalog from a plugin project
 
-## カタログ規模 (最新生成時点)
-- Projects: 26 (Sharp.Shared / Sharp.Core / Sharp.Generator(.Sdk) / Sharp.Extensions.* / Sharp.Modules.*)
-- Public Types: **1197** (うち Source Generator 由来: **64**)
-- Public Methods: 9213
+## Current catalog size
+- Projects: 26 (Sharp.Shared / Sharp.Core / Sharp.Generator(.Sdk) / Sharp.Extensions.\* / Sharp.Modules.\*)
+- Public types: **1197** (of which Source-Generator-emitted: **64**)
+- Public methods: 9213
 - Namespaces: 54
-- プラグイン開発で最重要な `Sharp.Shared` は 1073 型 / 21 namespace
+- `Sharp.Shared` — the main consumer-facing project — covers 1073 types across 21 namespaces
 
-Source Generator 由来 64 型の一覧は `catalog/indexes/generated-types.md`。
-protobuf メッセージの入れ子 `*.Types` がここに集約される。
+The 64 Source-Generator-emitted types (nested `*.Types` classes produced
+for protobuf messages) are summarized in `catalog/indexes/generated-types.md`.
 
-## セットアップ (新マシン初回)
+## First-time setup
 ```bash
 git clone --recurse-submodules <this-repo>
 ```
-`--recurse-submodules` を忘れた場合は:
+If you forgot `--recurse-submodules`:
 ```bash
 git submodule update --init --recursive
 ```
 
-## 更新
-このリポジトリで Claude Code セッションを起動し、
-「カタログを更新して」等と指示する。
-Claude Code が `CLAUDE.md` の手順に従って自動で実行する。
+## Updating the catalog
+Open a Claude Code session in this repository and say something
+like "update the catalog". Claude Code follows the runbook in
+`CLAUDE.md` and runs the commands itself — there is intentionally
+no shell script or CI automation for this.
 
-## 他プロジェクトからの参照
+## Consuming this catalog from another project
 ```bash
 cd my-plugin
 git submodule add <this-repo> refs/modsharp-catalog
 ```
-
-CLAUDE.mdで:
+Then reference it from your plugin's `CLAUDE.md`:
 ```
 ModSharp API: @refs/modsharp-catalog/catalog/_index.md
 ```
 
-## ライセンス
-- repo構造: MIT
-- external/modsharp/: AGPL-3.0 (ModSharp本体)
-- catalog/: ModSharpソース由来のためAGPL-3.0の影響を受ける可能性あり
+## Language policy
+All hand-written content in this repo — `CLAUDE.md`, `README.md`,
+files under `patterns/`, `gotchas.md`, `docs/`, commit messages — is
+written in **English**. Please keep additions in English even when the
+conversation driving the change happens in another language. The
+auto-generated `catalog/` is language-neutral; it reproduces whatever
+lives in the source code and XML doc comments upstream.
+
+## License
+- Repo scaffolding: MIT
+- `external/modsharp/`: AGPL-3.0 (ModSharp itself)
+- `catalog/`: derived from ModSharp source, so AGPL-3.0 terms may extend to it

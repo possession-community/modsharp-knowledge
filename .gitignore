@@ -1,6 +1,6 @@
-# ModSharp build artifacts (中間成果物のみ除外)
-# Source Generator 生成コードは Roslyn 経由で取得するため
-# これらをコミット対象にする必要はない
+# ModSharp build artifacts (intermediate outputs only).
+# Source-Generator output is retrieved via Roslyn at catalog
+# generation time, so there's no need to commit these.
 external/modsharp/**/bin/
 external/modsharp/**/obj/
 

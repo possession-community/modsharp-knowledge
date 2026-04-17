@@ -1,108 +1,116 @@
-# modsharp-catalog - Claude Code向け手順書
+# modsharp-catalog — Claude Code runbook
 
-このリポジトリは ModSharp (CS2/Source2 C# modding framework) の
-APIカタログ格納所。カタログ生成・更新は Claude Code がこの手順書に従って
-自動実行する。
+This repository stores the API catalog for ModSharp
+(CS2 / Source 2 C# modding framework). Catalog generation and
+updates are executed by Claude Code following this runbook.
 
-## 前提
-- .NET 10 SDK がインストール済み
-- カタログ生成ツール `ModSharpApiCatalog` が利用可能
-  - デフォルト: `~/tools/ModSharpApiCatalog`
-  - 環境変数 `MODSHARP_CATALOG_TOOL` で上書き可能
-  - ツールが見つからない場合はユーザーに確認して停止する
+## Prerequisites
+- .NET 10 SDK installed
+- The catalog generator tool `ModSharpApiCatalog` is available
+  - Default location: `~/tools/ModSharpApiCatalog`
+  - Override via the environment variable `MODSHARP_CATALOG_TOOL`
+  - If the tool cannot be found, ask the user and stop
 
-## ユーザーから「カタログを更新して」等の指示があった場合の手順
+## Procedure when the user asks you to update the catalog
 
-### 手順1: 更新の有無を確認
+### Step 1: check for upstream changes
 ```bash
 cd external/modsharp
 git fetch origin
 LOCAL=$(git rev-parse HEAD)
 REMOTE=$(git rev-parse origin/master)
 ```
-- `LOCAL == REMOTE` なら更新なし。ユーザーに報告して終了。
-- 差分がある場合は `git log --oneline $LOCAL..$REMOTE | head -20` で
-  変更内容をユーザーに見せる。
+- If `LOCAL == REMOTE`, there are no updates. Report that and stop.
+- Otherwise, show `git log --oneline $LOCAL..$REMOTE | head -20` so the user sees what changed.
 
-### 手順2: submodule更新
-repo ルートに戻って:
+### Step 2: update the submodule
+From the repo root:
 ```bash
 cd <repo root>
 git submodule update --remote external/modsharp
 ```
 
-### 手順3: ModSharp ビルド (Source Generator出力取得のため必須)
+### Step 3: build ModSharp (needed so Source-Generator output is available)
 ```bash
 cd external/modsharp
 dotnet restore
 dotnet build --no-restore --configuration Release
 ```
-- ビルド失敗時はエラー内容をユーザーに報告し、判断を仰ぐ
-- ビルドせずにカタログ生成すると Source Generator 生成型が欠落する
+- If the build fails, report the error and wait for direction.
+- Without a successful build, Source-Generator-emitted types will be missing from the catalog.
 
-### 手順4: カタログ生成
-ModSharp には `.sln` が無く、`Directory.Build.props` と個別の `.csproj` のみ。
-ツールは `--scan` でディレクトリ配下の `.csproj` を自動検出する。
+### Step 4: generate the catalog
+ModSharp currently has no `.sln` — just `.csproj` files and a
+`Directory.Build.props`. The tool uses `--scan` to discover them.
 ```bash
 cd <repo root>
 TOOL_PATH="${MODSHARP_CATALOG_TOOL:-$HOME/tools/ModSharpApiCatalog}"
 dotnet run --project "$TOOL_PATH" --configuration Release -- \
     --scan external/modsharp \
-    --output catalog
+    --output catalog \
+    --source-root external/modsharp
 ```
-もし将来 ModSharp 側に `.sln` が追加されたら `--solution <path>` も使用可能。
+If upstream ever adds a `.sln`, `--solution <path>` also works.
 
-### 手順5: 変更確認
+### Step 5: review the diff
 ```bash
 git status
 git diff --stat catalog/
 ```
-ユーザーに変更概要を報告する。
+Summarize the change for the user.
 
-### 手順6: コミット (ユーザー確認後)
+### Step 6: commit (after the user approves)
 ```bash
 NEW_COMMIT=$(cd external/modsharp && git rev-parse --short HEAD)
 git add -A
 git commit -m "Update catalog to ModSharp $NEW_COMMIT"
 ```
-push するかはユーザー判断に委ねる。
+Leave `git push` to the user's judgement.
 
-## 新マシン初回セットアップ
-`--recurse-submodules` なしで clone された場合:
+## Fresh-machine bootstrap
+If the repo was cloned without `--recurse-submodules`:
 ```bash
 git submodule update --init --recursive
 ```
 
-## トラブルシューティング
+## Troubleshooting
 
-### MSBuildWorkspace のロード失敗
-カタログ生成ツール側で `Microsoft.Build.Locator.RegisterDefaults()` が
-呼ばれているか確認。ツール側の修正が必要な場合はユーザーに報告。
+### MSBuildWorkspace fails to load
+Verify that the tool calls `Microsoft.Build.Locator.RegisterDefaults()`
+before touching any MSBuild or Workspaces type. If the tool itself
+needs a fix, report to the user.
 
-### Source Generator生成型がカタログに含まれない
-- 手順3のビルドが成功しているか確認
-- `catalog/indexes/generated-types.md` が空でないか確認
-- 空の場合、ツール側の実装を確認する必要がある
+### Source-Generator types are missing from the catalog
+- Confirm Step 3 succeeded.
+- Check that `catalog/indexes/generated-types.md` is not empty.
+- If it is empty, the tool implementation needs a look.
 
-### カタログ生成ツールが見つからない
-- 環境変数 `MODSHARP_CATALOG_TOOL` を確認
-- デフォルトパス `~/tools/ModSharpApiCatalog` の存在を確認
-- 見つからない場合はユーザーに正しいパスを確認する
+### The catalog tool cannot be found
+- Check `MODSHARP_CATALOG_TOOL`.
+- Check the default path `~/tools/ModSharpApiCatalog`.
+- If neither works, ask the user where the tool lives.
 
-## 注意事項
-- Source Generator出力(`*.g.cs`)はカタログに含める(除外しない)
-- `catalog/.meta/generated-at` は変動値のため gitignore 済み
-- ModSharpビルドが失敗するとカタログが不完全になる
-- `patterns/` と `gotchas.md` は手動メンテ領域。AI による自動更新はしない
+## Invariants
+- Source Generator output (`*.g.cs` etc.) is always included in the catalog — never excluded.
+- `catalog/.meta/generated-at` is volatile and gitignored.
+- A failed ModSharp build means an incomplete catalog.
+- `patterns/` and `gotchas.md` are hand-maintained. Do not auto-generate or rewrite them without an explicit instruction from the user.
 
-## このリポジトリで編集してよいもの / 編集してはいけないもの
+## Language policy
+All hand-written content in this repo is written in **English**:
+`CLAUDE.md`, `README.md`, files under `docs/` and `patterns/`,
+`gotchas.md`, and commit messages. Keep any new additions in English
+even if the conversation driving the change is happening in another
+language.
 
-### 編集してよい
-- `catalog/` 配下 (生成ツールによる再生成のみ。手動編集はしない)
-- `patterns/` 配下 (ユーザーが明示的に指示した場合のみ)
-- `gotchas.md` (ユーザーが明示的に指示した場合のみ)
-- `README.md`, `docs/usage.md`, この `CLAUDE.md`
+## What you may edit / must not edit
 
-### 編集してはいけない
-- `external/modsharp/` 配下 (submodule の中身)
+### Editable
+- `catalog/` — only via the generator tool; never hand-edit
+- `patterns/` — only when the user asks explicitly
+- `gotchas.md` — only when the user asks explicitly
+- `README.md`, `docs/usage.md`, this `CLAUDE.md`
+
+### Off-limits
+- Anything under `external/modsharp/` (submodule contents)
 - `.gitmodules`

@@ -1,6 +1,6 @@
-# エントリポイント
+# Entry points
 
-プラグイン/モジュールの起点となりやすい型。
+Types that typically serve as the starting point for a plugin or module.
 
 ## Plugin / Service / Manager / Provider Interfaces
 

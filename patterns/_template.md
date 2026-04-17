@@ -1,19 +1,19 @@
-# <パターン名>
+# <Pattern name>
 
-## 用途
-いつ使うか。どんな問題を解決するか。
+## What it's for
+When to use this pattern. What problem it solves.
 
-## 前提
+## Prerequisites
 - ModSharp version: git-XX
-- 必要な参照: Sharp.Shared, ...
+- Required references: Sharp.Shared, ...
 
-## 最小サンプル
+## Minimal example
 ```csharp
-// 動作確認済みのコード
+// Confirmed-working code
 ```
 
-## 注意点
+## Caveats
 - ...
 
-## 関連API
+## Related API
 - @../catalog/projects/Sharp.Shared/namespaces/XXX.md

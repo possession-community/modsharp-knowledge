@@ -1,12 +1,18 @@
 # Patterns
 
-動作検証済みのModSharp使用パターン集。
+Verified usage patterns for ModSharp.
 
-**重要**: このディレクトリは手動メンテ。AIに自動生成させない。
-実際に動かして確認したコードのみ記載する。
+**Ground rule:** this directory is maintained by hand. Do not let an
+AI auto-generate entries. Only add code that you have actually run and
+confirmed to work against a known ModSharp commit.
 
-## 命名規則
-機能別: `event-handling.md`, `console-commands.md`, `entity-manipulation.md`
+## File naming
+One pattern per file, named by feature area:
+`event-handling.md`, `console-commands.md`, `entity-manipulation.md`, ...
 
-## テンプレート
-`_template.md` を参照
+## Template
+See `_template.md`.
+
+## Language
+All pattern files are written in English for consistency with the
+catalog output and to keep the content portable across contributors.

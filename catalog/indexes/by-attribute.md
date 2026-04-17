@@ -1,6 +1,6 @@
-# 属性別インデックス
+# Index: by attribute
 
-型に付与された属性ごとの一覧。
+Types grouped by the attributes applied to them.
 
 ## `[AttributeUsage(1024)]`
 

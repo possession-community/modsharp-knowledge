@@ -4,15 +4,15 @@ Source Commit: c0d26d3e60a98ae43bb2e1fb8194adb5aa5c92ad
 
 > Generation timestamp is kept in `.meta/generated-at` (gitignored) to keep committed files stable across re-runs on the same source commit.
 
-## プラグイン開発者向け (最優先)
+## For plugin authors (start here)
 
-プラグインを書く際は、まず Sharp.Shared を参照すること:
+Start with Sharp.Shared when writing a plugin:
 
 → @projects/Sharp.Shared/_index.md
 
-## プロジェクト一覧
+## Projects
 
-| Project | Types | Generated | 詳細 |
+| Project | Types | Generated | Details |
 |---|---|---|---|
 | **Sharp.Shared** | 1073 | 64 | @projects/Sharp.Shared/_index.md |
 | Sharp.Core | 30 | 0 | @projects/Sharp.Core/_index.md |
@@ -41,17 +41,17 @@ Source Commit: c0d26d3e60a98ae43bb2e1fb8194adb5aa5c92ad
 | Sharp.Generator | 9 | 0 | @projects/Sharp.Generator/_index.md |
 | Sharp.Generator.Sdk | 8 | 0 | @projects/Sharp.Generator.Sdk/_index.md |
 
-## 横断インデックス
+## Cross-cutting indexes
 
-- 属性別: @indexes/by-attribute.md
-- インターフェース実装: @indexes/by-interface.md
-- エントリポイント: @indexes/entry-points.md
-- Source Generator生成型: @indexes/generated-types.md
+- By attribute: @indexes/by-attribute.md
+- By implemented interface: @indexes/by-interface.md
+- Entry points: @indexes/entry-points.md
+- Source-generator-emitted types: @indexes/generated-types.md
 
-## 手動メンテ領域 (このカタログの外)
+## Hand-maintained knowledge (outside this catalog)
 
-- `../patterns/` - 検証済みパターン
-- `../gotchas.md` - ハマりどころ
+- `../patterns/` — verified usage patterns
+- `../gotchas.md` — gotchas
 
 ## Statistics
 

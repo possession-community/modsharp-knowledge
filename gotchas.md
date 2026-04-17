@@ -1,14 +1,14 @@
 # Gotchas
 
-ModSharp使用時のハマりどころ。
+Things that have bitten us while using ModSharp.
 
-**フォーマット**:
-## <短いタイトル>
-- **症状**: 何が起きるか
-- **原因**: なぜ起きるか
-- **対処**: どうすれば良いか
-- **確認日**: YYYY-MM-DD (ModSharp git-XX)
+**Format:**
+## <Short title>
+- **Symptom:** what you observe
+- **Cause:** why it happens
+- **Fix:** how to avoid or recover
+- **Confirmed on:** YYYY-MM-DD (ModSharp git-XX)
 
 ---
 
-(ここから追記していく)
+(append new entries below)

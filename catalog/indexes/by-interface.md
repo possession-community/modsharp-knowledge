@@ -1,4 +1,6 @@
-# インターフェース実装インデックス
+# Index: by implemented interface
+
+Types grouped by each interface they implement.
 
 ## `Google.Protobuf.IBufferMessage`
 
