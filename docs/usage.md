@@ -14,8 +14,8 @@ or CI automation are provided on purpose.
 ### 1. Add as a submodule
 ```bash
 cd my-plugin
-git submodule add <this-repo-url> refs/modsharp-catalog
-git commit -m "Add ModSharp catalog reference"
+git submodule add <this-repo-url> refs/modsharp-knowledge
+git commit -m "Add ModSharp knowledge reference"
 ```
 
 ### 2. Reference it from the plugin's `CLAUDE.md`
@@ -25,11 +25,11 @@ should only be read on demand.
 
 **Quickest path** — in the plugin repo, tell Claude Code:
 
-> Follow `refs/modsharp-catalog/init.md`
+> Follow `refs/modsharp-knowledge/init.md`
 
 That runbook asks which preset you want (Full / Minimal / Custom),
 then inserts the correct block into your `CLAUDE.md` between
-`<!-- BEGIN modsharp-catalog integration -->` / `<!-- END ... -->`
+`<!-- BEGIN modsharp-knowledge integration -->` / `<!-- END ... -->`
 markers so a later re-run can update it in place.
 
 **Manual path** — if you prefer to paste it yourself, use this snippet:
@@ -38,21 +38,21 @@ markers so a later re-run can update it in place.
 ## ModSharp reference material
 
 Always-on context (loaded at session start via `@`):
-- @refs/modsharp-catalog/catalog/_index.md   — top-level index
-- @refs/modsharp-catalog/gotchas.md          — small, always worth keeping hot
+- @refs/modsharp-knowledge/catalog/_index.md   — top-level index
+- @refs/modsharp-knowledge/gotchas.md          — small, always worth keeping hot
 
 Browse on demand (do NOT auto-load with `@`):
-- refs/modsharp-catalog/catalog/projects/Sharp.Shared/_index.md
-- refs/modsharp-catalog/catalog/projects/Sharp.Shared/namespaces/
-- refs/modsharp-catalog/catalog/indexes/
-- refs/modsharp-catalog/patterns/
+- refs/modsharp-knowledge/catalog/projects/Sharp.Shared/_index.md
+- refs/modsharp-knowledge/catalog/projects/Sharp.Shared/namespaces/
+- refs/modsharp-knowledge/catalog/indexes/
+- refs/modsharp-knowledge/patterns/
 
 ## Workflow when touching ModSharp APIs
-1. Start from @refs/modsharp-catalog/catalog/_index.md to find the right project.
-2. Read `refs/modsharp-catalog/catalog/projects/Sharp.Shared/_index.md` to locate the namespace.
+1. Start from @refs/modsharp-knowledge/catalog/_index.md to find the right project.
+2. Read `refs/modsharp-knowledge/catalog/projects/Sharp.Shared/_index.md` to locate the namespace.
 3. Read the relevant `namespaces/<Namespace>.md` file for type signatures.
-4. Check `refs/modsharp-catalog/patterns/` for a verified precedent before writing new code.
-5. Scan `@refs/modsharp-catalog/gotchas.md` before committing anything non-trivial.
+4. Check `refs/modsharp-knowledge/patterns/` for a verified precedent before writing new code.
+5. Scan `@refs/modsharp-knowledge/gotchas.md` before committing anything non-trivial.
 ```
 
 ### Which files to reference — cheat sheet
@@ -74,7 +74,7 @@ not for **consuming** it.
 ### 3. Pull catalog updates into the plugin
 When the plugin wants a fresher catalog:
 ```bash
-git submodule update --remote refs/modsharp-catalog
+git submodule update --remote refs/modsharp-knowledge
 git commit -am "Update catalog reference"
 ```
 
@@ -90,6 +90,6 @@ Modern git refuses `file://` submodule clones by default. When wiring
 this catalog into a throwaway test project on the same filesystem,
 allow it for that single command:
 ```bash
-git -c protocol.file.allow=always submodule add /path/to/modsharp-catalog refs/modsharp-catalog
+git -c protocol.file.allow=always submodule add /path/to/modsharp-knowledge refs/modsharp-knowledge
 ```
 HTTPS-hosted submodules don't need this.

@@ -1,4 +1,4 @@
-# ModSharp Catalog
+# ModSharp Knowledge
 
 API catalog and curated development knowledge for ModSharp
 (CS2 / Source 2 C# modding framework).
@@ -45,13 +45,13 @@ no shell script or CI automation for this.
 ## Consuming this catalog from another project
 ```bash
 cd my-plugin
-git submodule add <this-repo> refs/modsharp-catalog
+git submodule add <this-repo> refs/modsharp-knowledge
 ```
 
 Quickest way to wire it into the plugin's `CLAUDE.md` — open Claude Code
 in the plugin repo and say:
 
-> Follow `refs/modsharp-catalog/init.md`
+> Follow `refs/modsharp-knowledge/init.md`
 
 `init.md` is an interactive setup runbook. It asks which preset (Full /
 Minimal / Custom) you want, then inserts the corresponding block into

@@ -1,15 +1,15 @@
 # init.md — Setup runbook for plugin consumers
 
 **Audience:** you are Claude Code running inside a **plugin project**
-that has added `modsharp-catalog` as a submodule at `refs/modsharp-catalog`.
+that has added `modsharp-knowledge` as a submodule at `refs/modsharp-knowledge`.
 The user pointed you at this file. Your job: wire the catalog into the
 plugin's own `CLAUDE.md`, interactively.
 
-If you are running inside the `modsharp-catalog` repo itself, this is
+If you are running inside the `modsharp-knowledge` repo itself, this is
 the wrong file — stop and tell the user.
 
 ## Step 1: verify environment
-1. Confirm that `refs/modsharp-catalog/catalog/_index.md` exists
+1. Confirm that `refs/modsharp-knowledge/catalog/_index.md` exists
    relative to the plugin repo root. If not, tell the user the submodule
    isn't checked out and stop.
 2. Locate the plugin's `CLAUDE.md`:
@@ -32,7 +32,7 @@ Present these options and default to **Full** if the user doesn't care:
 Search the plugin `CLAUDE.md` for the marker:
 
 ```
-<!-- BEGIN modsharp-catalog integration -->
+<!-- BEGIN modsharp-knowledge integration -->
 ```
 
 - If present: ask the user whether to **replace** the existing block or **skip**.
@@ -45,43 +45,43 @@ markers so a later re-run of this runbook can locate and replace it.
 ### Full preset
 
 ```markdown
-<!-- BEGIN modsharp-catalog integration -->
+<!-- BEGIN modsharp-knowledge integration -->
 ## ModSharp reference material
 
 Always-on context (loaded at session start via `@`):
-- @refs/modsharp-catalog/catalog/_index.md   — top-level index
-- @refs/modsharp-catalog/gotchas.md          — small, always worth keeping hot
+- @refs/modsharp-knowledge/catalog/_index.md   — top-level index
+- @refs/modsharp-knowledge/gotchas.md          — small, always worth keeping hot
 
 Browse on demand (do NOT auto-load with `@`):
-- refs/modsharp-catalog/catalog/projects/Sharp.Shared/_index.md
-- refs/modsharp-catalog/catalog/projects/Sharp.Shared/namespaces/
-- refs/modsharp-catalog/catalog/indexes/
-- refs/modsharp-catalog/patterns/
+- refs/modsharp-knowledge/catalog/projects/Sharp.Shared/_index.md
+- refs/modsharp-knowledge/catalog/projects/Sharp.Shared/namespaces/
+- refs/modsharp-knowledge/catalog/indexes/
+- refs/modsharp-knowledge/patterns/
 
 ## Workflow when touching ModSharp APIs
-1. Start from @refs/modsharp-catalog/catalog/_index.md to find the right project.
-2. Read `refs/modsharp-catalog/catalog/projects/Sharp.Shared/_index.md` to locate the namespace.
+1. Start from @refs/modsharp-knowledge/catalog/_index.md to find the right project.
+2. Read `refs/modsharp-knowledge/catalog/projects/Sharp.Shared/_index.md` to locate the namespace.
 3. Read the relevant `namespaces/<Namespace>.md` file for type signatures.
-4. Check `refs/modsharp-catalog/patterns/` for a verified precedent.
-5. Scan `@refs/modsharp-catalog/gotchas.md` before committing tricky code.
+4. Check `refs/modsharp-knowledge/patterns/` for a verified precedent.
+5. Scan `@refs/modsharp-knowledge/gotchas.md` before committing tricky code.
 
 ## Notes
 - Never `@`-load `catalog/projects/*/namespaces/*.md` directly — some files exceed 60k lines and will blow the context window.
-- Pull catalog updates with `git submodule update --remote refs/modsharp-catalog`.
-<!-- END modsharp-catalog integration -->
+- Pull catalog updates with `git submodule update --remote refs/modsharp-knowledge`.
+<!-- END modsharp-knowledge integration -->
 ```
 
 ### Minimal preset
 
 ```markdown
-<!-- BEGIN modsharp-catalog integration -->
+<!-- BEGIN modsharp-knowledge integration -->
 ## ModSharp reference material
 
-- @refs/modsharp-catalog/catalog/_index.md
-- @refs/modsharp-catalog/gotchas.md
+- @refs/modsharp-knowledge/catalog/_index.md
+- @refs/modsharp-knowledge/gotchas.md
 
 Never `@`-load per-namespace files — some exceed 60k lines.
-<!-- END modsharp-catalog integration -->
+<!-- END modsharp-knowledge integration -->
 ```
 
 ### Custom preset

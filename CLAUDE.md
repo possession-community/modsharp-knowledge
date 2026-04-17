@@ -1,4 +1,4 @@
-# modsharp-catalog — Claude Code runbook
+# modsharp-knowledge — Claude Code runbook
 
 This repository stores the API catalog for ModSharp
 (CS2 / Source 2 C# modding framework). Catalog generation and
