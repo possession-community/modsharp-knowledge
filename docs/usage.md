@@ -37,31 +37,34 @@ markers so a later re-run can update it in place.
 ```markdown
 ## ModSharp reference material
 
-Always-on context (loaded at session start via `@`):
-- @refs/modsharp-knowledge/catalog/_index.md   — top-level index
-- @refs/modsharp-knowledge/gotchas.md          — small, always worth keeping hot
+Auto-loaded at session start (keep each `@` on its own line, with
+nothing else on the line — the rest of the line is parsed as part
+of the path by Claude Code):
 
-Browse on demand (do NOT auto-load with `@`):
-- refs/modsharp-knowledge/catalog/projects/Sharp.Shared/_index.md
-- refs/modsharp-knowledge/catalog/projects/Sharp.Shared/namespaces/
-- refs/modsharp-knowledge/catalog/indexes/
-- refs/modsharp-knowledge/patterns/
+@refs/modsharp-knowledge/catalog/_index.md
+@refs/modsharp-knowledge/gotchas.md
+
+Browse on demand (plain paths — do NOT prefix with `@`):
+- `refs/modsharp-knowledge/catalog/projects/Sharp.Shared/_index.md`
+- `refs/modsharp-knowledge/catalog/projects/Sharp.Shared/namespaces/`
+- `refs/modsharp-knowledge/catalog/indexes/`
+- `refs/modsharp-knowledge/patterns/`
 
 ## Workflow when touching ModSharp APIs
-1. Start from @refs/modsharp-knowledge/catalog/_index.md to find the right project.
+1. Start from `refs/modsharp-knowledge/catalog/_index.md` to find the right project.
 2. Read `refs/modsharp-knowledge/catalog/projects/Sharp.Shared/_index.md` to locate the namespace.
 3. Read the relevant `namespaces/<Namespace>.md` file for type signatures.
 4. Check `refs/modsharp-knowledge/patterns/` for a verified precedent before writing new code.
-5. Scan `@refs/modsharp-knowledge/gotchas.md` before committing anything non-trivial.
+5. Scan `refs/modsharp-knowledge/gotchas.md` before committing anything non-trivial.
 ```
 
 ### Which files to reference — cheat sheet
 
 | File / directory | Typical size | `@`-load? | Notes |
 |---|---|---|---|
-| `catalog/_index.md` | small | **Yes** | Top-level index, always useful |
-| `gotchas.md` | small | **Yes** | Worth keeping hot |
-| `catalog/projects/Sharp.Shared/_index.md` | medium | No | Link and let Claude read on demand |
+| `catalog/_index.md` | small | **Yes** | Top-level index, always useful. Put the `@`-ref on its own line |
+| `gotchas.md` | small | **Yes** | Worth keeping hot. Put the `@`-ref on its own line |
+| `catalog/projects/Sharp.Shared/_index.md` | medium | No | Reference by path and let Claude read on demand |
 | `catalog/projects/Sharp.Shared/namespaces/*.md` | **large** (`_global.md` exceeds 60k lines) | **Never** | Auto-loading will blow context |
 | `catalog/indexes/entry-points.md` | medium | Optional | Useful to pin during scaffolding |
 | `catalog/indexes/generated-types.md` | medium | Optional | Useful when working with protobuf / generated code |

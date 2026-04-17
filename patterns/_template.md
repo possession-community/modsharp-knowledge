@@ -16,4 +16,4 @@ When to use this pattern. What problem it solves.
 - ...
 
 ## Related API
-- @../catalog/projects/Sharp.Shared/namespaces/XXX.md
+- `../catalog/projects/Sharp.Shared/namespaces/XXX.md`
