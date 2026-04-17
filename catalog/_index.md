@@ -1,7 +1,8 @@
 # ModSharp API Catalog
 
 Source Commit: c0d26d3e60a98ae43bb2e1fb8194adb5aa5c92ad
-Generated: 2026-04-17T04:15:16Z
+
+> Generation timestamp is kept in `.meta/generated-at` (gitignored) to keep committed files stable across re-runs on the same source commit.
 
 ## プラグイン開発者向け (最優先)
 
