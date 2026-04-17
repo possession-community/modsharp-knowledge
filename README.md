@@ -42,6 +42,11 @@ like "update the catalog". Claude Code follows the runbook in
 `CLAUDE.md` and runs the commands itself — there is intentionally
 no shell script or CI automation for this.
 
+The generator tool lives in its own repository:
+<https://github.com/fltuna/modsharp-api-catalog-generator>.
+Clone it once to `~/tools/ModSharpApiCatalog` (or anywhere, as long
+as `MODSHARP_CATALOG_TOOL` points at it) before running updates.
+
 ## Consuming this catalog from another project
 ```bash
 cd my-plugin

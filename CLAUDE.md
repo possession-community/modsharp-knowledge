@@ -6,10 +6,20 @@ updates are executed by Claude Code following this runbook.
 
 ## Prerequisites
 - .NET 10 SDK installed
-- The catalog generator tool `ModSharpApiCatalog` is available
-  - Default location: `~/tools/ModSharpApiCatalog`
-  - Override via the environment variable `MODSHARP_CATALOG_TOOL`
-  - If the tool cannot be found, ask the user and stop
+- The catalog generator tool is available locally.
+  Source: <https://github.com/fltuna/modsharp-api-catalog-generator>
+
+  Default expected path: `~/tools/ModSharpApiCatalog`.
+  Override with the environment variable `MODSHARP_CATALOG_TOOL`.
+
+  If the tool is missing, ask the user to clone it first:
+  ```bash
+  git clone https://github.com/fltuna/modsharp-api-catalog-generator.git \
+      ~/tools/ModSharpApiCatalog
+  ```
+  The directory name can be anything; `MODSHARP_CATALOG_TOOL`
+  (or the path passed to `--project`) just has to point at it.
+  If still not available after cloning, stop and tell the user.
 
 ## Procedure when the user asks you to update the catalog
 
