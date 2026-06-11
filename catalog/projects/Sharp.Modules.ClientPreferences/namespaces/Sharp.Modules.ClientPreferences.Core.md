@@ -14,7 +14,7 @@ Types: 1 (0 generated)
 Inheritance: object → **ClientPreferences**
 
 #### Constructors
-- `Sharp.Modules.ClientPreferences.Core.ClientPreferences.ClientPreferences(Sharp.Shared.ISharedSystem sharedSystem, string dllPath, string sharpPath, System.Version version, IConfiguration configuration, bool hotReload)` [L:58]
+- `Sharp.Modules.ClientPreferences.Core.ClientPreferences.ClientPreferences(Sharp.Shared.ISharedSystem sharedSystem, string dllPath, string sharpPath, System.Version version, Microsoft.Extensions.Configuration.IConfiguration configuration, bool hotReload)` [L:58]
 
 #### Properties
 - `string Sharp.Modules.ClientPreferences.Core.ClientPreferences.DisplayAuthor` [L:42]

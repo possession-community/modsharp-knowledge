@@ -574,81 +574,84 @@ Types: 24 (0 generated)
 - Attributes: `[NetClass("CCSPlayerPawnBase")]`
 
 #### Properties
-- `Sharp.Shared.Enums.PlayerState Sharp.Shared.GameEntities.IBasePlayerPawn.State` [L:126]
+- `Sharp.Shared.Enums.PlayerState Sharp.Shared.GameEntities.IBasePlayerPawn.State` [L:134]
   - Modifiers: public, abstract
   - Summary: PlayerState
-- `bool Sharp.Shared.GameEntities.IBasePlayerPawn.Respawning` [L:131]
+- `bool Sharp.Shared.GameEntities.IBasePlayerPawn.Respawning` [L:139]
   - Modifiers: public, abstract, readonly
   - Summary: m_bRespawning
-- `float Sharp.Shared.GameEntities.IBasePlayerPawn.DeathTime` [L:116]
+- `float Sharp.Shared.GameEntities.IBasePlayerPawn.DeathTime` [L:124]
   - Modifiers: public, abstract
   - Summary: m_flDeathTime
-- `float Sharp.Shared.GameEntities.IBasePlayerPawn.FlashDuration` [L:146]
+- `float Sharp.Shared.GameEntities.IBasePlayerPawn.FlashDuration` [L:154]
   - Modifiers: public, abstract
   - Summary: How long does the flashbang effect last
-- `float Sharp.Shared.GameEntities.IBasePlayerPawn.FlashMaxAlpha` [L:141]
+- `float Sharp.Shared.GameEntities.IBasePlayerPawn.FlashMaxAlpha` [L:149]
   - Modifiers: public, abstract
   - Summary: Alpha for flashbang effect
-- `float Sharp.Shared.GameEntities.IBasePlayerPawn.NextRadarUpdateTime` [L:151]
+- `float Sharp.Shared.GameEntities.IBasePlayerPawn.NextRadarUpdateTime` [L:159]
   - Modifiers: public, abstract
   - Summary: m_fNextRadarUpdateTime
-- `float Sharp.Shared.GameEntities.IBasePlayerPawn.NextSuicideTime` [L:121]
+- `float Sharp.Shared.GameEntities.IBasePlayerPawn.NextSuicideTime` [L:129]
   - Modifiers: public, abstract
   - Summary: m_fNextSuicideTime
-- `float Sharp.Shared.GameEntities.IBasePlayerPawn.ProgressBarStartTime` [L:156]
+- `float Sharp.Shared.GameEntities.IBasePlayerPawn.ProgressBarStartTime` [L:164]
   - Modifiers: public, abstract
   - Summary: m_flProgressBarStartTime
-- `float Sharp.Shared.GameEntities.IBasePlayerPawn.TimeLastHurt` [L:111]
+- `float Sharp.Shared.GameEntities.IBasePlayerPawn.TimeLastHurt` [L:119]
   - Modifiers: public, abstract
   - Summary: m_fTimeLastHurt
-- `int Sharp.Shared.GameEntities.IBasePlayerPawn.NumSpawns` [L:136]
+- `int Sharp.Shared.GameEntities.IBasePlayerPawn.NumSpawns` [L:144]
   - Modifiers: public, abstract, readonly
   - Summary: m_iNumSpawns
-- `int Sharp.Shared.GameEntities.IBasePlayerPawn.ProgressBarDuration` [L:161]
+- `int Sharp.Shared.GameEntities.IBasePlayerPawn.ProgressBarDuration` [L:169]
   - Modifiers: public, abstract
   - Summary: m_iProgressBarDuration
-- `uint Sharp.Shared.GameEntities.IBasePlayerPawn.HideHud` [L:106]
+- `uint Sharp.Shared.GameEntities.IBasePlayerPawn.HideHud` [L:114]
   - Modifiers: public, abstract
   - Summary: m_iHideHUD
 
 #### Methods
-- `Sharp.Shared.GameEntities.IObserverPawn? Sharp.Shared.GameEntities.IBasePlayerPawn.AsObserver()` [L:54]
+- `Sharp.Shared.GameEntities.IObserverPawn? Sharp.Shared.GameEntities.IBasePlayerPawn.AsObserver()` [L:62]
   - Modifiers: public, abstract
   - Summary: Cast to CCSObserverPawn
-- `Sharp.Shared.GameEntities.IPlayerController? Sharp.Shared.GameEntities.IBasePlayerPawn.GetController()` [L:59]
+- `Sharp.Shared.GameEntities.IPlayerController? Sharp.Shared.GameEntities.IBasePlayerPawn.GetController()` [L:67]
   - Modifiers: public, abstract
   - Summary: Gets the Controller corresponding to the current PlayerPawn
-- `Sharp.Shared.GameEntities.IPlayerController? Sharp.Shared.GameEntities.IBasePlayerPawn.GetOriginalController()` [L:64]
+- `Sharp.Shared.GameEntities.IPlayerController? Sharp.Shared.GameEntities.IBasePlayerPawn.GetOriginalController()` [L:72]
   - Modifiers: public, abstract
   - Summary: m_hOriginalController
-- `Sharp.Shared.GameEntities.IPlayerPawn? Sharp.Shared.GameEntities.IBasePlayerPawn.AsPlayer()` [L:49]
+- `Sharp.Shared.GameEntities.IPlayerPawn? Sharp.Shared.GameEntities.IBasePlayerPawn.AsPlayer()` [L:57]
   - Modifiers: public, abstract
   - Summary: Cast to CCSPlayerPawn
-- `Sharp.Shared.GameObjects.ICameraService? Sharp.Shared.GameEntities.IBasePlayerPawn.GetCameraService()` [L:91]
+- `Sharp.Shared.GameObjects.ICameraService? Sharp.Shared.GameEntities.IBasePlayerPawn.GetCameraService()` [L:99]
   - Modifiers: public, abstract
   - Summary: CameraService
-- `Sharp.Shared.GameObjects.IMovementService? Sharp.Shared.GameEntities.IBasePlayerPawn.GetMovementService()` [L:96]
+- `Sharp.Shared.GameObjects.IMovementService? Sharp.Shared.GameEntities.IBasePlayerPawn.GetMovementService()` [L:104]
   - Modifiers: public, abstract
   - Summary: MoveService
-- `Sharp.Shared.GameObjects.IUseService? Sharp.Shared.GameEntities.IBasePlayerPawn.GetUseService()` [L:101]
+- `Sharp.Shared.GameObjects.IUseService? Sharp.Shared.GameEntities.IBasePlayerPawn.GetUseService()` [L:109]
   - Modifiers: public, abstract
   - Summary: UseService
-- `Sharp.Shared.Types.SoundOpEventGuid Sharp.Shared.GameEntities.IBasePlayerPawn.EmitSoundClient(string sound, [float? volume = null])` [L:81]
+- `Sharp.Shared.Types.SoundOpEventGuid Sharp.Shared.GameEntities.IBasePlayerPawn.EmitSoundClient(string sound, [float? volume = null])` [L:89]
   - Modifiers: public, abstract
   - Summary: Play a soundevent to this player, other player won't hear it
-- `Sharp.Shared.Types.Vector Sharp.Shared.GameEntities.IBasePlayerPawn.GetEyeAngles()` [L:69]
+- `Sharp.Shared.Types.Vector Sharp.Shared.GameEntities.IBasePlayerPawn.GetEyeAngles()` [L:77]
   - Modifiers: public, abstract
   - Summary: Eye angles
-- `Sharp.Shared.Types.Vector Sharp.Shared.GameEntities.IBasePlayerPawn.GetEyePosition()` [L:74]
+- `Sharp.Shared.Types.Vector Sharp.Shared.GameEntities.IBasePlayerPawn.GetEyePosition()` [L:82]
   - Modifiers: public, abstract
   - Summary: Eye position
-- `bool Sharp.Shared.GameEntities.IBasePlayerPawn.IsPlayer([bool nativeCall = false])` [L:43]
+- `bool Sharp.Shared.GameEntities.IBasePlayerPawn.IsPlayer([bool nativeCall = false])` [L:51]
   - Modifiers: public, abstract
   - Summary: Check if entity is CCSPlayerPawn or CCSObserverPawn
 - `void Sharp.Shared.GameEntities.IBasePlayerPawn.Print(Sharp.Shared.Enums.HudPrintChannel channel, string message, [string? param1 = null], [string? param2 = null], [string? param3 = null], [string? param4 = null])` [L:33]
   - Modifiers: public, abstract
   - Summary: Print message to this player
-- `void Sharp.Shared.GameEntities.IBasePlayerPawn.TransientChangeTeam(Sharp.Shared.Enums.CStrikeTeam team)` [L:86]
+- `void Sharp.Shared.GameEntities.IBasePlayerPawn.PrintCenterHtml(string message, [int duration = 1])` [L:46]
+  - Modifiers: public, abstract
+  - Summary: Print a hud message with limited html format support to this player.
+- `void Sharp.Shared.GameEntities.IBasePlayerPawn.TransientChangeTeam(Sharp.Shared.Enums.CStrikeTeam team)` [L:94]
   - Modifiers: public, abstract
   - Summary: Change m_iTeamNum without sending update state to the client
 
@@ -993,70 +996,70 @@ Types: 24 (0 generated)
 - Attributes: `[NetClass("CCSPlayerController")]`
 
 #### Properties
-- `Sharp.Shared.Enums.CStrikeTeam Sharp.Shared.GameEntities.IPlayerController.PendingTeamNum` [L:228]
+- `Sharp.Shared.Enums.CStrikeTeam Sharp.Shared.GameEntities.IPlayerController.PendingTeamNum` [L:236]
   - Modifiers: public, abstract
   - Summary: m_iPendingTeamNum
-- `Sharp.Shared.Enums.CompetitiveRankType Sharp.Shared.GameEntities.IPlayerController.CompetitiveRankType` [L:188]
+- `Sharp.Shared.Enums.CompetitiveRankType Sharp.Shared.GameEntities.IPlayerController.CompetitiveRankType` [L:196]
   - Modifiers: public, abstract
   - Summary: m_iCompetitiveRankType
-- `Sharp.Shared.Enums.PlayerConnectedState Sharp.Shared.GameEntities.IPlayerController.ConnectedState` [L:203]
+- `Sharp.Shared.Enums.PlayerConnectedState Sharp.Shared.GameEntities.IPlayerController.ConnectedState` [L:211]
   - Modifiers: public, abstract, readonly
   - Summary: Connection state
-- `Sharp.Shared.Units.PlayerSlot Sharp.Shared.GameEntities.IPlayerController.PlayerSlot` [L:124]
+- `Sharp.Shared.Units.PlayerSlot Sharp.Shared.GameEntities.IPlayerController.PlayerSlot` [L:132]
   - Modifiers: public, abstract, readonly
   - Summary: PlayerSlot
-- `Sharp.Shared.Units.SteamID Sharp.Shared.GameEntities.IPlayerController.SteamId` [L:119]
+- `Sharp.Shared.Units.SteamID Sharp.Shared.GameEntities.IPlayerController.SteamId` [L:127]
   - Modifiers: public, abstract, readonly
   - Summary: Returns a SteamID64 (7656119xxxxxxxxxx)
-- `bool Sharp.Shared.GameEntities.IPlayerController.ControllingBot` [L:233]
+- `bool Sharp.Shared.GameEntities.IPlayerController.ControllingBot` [L:241]
   - Modifiers: public, abstract
   - Summary: m_bControllingBot
-- `bool Sharp.Shared.GameEntities.IPlayerController.HasCommunicationAbuseMute` [L:223]
+- `bool Sharp.Shared.GameEntities.IPlayerController.HasCommunicationAbuseMute` [L:231]
   - Modifiers: public, abstract
   - Summary: m_bHasCommunicationAbuseMute
-- `bool Sharp.Shared.GameEntities.IPlayerController.IsFakeClient` [L:158]
+- `bool Sharp.Shared.GameEntities.IPlayerController.IsFakeClient` [L:166]
   - Modifiers: public, virtual, readonly
   - Summary: Is this controller for FakeClient(Bots)
-- `bool Sharp.Shared.GameEntities.IPlayerController.IsHltv` [L:153]
+- `bool Sharp.Shared.GameEntities.IPlayerController.IsHltv` [L:161]
   - Modifiers: public, abstract, readonly
   - Summary: Is controller in HLTV
-- `bool Sharp.Shared.GameEntities.IPlayerController.RemoveAllItemsOnNextRoundReset` [L:213]
+- `bool Sharp.Shared.GameEntities.IPlayerController.RemoveAllItemsOnNextRoundReset` [L:221]
   - Modifiers: public, abstract
   - Summary: m_bRemoveAllItemsOnNextRoundReset
-- `bool Sharp.Shared.GameEntities.IPlayerController.SwitchTeamsOnNextRoundReset` [L:208]
+- `bool Sharp.Shared.GameEntities.IPlayerController.SwitchTeamsOnNextRoundReset` [L:216]
   - Modifiers: public, abstract
   - Summary: Will the player switch team when a new round starts
-- `float Sharp.Shared.GameEntities.IPlayerController.LaggedMovement` [L:178]
+- `float Sharp.Shared.GameEntities.IPlayerController.LaggedMovement` [L:186]
   - Modifiers: public, abstract
   - Summary: m_flLaggedMovementValue in source1
-- `int Sharp.Shared.GameEntities.IPlayerController.CompetitiveRanking` [L:183]
+- `int Sharp.Shared.GameEntities.IPlayerController.CompetitiveRanking` [L:191]
   - Modifiers: public, abstract
   - Summary: m_iCompetitiveRanking
-- `int Sharp.Shared.GameEntities.IPlayerController.CompetitiveWins` [L:193]
+- `int Sharp.Shared.GameEntities.IPlayerController.CompetitiveWins` [L:201]
   - Modifiers: public, abstract
   - Summary: m_iCompetitiveWins
-- `int Sharp.Shared.GameEntities.IPlayerController.DesiredObserverMode` [L:218]
+- `int Sharp.Shared.GameEntities.IPlayerController.DesiredObserverMode` [L:226]
   - Modifiers: public, abstract
   - Summary: Desired observer mode
-- `int Sharp.Shared.GameEntities.IPlayerController.MvpCount` [L:168]
+- `int Sharp.Shared.GameEntities.IPlayerController.MvpCount` [L:176]
   - Modifiers: public, abstract
   - Summary: MVP on scoreboard
-- `int Sharp.Shared.GameEntities.IPlayerController.RoundsWon` [L:238]
+- `int Sharp.Shared.GameEntities.IPlayerController.RoundsWon` [L:246]
   - Modifiers: public, abstract
   - Summary: m_iRoundsWon
-- `int Sharp.Shared.GameEntities.IPlayerController.Score` [L:163]
+- `int Sharp.Shared.GameEntities.IPlayerController.Score` [L:171]
   - Modifiers: public, abstract
   - Summary: Score on scoreboard
-- `int Sharp.Shared.GameEntities.IPlayerController.UpdaterCount` [L:173]
+- `int Sharp.Shared.GameEntities.IPlayerController.UpdaterCount` [L:181]
   - Modifiers: public, abstract
   - Summary: Scoreboard update count
-- `string Sharp.Shared.GameEntities.IPlayerController.ClanTag` [L:129]
+- `string Sharp.Shared.GameEntities.IPlayerController.ClanTag` [L:137]
   - Modifiers: public, abstract, readonly
   - Summary: Clantag
-- `string Sharp.Shared.GameEntities.IPlayerController.PlayerName` [L:134]
+- `string Sharp.Shared.GameEntities.IPlayerController.PlayerName` [L:142]
   - Modifiers: public, abstract
   - Summary: PlayerName, setting the value does not call StateChanged
-- `uint Sharp.Shared.GameEntities.IPlayerController.DesiredFOV` [L:198]
+- `uint Sharp.Shared.GameEntities.IPlayerController.DesiredFOV` [L:206]
   - Modifiers: public, abstract
   - Summary: m_iDesiredFOV
 
@@ -1070,58 +1073,61 @@ Types: 24 (0 generated)
 - `Sharp.Shared.GameEntities.IPlayerPawn? Sharp.Shared.GameEntities.IPlayerController.GetPlayerPawn()` [L:47]
   - Modifiers: public, abstract
   - Summary: Gets the PlayerPawn for this Controller
-- `Sharp.Shared.GameObjects.IControllerActionTrackingService? Sharp.Shared.GameEntities.IPlayerController.GetActionTrackingService()` [L:258]
+- `Sharp.Shared.GameObjects.IControllerActionTrackingService? Sharp.Shared.GameEntities.IPlayerController.GetActionTrackingService()` [L:266]
   - Modifiers: public, abstract
   - Summary: ActionTrackingService
-- `Sharp.Shared.GameObjects.IDamageService? Sharp.Shared.GameEntities.IPlayerController.GetDamageService()` [L:243]
+- `Sharp.Shared.GameObjects.IDamageService? Sharp.Shared.GameEntities.IPlayerController.GetDamageService()` [L:251]
   - Modifiers: public, abstract
   - Summary: DamageService
-- `Sharp.Shared.GameObjects.IEconItemView? Sharp.Shared.GameEntities.IPlayerController.GetItemInLoadoutFromInventory(Sharp.Shared.Enums.CStrikeTeam team, int slot)` [L:270]
+- `Sharp.Shared.GameObjects.IEconItemView? Sharp.Shared.GameEntities.IPlayerController.GetItemInLoadoutFromInventory(Sharp.Shared.Enums.CStrikeTeam team, int slot)` [L:278]
   - Modifiers: public, abstract
   - Summary: Gets the equipped inventory item from loadout
-- `Sharp.Shared.GameObjects.IInGameMoneyService? Sharp.Shared.GameEntities.IPlayerController.GetInGameMoneyService()` [L:248]
+- `Sharp.Shared.GameObjects.IInGameMoneyService? Sharp.Shared.GameEntities.IPlayerController.GetInGameMoneyService()` [L:256]
   - Modifiers: public, abstract
   - Summary: MoneyService
-- `Sharp.Shared.GameObjects.IInventoryService? Sharp.Shared.GameEntities.IPlayerController.GetInventoryService()` [L:253]
+- `Sharp.Shared.GameObjects.IInventoryService? Sharp.Shared.GameEntities.IPlayerController.GetInventoryService()` [L:261]
   - Modifiers: public, abstract
   - Summary: InventoryService
 - `Sharp.Shared.Objects.IGameClient? Sharp.Shared.GameEntities.IPlayerController.GetGameClient()` [L:67]
   - Modifiers: public, abstract
   - Summary: Gets the Returns null if the player is not in-game, even if the entity exists
-- `Sharp.Shared.Types.SoundOpEventGuid Sharp.Shared.GameEntities.IPlayerController.EmitSoundClient(string sound, [float? volume = null])` [L:265]
+- `Sharp.Shared.Types.SoundOpEventGuid Sharp.Shared.GameEntities.IPlayerController.EmitSoundClient(string sound, [float? volume = null])` [L:273]
   - Modifiers: public, abstract
   - Summary: Play a soundevent only for this player
-- `bool Sharp.Shared.GameEntities.IPlayerController.IsConnected()` [L:107]
+- `bool Sharp.Shared.GameEntities.IPlayerController.IsConnected()` [L:115]
   - Modifiers: public, virtual
   - Summary: Is the player connected
-- `bool Sharp.Shared.GameEntities.IPlayerController.IsDisconnecting()` [L:113]
+- `bool Sharp.Shared.GameEntities.IPlayerController.IsDisconnecting()` [L:121]
   - Modifiers: public, virtual
   - Summary: Is the player disconnecting
-- `void Sharp.Shared.GameEntities.IPlayerController.CheckPawn()` [L:97]
+- `void Sharp.Shared.GameEntities.IPlayerController.CheckPawn()` [L:105]
   - Modifiers: public, abstract
   - Summary: Check awn
 - `void Sharp.Shared.GameEntities.IPlayerController.Print(Sharp.Shared.Enums.HudPrintChannel channel, string message, [string? param1 = null], [string? param2 = null], [string? param3 = null], [string? param4 = null])` [L:72]
   - Modifiers: public, abstract
   - Summary: Print message to this player
-- `void Sharp.Shared.GameEntities.IPlayerController.Respawn()` [L:87]
+- `void Sharp.Shared.GameEntities.IPlayerController.PrintCenterHtml(string message, [int duration = 1])` [L:85]
+  - Modifiers: public, abstract
+  - Summary: Print a hud message with limited html format support to this player.
+- `void Sharp.Shared.GameEntities.IPlayerController.Respawn()` [L:95]
   - Modifiers: public, abstract
   - Summary: Respawn player
-- `void Sharp.Shared.GameEntities.IPlayerController.SetClanTag(string tag)` [L:92]
+- `void Sharp.Shared.GameEntities.IPlayerController.SetClanTag(string tag)` [L:100]
   - Modifiers: public, abstract
   - Summary: Set clantag
-- `void Sharp.Shared.GameEntities.IPlayerController.SetPawn(Sharp.Shared.GameEntities.IBasePlayerPawn pawn, bool unknown1, bool unknown2, bool unknown3, bool unknown4)` [L:102]
+- `void Sharp.Shared.GameEntities.IPlayerController.SetPawn(Sharp.Shared.GameEntities.IBasePlayerPawn pawn, bool unknown1, bool unknown2, bool unknown3, bool unknown4)` [L:110]
   - Modifiers: public, abstract
   - Summary: Set PlayerPawn
 - `void Sharp.Shared.GameEntities.IPlayerController.SetPlayerPawn(Sharp.Shared.GameEntities.IPlayerPawn pawn)` [L:61]
   - Modifiers: public, abstract
   - Summary: Sets the PlayerPawn You should know what you're doing before calling this
-- `void Sharp.Shared.GameEntities.IPlayerController.SwitchTeam(Sharp.Shared.Enums.CStrikeTeam team)` [L:82]
+- `void Sharp.Shared.GameEntities.IPlayerController.SwitchTeam(Sharp.Shared.Enums.CStrikeTeam team)` [L:90]
   - Modifiers: public, abstract
   - Summary: Change team without slaying
 
 #### Obsolete Members
-- `bool Sharp.Shared.GameEntities.IPlayerController.IsPawnAlive` [L:141] — Use GetPawn().IsAlive, will be removed in 2.2
-- `uint Sharp.Shared.GameEntities.IPlayerController.PawnHealth` [L:148] — Use GetPawn().Health, will be removed in 2.2
+- `bool Sharp.Shared.GameEntities.IPlayerController.IsPawnAlive` [L:149] — Use GetPawn().IsAlive, will be removed in 2.2
+- `uint Sharp.Shared.GameEntities.IPlayerController.PawnHealth` [L:156] — Use GetPawn().Health, will be removed in 2.2
 
 
 ### interface IPlayerPawn : Sharp.Shared.GameEntities.IBasePlayerPawn
@@ -1129,155 +1135,143 @@ Types: 24 (0 generated)
 - FullName: `Sharp.Shared.GameEntities.IPlayerPawn`
 - Kind: interface
 - Modifiers: public
-- Source: Sharp.Shared/GameEntities/IPlayerPawn.cs:29
+- Source: Sharp.Shared/GameEntities/IPlayerPawn.cs:28
 - Generated: false
 - Attributes: `[NetClass("CCSPlayerPawn")]`
 
 #### Properties
-- `Sharp.Shared.Types.Vector Sharp.Shared.GameEntities.IPlayerPawn.AimPunchAngle` [L:256]
-  - Modifiers: public, abstract
-  - Summary: m_aimPunchAngle
-- `Sharp.Shared.Types.Vector Sharp.Shared.GameEntities.IPlayerPawn.AimPunchAngleVelocity` [L:261]
-  - Modifiers: public, abstract
-  - Summary: m_aimPunchAngleVel
-- `Sharp.Shared.Types.Vector Sharp.Shared.GameEntities.IPlayerPawn.TotalBulletForce` [L:241]
+- `Sharp.Shared.Types.Vector Sharp.Shared.GameEntities.IPlayerPawn.TotalBulletForce` [L:245]
   - Modifiers: public, abstract
   - Summary: m_vecTotalBulletForce
-- `bool Sharp.Shared.GameEntities.IPlayerPawn.InBombZone` [L:221]
+- `bool Sharp.Shared.GameEntities.IPlayerPawn.InBombZone` [L:225]
   - Modifiers: public, abstract, readonly
   - Summary: m_bInBombZone
-- `bool Sharp.Shared.GameEntities.IPlayerPawn.InBuyZone` [L:211]
+- `bool Sharp.Shared.GameEntities.IPlayerPawn.InBuyZone` [L:215]
   - Modifiers: public, abstract, readonly
   - Summary: m_bInBuyZone
-- `bool Sharp.Shared.GameEntities.IPlayerPawn.InHostageRescueZone` [L:216]
+- `bool Sharp.Shared.GameEntities.IPlayerPawn.InHostageRescueZone` [L:220]
   - Modifiers: public, abstract, readonly
   - Summary: m_bInHostageRescueZone
-- `bool Sharp.Shared.GameEntities.IPlayerPawn.IsBuyMenuOpen` [L:226]
+- `bool Sharp.Shared.GameEntities.IPlayerPawn.IsBuyMenuOpen` [L:230]
   - Modifiers: public, abstract, readonly
   - Summary: m_bIsBuyMenuOpen
-- `bool Sharp.Shared.GameEntities.IPlayerPawn.LeftHanded` [L:231]
+- `bool Sharp.Shared.GameEntities.IPlayerPawn.LeftHanded` [L:235]
   - Modifiers: public, abstract, readonly
   - Summary: m_bLeftHanded
-- `bool Sharp.Shared.GameEntities.IPlayerPawn.WaitForNoAttack` [L:251]
+- `bool Sharp.Shared.GameEntities.IPlayerPawn.WaitForNoAttack` [L:255]
   - Modifiers: public, abstract
   - Summary: m_bWaitForNoAttack
-- `float Sharp.Shared.GameEntities.IPlayerPawn.AimPunchTickFraction` [L:271]
-  - Modifiers: public, abstract
-  - Summary: m_aimPunchTickFraction
-- `float Sharp.Shared.GameEntities.IPlayerPawn.FlinchStack` [L:206]
+- `float Sharp.Shared.GameEntities.IPlayerPawn.FlinchStack` [L:210]
   - Modifiers: public, abstract
   - Summary: m_flFlinchStack
-- `float Sharp.Shared.GameEntities.IPlayerPawn.HealthShotBoostExpirationTime` [L:191]
+- `float Sharp.Shared.GameEntities.IPlayerPawn.HealthShotBoostExpirationTime` [L:195]
   - Modifiers: public, abstract
   - Summary: m_flHealthShotBoostExpirationTime
-- `float Sharp.Shared.GameEntities.IPlayerPawn.MolotovDamageTime` [L:186]
+- `float Sharp.Shared.GameEntities.IPlayerPawn.MolotovDamageTime` [L:190]
   - Modifiers: public, abstract
   - Summary: m_fMolotovDamageTime
-- `float Sharp.Shared.GameEntities.IPlayerPawn.SwitchedHandednessTime` [L:236]
+- `float Sharp.Shared.GameEntities.IPlayerPawn.SwitchedHandednessTime` [L:240]
   - Modifiers: public, abstract
   - Summary: m_fSwitchedHandednessTime
-- `float Sharp.Shared.GameEntities.IPlayerPawn.VelocityModifier` [L:196]
+- `float Sharp.Shared.GameEntities.IPlayerPawn.VelocityModifier` [L:200]
   - Modifiers: public, abstract
   - Summary: m_flVelocityModifier
-- `int Sharp.Shared.GameEntities.IPlayerPawn.AimPunchTickBase` [L:266]
-  - Modifiers: public, abstract
-  - Summary: m_aimPunchTickBase
-- `int Sharp.Shared.GameEntities.IPlayerPawn.ArmorValue` [L:181]
+- `int Sharp.Shared.GameEntities.IPlayerPawn.ArmorValue` [L:185]
   - Modifiers: public, abstract
   - Summary: Armor value
-- `int Sharp.Shared.GameEntities.IPlayerPawn.DeathFlags` [L:246]
+- `int Sharp.Shared.GameEntities.IPlayerPawn.DeathFlags` [L:250]
   - Modifiers: public, abstract
   - Summary: m_iDeathFlags
-- `int Sharp.Shared.GameEntities.IPlayerPawn.ShotsFired` [L:201]
+- `int Sharp.Shared.GameEntities.IPlayerPawn.ShotsFired` [L:205]
   - Modifiers: public, abstract
   - Summary: m_iShotsFired
 
 #### Methods
-- `Sharp.Shared.CStrike.ISchemaList<Sharp.Shared.Types.Vector> Sharp.Shared.GameEntities.IPlayerPawn.GetAimPunchCache()` [L:276]
-  - Modifiers: public, abstract
-  - Summary: m_aimPunchCache
-- `Sharp.Shared.GameEntities.IBaseWeapon? Sharp.Shared.GameEntities.IPlayerPawn.GetActiveWeapon()` [L:56]
+- `Sharp.Shared.GameEntities.IBaseWeapon? Sharp.Shared.GameEntities.IPlayerPawn.GetActiveWeapon()` [L:55]
   - Modifiers: public, abstract
   - Summary: Gets the currently held weapon
-- `Sharp.Shared.GameEntities.IBaseWeapon? Sharp.Shared.GameEntities.IPlayerPawn.GetWeaponBySlot(Sharp.Shared.Enums.GearSlot slot, [int position = -1])` [L:61]
+- `Sharp.Shared.GameEntities.IBaseWeapon? Sharp.Shared.GameEntities.IPlayerPawn.GetWeaponBySlot(Sharp.Shared.Enums.GearSlot slot, [int position = -1])` [L:60]
   - Modifiers: public, abstract
   - Summary: Gets weapon from inventory by slot
-- `Sharp.Shared.GameEntities.IBaseWeapon? Sharp.Shared.GameEntities.IPlayerPawn.GiveNamedItem(Sharp.Shared.Enums.EconItemId item)` [L:50]
+- `Sharp.Shared.GameEntities.IBaseWeapon? Sharp.Shared.GameEntities.IPlayerPawn.GiveNamedItem(Sharp.Shared.Enums.EconItemId item)` [L:49]
   - Modifiers: public, abstract
   - Summary: Give weapon to player
-- `Sharp.Shared.GameEntities.IBaseWeapon? Sharp.Shared.GameEntities.IPlayerPawn.GiveNamedItem(string weapon)` [L:45]
+- `Sharp.Shared.GameEntities.IBaseWeapon? Sharp.Shared.GameEntities.IPlayerPawn.GiveNamedItem(string weapon)` [L:44]
   - Modifiers: public, abstract
   - Summary: Give weapon to player
-- `Sharp.Shared.GameEntities.IPlayerController? Sharp.Shared.GameEntities.IPlayerPawn.GetControllerAuto()` [L:40]
+- `Sharp.Shared.GameEntities.IPlayerController? Sharp.Shared.GameEntities.IPlayerPawn.GetControllerAuto()` [L:39]
   - Modifiers: public, abstract
   - Summary: Automatically gets Controller if alive, otherwise OriginalController
-- `Sharp.Shared.GameObjects.IBulletService? Sharp.Shared.GameEntities.IPlayerPawn.GetBulletService()` [L:146]
+- `Sharp.Shared.GameObjects.IAimPunchService? Sharp.Shared.GameEntities.IPlayerPawn.GetAimPunchService()` [L:175]
+  - Modifiers: public, abstract
+  - Summary: AimPunchService
+- `Sharp.Shared.GameObjects.IBulletService? Sharp.Shared.GameEntities.IPlayerPawn.GetBulletService()` [L:145]
   - Modifiers: public, abstract
   - Summary: BulletService
-- `Sharp.Shared.GameObjects.IBuyService? Sharp.Shared.GameEntities.IPlayerPawn.GetBuyService()` [L:156]
+- `Sharp.Shared.GameObjects.IBuyService? Sharp.Shared.GameEntities.IPlayerPawn.GetBuyService()` [L:155]
   - Modifiers: public, abstract
   - Summary: BuyService
-- `Sharp.Shared.GameObjects.IDamageReactService? Sharp.Shared.GameEntities.IPlayerPawn.GetDamageReactService()` [L:171]
+- `Sharp.Shared.GameObjects.IDamageReactService? Sharp.Shared.GameEntities.IPlayerPawn.GetDamageReactService()` [L:170]
   - Modifiers: public, abstract
   - Summary: DamageReactService
-- `Sharp.Shared.GameObjects.IEconItemView Sharp.Shared.GameEntities.IPlayerPawn.GetEconGloves()` [L:176]
+- `Sharp.Shared.GameObjects.IEconItemView Sharp.Shared.GameEntities.IPlayerPawn.GetEconGloves()` [L:180]
   - Modifiers: public, abstract
   - Summary: Glove Econ
-- `Sharp.Shared.GameObjects.IHostageService? Sharp.Shared.GameEntities.IPlayerPawn.GetHostageService()` [L:151]
+- `Sharp.Shared.GameObjects.IHostageService? Sharp.Shared.GameEntities.IPlayerPawn.GetHostageService()` [L:150]
   - Modifiers: public, abstract
   - Summary: HostageService
-- `Sharp.Shared.GameObjects.IItemService? Sharp.Shared.GameEntities.IPlayerPawn.GetItemService()` [L:116]
+- `Sharp.Shared.GameObjects.IItemService? Sharp.Shared.GameEntities.IPlayerPawn.GetItemService()` [L:115]
   - Modifiers: public, abstract
   - Summary: ItemService
-- `Sharp.Shared.GameObjects.IPingService? Sharp.Shared.GameEntities.IPlayerPawn.GetPingService()` [L:136]
+- `Sharp.Shared.GameObjects.IPingService? Sharp.Shared.GameEntities.IPlayerPawn.GetPingService()` [L:135]
   - Modifiers: public, abstract
   - Summary: PingServices
-- `Sharp.Shared.GameObjects.IPlayerActionTrackingService? Sharp.Shared.GameEntities.IPlayerPawn.GetActionTrackingService()` [L:161]
+- `Sharp.Shared.GameObjects.IPlayerActionTrackingService? Sharp.Shared.GameEntities.IPlayerPawn.GetActionTrackingService()` [L:160]
   - Modifiers: public, abstract
   - Summary: ActionTrackingService
-- `Sharp.Shared.GameObjects.IPlayerMovementService? Sharp.Shared.GameEntities.IPlayerPawn.GetPlayerMovementService()` [L:126]
+- `Sharp.Shared.GameObjects.IPlayerMovementService? Sharp.Shared.GameEntities.IPlayerPawn.GetPlayerMovementService()` [L:125]
   - Modifiers: public, abstract
   - Summary: PlayerMoveService
-- `Sharp.Shared.GameObjects.IPlayerUseService? Sharp.Shared.GameEntities.IPlayerPawn.GetPlayerUseService()` [L:131]
+- `Sharp.Shared.GameObjects.IPlayerUseService? Sharp.Shared.GameEntities.IPlayerPawn.GetPlayerUseService()` [L:130]
   - Modifiers: public, abstract
   - Summary: PlayerUseService
-- `Sharp.Shared.GameObjects.IRadioService? Sharp.Shared.GameEntities.IPlayerPawn.GetRadioService()` [L:166]
+- `Sharp.Shared.GameObjects.IRadioService? Sharp.Shared.GameEntities.IPlayerPawn.GetRadioService()` [L:165]
   - Modifiers: public, abstract
   - Summary: RadioService
-- `Sharp.Shared.GameObjects.IWaterService? Sharp.Shared.GameEntities.IPlayerPawn.GetWaterService()` [L:141]
+- `Sharp.Shared.GameObjects.IWaterService? Sharp.Shared.GameEntities.IPlayerPawn.GetWaterService()` [L:140]
   - Modifiers: public, abstract
   - Summary: WaterService
-- `Sharp.Shared.GameObjects.IWeaponService? Sharp.Shared.GameEntities.IPlayerPawn.GetWeaponService()` [L:121]
+- `Sharp.Shared.GameObjects.IWeaponService? Sharp.Shared.GameEntities.IPlayerPawn.GetWeaponService()` [L:120]
   - Modifiers: public, abstract
   - Summary: WeaponService
-- `bool Sharp.Shared.GameEntities.IPlayerPawn.DetachWeapon(Sharp.Shared.GameEntities.IBaseWeapon item)` [L:91]
+- `bool Sharp.Shared.GameEntities.IPlayerPawn.DetachWeapon(Sharp.Shared.GameEntities.IBaseWeapon item)` [L:90]
   - Modifiers: public, abstract
   - Summary: Detach weapon from player
-- `bool Sharp.Shared.GameEntities.IPlayerPawn.SelectItem(Sharp.Shared.GameEntities.IBaseWeapon item)` [L:86]
+- `bool Sharp.Shared.GameEntities.IPlayerPawn.SelectItem(Sharp.Shared.GameEntities.IBaseWeapon item)` [L:85]
   - Modifiers: public, abstract
   - Summary: Switch to weapon/item
-- `void Sharp.Shared.GameEntities.IPlayerPawn.DropWeapon(Sharp.Shared.GameEntities.IBaseWeapon item)` [L:81]
+- `void Sharp.Shared.GameEntities.IPlayerPawn.DropWeapon(Sharp.Shared.GameEntities.IBaseWeapon item)` [L:80]
   - Modifiers: public, abstract
   - Summary: Force drop weapon
-- `void Sharp.Shared.GameEntities.IPlayerPawn.GiveGloves(Sharp.Shared.Enums.EconGlovesId id, int prefab, float wear, int seed)` [L:106]
+- `void Sharp.Shared.GameEntities.IPlayerPawn.GiveGloves(Sharp.Shared.Enums.EconGlovesId id, int prefab, float wear, int seed)` [L:105]
   - Modifiers: public, abstract
   - Summary: Give gloves to player
-- `void Sharp.Shared.GameEntities.IPlayerPawn.GiveGloves(int itemDefIndex, int prefab, float wear, int seed)` [L:101]
+- `void Sharp.Shared.GameEntities.IPlayerPawn.GiveGloves(int itemDefIndex, int prefab, float wear, int seed)` [L:100]
   - Modifiers: public, abstract
   - Summary: Give gloves to player
-- `void Sharp.Shared.GameEntities.IPlayerPawn.RemoveAllItems([bool removeSuit = false])` [L:76]
+- `void Sharp.Shared.GameEntities.IPlayerPawn.RemoveAllItems([bool removeSuit = false])` [L:75]
   - Modifiers: public, abstract
   - Summary: Remove all items
-- `void Sharp.Shared.GameEntities.IPlayerPawn.RemovePlayerItem(Sharp.Shared.GameEntities.IBaseWeapon item)` [L:70]
+- `void Sharp.Shared.GameEntities.IPlayerPawn.RemovePlayerItem(Sharp.Shared.GameEntities.IBaseWeapon item)` [L:69]
   - Modifiers: public, abstract
   - Summary: Remove weapon and destroy it immediately
-- `void Sharp.Shared.GameEntities.IPlayerPawn.Slay([bool explode = false])` [L:34]
+- `void Sharp.Shared.GameEntities.IPlayerPawn.Slay([bool explode = false])` [L:33]
   - Modifiers: public, abstract
   - Summary: Slay
-- `void Sharp.Shared.GameEntities.IPlayerPawn.SwitchWeapon(Sharp.Shared.GameEntities.IBaseWeapon? weapon)` [L:96]
+- `void Sharp.Shared.GameEntities.IPlayerPawn.SwitchWeapon(Sharp.Shared.GameEntities.IBaseWeapon? weapon)` [L:95]
   - Modifiers: public, abstract
   - Summary: Force switch weapon or go empty-handed (bypasses all checks/conditions)
-- `void Sharp.Shared.GameEntities.IPlayerPawn.TransientChangeVelocityModifier(float velocityModifier)` [L:111]
+- `void Sharp.Shared.GameEntities.IPlayerPawn.TransientChangeVelocityModifier(float velocityModifier)` [L:110]
   - Modifiers: public, abstract
   - Summary: Change VelocityModifier without calling StateChanged, player won't receive new value
 

@@ -14,7 +14,7 @@ Types: 1 (0 generated)
 Inheritance: object → **EntityEnhancement**
 
 #### Constructors
-- `Sharp.Modules.EntityEnhancements.EntityEnhancement.EntityEnhancement(Sharp.Shared.ISharedSystem sharedSystem, string dllPath, string sharpPath, System.Version version, IConfiguration coreConfiguration, bool hotReload)` [L:39]
+- `Sharp.Modules.EntityEnhancements.EntityEnhancement.EntityEnhancement(Sharp.Shared.ISharedSystem sharedSystem, string dllPath, string sharpPath, System.Version version, Microsoft.Extensions.Configuration.IConfiguration coreConfiguration, bool hotReload)` [L:39]
 
 #### Properties
 - `string Sharp.Modules.EntityEnhancements.EntityEnhancement.DisplayAuthor` [L:32]

@@ -3,7 +3,7 @@
 Public types produced by ModSharp's Source Generators.
 Includes protobuf message stubs and entity metadata that plugins routinely consume.
 
-## Sharp.Shared (64)
+## Sharp.Shared (66)
 
 ### <global>
 - `CBidirMsg_PredictionEvent.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CBidirMsg_PredictionEvent message type.
@@ -43,6 +43,7 @@ Includes protobuf message stubs and entity metadata that plugins routinely consu
 - `CMsgSource1LegacyGameEvent.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CMsgSource1LegacyGameEvent message type.
 - `CMsgSource1LegacyGameEventList.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CMsgSource1LegacyGameEventList message type.
 - `CMsgSource2PerfIntervalSample.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CMsgSource2PerfIntervalSample message type.
+- `CMsgSource2PlayStatsPackedRecordList.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CMsgSource2PlayStatsPackedRecordList message type.
 - `CMsgTEFireBullets.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CMsgTEFireBullets message type.
 - `CMsg_CVars.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CMsg_CVars message type.
 - `CPreMatchInfoData.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CPreMatchInfoData message type.
@@ -54,6 +55,7 @@ Includes protobuf message stubs and entity metadata that plugins routinely consu
 - `CSVCMsg_PacketEntities.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CSVCMsg_PacketEntities message type.
 - `CSVCMsg_SendTable.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CSVCMsg_SendTable message type.
 - `CSVCMsg_Sounds.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CSVCMsg_Sounds message type.
+- `CSource2Metrics_FetchMapData_Response.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CSource2Metrics_FetchMapData_Response message type.
 - `CSource2Metrics_MatchPerfSummary_Notification.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CSource2Metrics_MatchPerfSummary_Notification message type.
 - `CUserMessageCameraTransition.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CUserMessageCameraTransition message type.
 - `CUserMessageRequestDiagnostic.Types` → ../projects/Sharp.Shared/namespaces/_global.md — Container for nested types declared in the CUserMessageRequestDiagnostic message type.

@@ -179,6 +179,9 @@ Inheritance: object → System.ValueType → **AdminOperationType**
   - Modifiers: public, abstract, readonly
 
 #### Methods
+- `Sharp.Modules.AdminCommands.Shared.IAdminOperationHandler? Sharp.Modules.AdminCommands.Shared.IAdminService.GetHandler(Sharp.Modules.AdminCommands.Shared.AdminOperationType type)` [L:106]
+  - Modifiers: public, abstract
+  - Summary: Returns the currently registered handler for the given operation type, or null if none is registered.
 - `void Sharp.Modules.AdminCommands.Shared.IAdminService.Apply(Sharp.Shared.Objects.IGameClient? admin, Sharp.Shared.Objects.IGameClient target, Sharp.Modules.AdminCommands.Shared.AdminOperationType type, System.TimeSpan? duration, string reason, [bool silent = false])` [L:53]
   - Modifiers: public, abstract
   - Summary: Applies an admin operation to an online target.

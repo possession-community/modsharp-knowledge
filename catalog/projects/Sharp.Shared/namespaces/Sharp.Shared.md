@@ -72,31 +72,31 @@ Inheritance: object → **DataMapField**
 - Generated: false
 
 #### Methods
-- `Sharp.Shared.Types.VirtualTableInfo[] Sharp.Shared.ILibraryModule.FindVirtualTablesPartial(string str)` [L:84]
+- `Sharp.Shared.Types.VirtualTableInfo[] Sharp.Shared.ILibraryModule.FindVirtualTablesPartial(string str)` [L:92]
   - Modifiers: public, abstract
   - Summary: Finds virtual tables that contain the specified partial string in their type descriptor or name.
 - `System.Collections.Generic.List<nint> Sharp.Shared.ILibraryModule.FindPatternMulti(string pattern)` [L:66]
   - Modifiers: public, abstract
   - Summary: Find multiple function addresses by IDA pattern.
-- `bool Sharp.Shared.ILibraryModule.GetFunctionRange(nint middle, out nint start, out nint end)` [L:171]
+- `bool Sharp.Shared.ILibraryModule.GetFunctionRange(nint middle, out nint start, out nint end)` [L:179]
   - Modifiers: public, abstract
   - Summary: Determines the start and end boundaries of a function given an address inside it.
-- `bool Sharp.Shared.ILibraryModule.IsPointerDerivedFrom(nint ptr, string name)` [L:92]
+- `bool Sharp.Shared.ILibraryModule.IsPointerDerivedFrom(nint ptr, string name)` [L:100]
   - Modifiers: public, abstract
   - Summary: Checks if the object instance at the specified pointer inherits from a class matching the given name.
-- `nint Sharp.Shared.ILibraryModule.FindData(System.ReadOnlySpan<byte> data, bool readOnly)` [L:162]
+- `nint Sharp.Shared.ILibraryModule.FindData(System.ReadOnlySpan<byte> data, bool readOnly)` [L:170]
   - Modifiers: public, abstract
   - Summary: Scans the module's known data sections for a specific byte sequence.
-- `nint Sharp.Shared.ILibraryModule.FindFunction(System.ReadOnlySpan<nint> ptrs)` [L:137]
+- `nint Sharp.Shared.ILibraryModule.FindFunction(System.ReadOnlySpan<nint> ptrs)` [L:145]
   - Modifiers: public, abstract
   - Summary: Finds the start address of a function that references any of the specific pointers (xref).
-- `nint Sharp.Shared.ILibraryModule.FindFunction(System.ReadOnlySpan<string> strs)` [L:113]
+- `nint Sharp.Shared.ILibraryModule.FindFunction(System.ReadOnlySpan<string> strs)` [L:121]
   - Modifiers: public, abstract
   - Summary: Finds the start address of a function that references the specific string literal.
-- `nint Sharp.Shared.ILibraryModule.FindFunction(nint ptr)` [L:131]
+- `nint Sharp.Shared.ILibraryModule.FindFunction(nint ptr)` [L:139]
   - Modifiers: public, abstract
   - Summary: Finds the start address of a function that references the specific pointer (xref).
-- `nint Sharp.Shared.ILibraryModule.FindFunction(string str)` [L:106]
+- `nint Sharp.Shared.ILibraryModule.FindFunction(string str)` [L:114]
   - Modifiers: public, abstract
   - Summary: Finds the start address of a function that references the specific string literal.
 - `nint Sharp.Shared.ILibraryModule.FindInterface(string interfaceName)` [L:59]
@@ -108,10 +108,13 @@ Inheritance: object → **DataMapField**
 - `nint Sharp.Shared.ILibraryModule.FindPatternExactly(string pattern)` [L:53]
   - Modifiers: public, abstract
   - Summary: Find function address by IDA pattern (expecting a unique match).
-- `nint Sharp.Shared.ILibraryModule.FindPtr(nint ptr)` [L:78]
+- `nint Sharp.Shared.ILibraryModule.FindPtr(nint ptr)` [L:86]
   - Modifiers: public, abstract
   - Summary: Find the address in memory that contains a pointer to the specific value provided.
 - `nint Sharp.Shared.ILibraryModule.FindString(string str)` [L:72]
+  - Modifiers: public, abstract
+  - Summary: Find address of the given string in the module's data section.
+- `nint Sharp.Shared.ILibraryModule.FindStringExact(string str)` [L:80]
   - Modifiers: public, abstract
   - Summary: Find address of the given string in the module's data section.
 - `nint Sharp.Shared.ILibraryModule.GetFunctionByName(string functionName)` [L:46]
@@ -120,19 +123,19 @@ Inheritance: object → **DataMapField**
 - `nint Sharp.Shared.ILibraryModule.GetVirtualTableByName(string tableName, [bool decorated = false])` [L:40]
   - Modifiers: public, abstract
   - Summary: Find virtual table by name
-- `nint[] Sharp.Shared.ILibraryModule.FindFunctions(System.ReadOnlySpan<nint> ptrs)` [L:149]
+- `nint[] Sharp.Shared.ILibraryModule.FindFunctions(System.ReadOnlySpan<nint> ptrs)` [L:157]
   - Modifiers: public, abstract
   - Summary: Finds all functions that reference the provided pointers.
-- `nint[] Sharp.Shared.ILibraryModule.FindFunctions(System.ReadOnlySpan<string> strs)` [L:125]
+- `nint[] Sharp.Shared.ILibraryModule.FindFunctions(System.ReadOnlySpan<string> strs)` [L:133]
   - Modifiers: public, abstract
   - Summary: Finds all functions that reference the provided string literals.
-- `nint[] Sharp.Shared.ILibraryModule.FindFunctions(nint ptr)` [L:143]
+- `nint[] Sharp.Shared.ILibraryModule.FindFunctions(nint ptr)` [L:151]
   - Modifiers: public, abstract
   - Summary: Finds all functions that reference the specific pointer.
-- `nint[] Sharp.Shared.ILibraryModule.FindFunctions(string str)` [L:119]
+- `nint[] Sharp.Shared.ILibraryModule.FindFunctions(string str)` [L:127]
   - Modifiers: public, abstract
   - Summary: Finds all functions that reference the specific string literal.
-- `nint[] Sharp.Shared.ILibraryModule.GetReferencesFromPointer(nint ptr)` [L:99]
+- `nint[] Sharp.Shared.ILibraryModule.GetReferencesFromPointer(nint ptr)` [L:107]
   - Modifiers: public, abstract
   - Summary: Finds all references to the specified pointer within the module's executable code section (.text).
 

@@ -5,6 +5,7 @@ Types that typically serve as the starting point for a plugin or module.
 ## Plugin / Service / Manager / Provider Interfaces
 
 ### Sharp.Shared
+- `Sharp.Shared.GameObjects.IAimPunchService` → ../projects/Sharp.Shared/namespaces/Sharp.Shared.GameObjects.md
 - `Sharp.Shared.GameObjects.IBulletService` → ../projects/Sharp.Shared/namespaces/Sharp.Shared.GameObjects.md
 - `Sharp.Shared.GameObjects.IBuyService` → ../projects/Sharp.Shared/namespaces/Sharp.Shared.GameObjects.md
 - `Sharp.Shared.GameObjects.ICameraService` → ../projects/Sharp.Shared/namespaces/Sharp.Shared.GameObjects.md

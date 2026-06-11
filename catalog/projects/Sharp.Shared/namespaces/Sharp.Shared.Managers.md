@@ -45,6 +45,12 @@ Types: 20 (0 generated)
 - `void Sharp.Shared.Managers.IClientManager.KickClient(Sharp.Shared.Objects.IGameClient client, string internalReason, [Sharp.Shared.Enums.NetworkDisconnectionReason msgId = Sharp.Shared.Enums.NetworkDisconnectionReason.Invalid])` [L:104]
   - Modifiers: public, abstract
   - Summary: Immediately kick a player from the game
+- `void Sharp.Shared.Managers.IClientManager.PrintCenterHtmlToAll(string message, [int duration = 1])` [L:129]
+  - Modifiers: public, abstract
+  - Summary: Send center HTML message to all players
+- `void Sharp.Shared.Managers.IClientManager.PrintCenterHtmlToClients(System.Collections.Generic.IEnumerable<Sharp.Shared.Objects.IGameClient> clients, string message, [int duration = 1])` [L:134]
+  - Modifiers: public, abstract
+  - Summary: Send center HTML message to multiple players
 - `void Sharp.Shared.Managers.IClientManager.RemoveClientListener(Sharp.Shared.Listeners.IClientListener listener)` [L:42]
   - Modifiers: public, abstract
   - Summary: Remove
@@ -56,12 +62,12 @@ Types: 20 (0 generated)
   - Summary: Remove listener for ConCommand sent by
 
 #### Obsolete Members
-- `Sharp.Shared.Objects.IAdmin Sharp.Shared.Managers.IClientManager.CreateAdmin(Sharp.Shared.Units.SteamID identity, string name, [byte immunity = 0])` [L:148] — Migrated to AdminManager. Will be removed at 2.2
-- `Sharp.Shared.Objects.IAdmin? Sharp.Shared.Managers.IClientManager.FindAdmin(Sharp.Shared.Units.SteamID identity)` [L:136] — Migrated to AdminManager. Will be removed at 2.2
-- `Sharp.Shared.Objects.IAdmin? Sharp.Shared.Managers.IClientManager.FindAdmin(string name)` [L:142] — Migrated to AdminManager. Will be removed at 2.2
-- `System.Collections.Generic.IReadOnlyCollection<Sharp.Shared.Objects.IAdmin> Sharp.Shared.Managers.IClientManager.GetAdmins()` [L:161] — Migrated to AdminManager. Will be removed at 2.2
-- `void Sharp.Shared.Managers.IClientManager.DeleteAdmin(Sharp.Shared.Objects.IAdmin admin)` [L:154] — Migrated to AdminManager. Will be removed at 2.2
-- `void Sharp.Shared.Managers.IClientManager.ReloadAdmins()` [L:130] — Migrated to AdminManager. Will be removed at 2.2
+- `Sharp.Shared.Objects.IAdmin Sharp.Shared.Managers.IClientManager.CreateAdmin(Sharp.Shared.Units.SteamID identity, string name, [byte immunity = 0])` [L:158] — Migrated to AdminManager. Will be removed at 2.2
+- `Sharp.Shared.Objects.IAdmin? Sharp.Shared.Managers.IClientManager.FindAdmin(Sharp.Shared.Units.SteamID identity)` [L:146] — Migrated to AdminManager. Will be removed at 2.2
+- `Sharp.Shared.Objects.IAdmin? Sharp.Shared.Managers.IClientManager.FindAdmin(string name)` [L:152] — Migrated to AdminManager. Will be removed at 2.2
+- `System.Collections.Generic.IReadOnlyCollection<Sharp.Shared.Objects.IAdmin> Sharp.Shared.Managers.IClientManager.GetAdmins()` [L:171] — Migrated to AdminManager. Will be removed at 2.2
+- `void Sharp.Shared.Managers.IClientManager.DeleteAdmin(Sharp.Shared.Objects.IAdmin admin)` [L:164] — Migrated to AdminManager. Will be removed at 2.2
+- `void Sharp.Shared.Managers.IClientManager.ReloadAdmins()` [L:140] — Migrated to AdminManager. Will be removed at 2.2
 
 
 ### delegate DelegateClientCommand : System.MulticastDelegate
@@ -319,15 +325,15 @@ Inheritance: object → System.Delegate → System.MulticastDelegate → **Deleg
 - FullName: `Sharp.Shared.Managers.IForwardType<TParams>`
 - Kind: interface
 - Modifiers: public
-- Source: Sharp.Shared/Managers/HookManager.cs:376
+- Source: Sharp.Shared/Managers/HookManager.cs:485
 - Generated: false
 - Constraint: `where TParams : class, Sharp.Shared.HookParams.IFunctionParams`
 
 #### Methods
-- `void Sharp.Shared.Managers.IForwardType<out TParams>.InstallForward(System.Action<out TParams> func, [int priority = 0])` [L:382]
+- `void Sharp.Shared.Managers.IForwardType<out TParams>.InstallForward(System.Action<out TParams> func, [int priority = 0])` [L:491]
   - Modifiers: public, abstract
   - Summary: Listen to this Forward call Higher priority value means higher priority
-- `void Sharp.Shared.Managers.IForwardType<out TParams>.RemoveForward(System.Action<out TParams> func)` [L:387]
+- `void Sharp.Shared.Managers.IForwardType<out TParams>.RemoveForward(System.Action<out TParams> func)` [L:496]
   - Modifiers: public, abstract
   - Summary: Stop listening to this Forward call
 
@@ -341,111 +347,110 @@ Inheritance: object → System.Delegate → System.MulticastDelegate → **Deleg
 - Generated: false
 
 #### Properties
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IEmitMusicForwardParams> Sharp.Shared.Managers.IHookManager.EmitMusic` [L:233]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IEmitMusicForwardParams> Sharp.Shared.Managers.IHookManager.EmitMusic` [L:342]
   - Modifiers: public, abstract, readonly
   - Summary: SoundOpGameSystem::DoStartSoundEvent Only fires when the sound event is treated as music
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IGiveGloveItemForwardParams> Sharp.Shared.Managers.IHookManager.GiveGloveItem` [L:284]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IGiveGloveItemForwardParams> Sharp.Shared.Managers.IHookManager.GiveGloveItem` [L:393]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn->ItemService::GiveGloveItem
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IMapVoteCreatedForwardParams> Sharp.Shared.Managers.IHookManager.MapVoteCreated` [L:344]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IMapVoteCreatedForwardParams> Sharp.Shared.Managers.IHookManager.MapVoteCreated` [L:453]
   - Modifiers: public, abstract, readonly
   - Summary: CCSGameRules::CreateEndMatchMapGroupVoteOptions
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerDropWeaponForwardParams> Sharp.Shared.Managers.IHookManager.PlayerDropWeapon` [L:335]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerDropWeaponForwardParams> Sharp.Shared.Managers.IHookManager.PlayerDropWeapon` [L:444]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn->WeaponService::DropWeapon
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerEquipWeaponForwardParams> Sharp.Shared.Managers.IHookManager.PlayerEquipWeapon` [L:330]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerEquipWeaponForwardParams> Sharp.Shared.Managers.IHookManager.PlayerEquipWeapon` [L:439]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn->WeaponService::EquipWeapon
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerKilledForwardParams> Sharp.Shared.Managers.IHookManager.PlayerKilledPost` [L:257]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerKilledForwardParams> Sharp.Shared.Managers.IHookManager.PlayerKilledPost` [L:366]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn::Killed
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerKilledForwardParams> Sharp.Shared.Managers.IHookManager.PlayerKilledPre` [L:252]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerKilledForwardParams> Sharp.Shared.Managers.IHookManager.PlayerKilledPre` [L:361]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn::Killed
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerProcessMoveForwardParams> Sharp.Shared.Managers.IHookManager.PlayerProcessMovePost` [L:316]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerProcessMoveForwardParams> Sharp.Shared.Managers.IHookManager.PlayerProcessMovePost` [L:425]
   - Modifiers: public, abstract, readonly
   - Summary: CPlayer_MovementService::ProcessMove
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerProcessMoveForwardParams> Sharp.Shared.Managers.IHookManager.PlayerProcessMovePre` [L:307]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerProcessMoveForwardParams> Sharp.Shared.Managers.IHookManager.PlayerProcessMovePre` [L:416]
   - Modifiers: public, abstract, readonly
   - Summary: CPlayer_MovementService::ProcessMove
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerSpawnForwardParams> Sharp.Shared.Managers.IHookManager.PlayerSpawnPost` [L:247]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerSpawnForwardParams> Sharp.Shared.Managers.IHookManager.PlayerSpawnPost` [L:356]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn::
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerSpawnForwardParams> Sharp.Shared.Managers.IHookManager.PlayerSpawnPre` [L:242]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerSpawnForwardParams> Sharp.Shared.Managers.IHookManager.PlayerSpawnPre` [L:351]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn::PlayerSpawn
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerSwitchWeaponForwardParams> Sharp.Shared.Managers.IHookManager.PlayerSwitchWeapon` [L:325]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerSwitchWeaponForwardParams> Sharp.Shared.Managers.IHookManager.PlayerSwitchWeapon` [L:434]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn->WeaponService::SwitchWeapon
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerThinkForwardParams> Sharp.Shared.Managers.IHookManager.PlayerPostThink` [L:275]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerThinkForwardParams> Sharp.Shared.Managers.IHookManager.PlayerPostThink` [L:384]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn::PostThink
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerThinkForwardParams> Sharp.Shared.Managers.IHookManager.PlayerPreThink` [L:266]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerThinkForwardParams> Sharp.Shared.Managers.IHookManager.PlayerPreThink` [L:375]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn::PreThink
-- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerWalkMoveForwardParams> Sharp.Shared.Managers.IHookManager.PlayerWalkMove` [L:298]
+- `Sharp.Shared.Managers.IForwardType<Sharp.Shared.HookParams.IPlayerWalkMoveForwardParams> Sharp.Shared.Managers.IHookManager.PlayerWalkMove` [L:407]
   - Modifiers: public, abstract, readonly
   - Summary: CPlayer_MovementService::WalkMove
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IClientCanHearHookParams, bool> Sharp.Shared.Managers.IHookManager.ClientCanHear` [L:65]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IClientCanHearHookParams, bool> Sharp.Shared.Managers.IHookManager.ClientCanHear` [L:75]
   - Modifiers: public, abstract, readonly
   - Summary: CServerSideClient::ClientCanHear
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IClientSpeakingHookParams, Sharp.Shared.HookParams.EmptyHookReturn> Sharp.Shared.Managers.IHookManager.ClientSpeaking` [L:70]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IClientSpeakingHookParams, Sharp.Shared.HookParams.EmptyHookReturn> Sharp.Shared.Managers.IHookManager.ClientSpeaking` [L:85]
   - Modifiers: public, abstract, readonly
   - Summary: CServerSideClient:CLCMsg_VoiceData
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IConnectClientHookParams, Sharp.Shared.Enums.NetworkDisconnectionReason> Sharp.Shared.Managers.IHookManager.ConnectClient` [L:54]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IConnectClientHookParams, Sharp.Shared.Enums.NetworkDisconnectionReason> Sharp.Shared.Managers.IHookManager.ConnectClient` [L:59]
   - Modifiers: public, abstract, readonly
   - Summary: CNetworkGameServer::ConnectClient
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IEmitSoundHookParams, Sharp.Shared.Types.SoundOpEventGuid> Sharp.Shared.Managers.IHookManager.EmitSound` [L:142]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IEmitSoundHookParams, Sharp.Shared.Types.SoundOpEventGuid> Sharp.Shared.Managers.IHookManager.EmitSound` [L:206]
   - Modifiers: public, abstract, readonly
   - Summary: CSoundEmitterSystem::EmitSound
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IEntityDispatchTraceAttackHookParams, long> Sharp.Shared.Managers.IHookManager.EntityDispatchTraceAttack` [L:187]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IEntityDispatchTraceAttackHookParams, long> Sharp.Shared.Managers.IHookManager.EntityDispatchTraceAttack` [L:267]
   - Modifiers: public, abstract, readonly
   - Summary: CBaseEntity::DispatchTraceAttack (No PlayerPawn)
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IGiveNamedItemHookParams, Sharp.Shared.GameEntities.IBaseWeapon> Sharp.Shared.Managers.IHookManager.GiveNamedItem` [L:120]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IGiveNamedItemHookParams, Sharp.Shared.GameEntities.IBaseWeapon> Sharp.Shared.Managers.IHookManager.GiveNamedItem` [L:173]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn->ItemService::GiveNamedItem
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IHandleCommandJoinTeamHookParams, bool> Sharp.Shared.Managers.IHookManager.HandleCommandJoinTeam` [L:115]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IHandleCommandJoinTeamHookParams, bool> Sharp.Shared.Managers.IHookManager.HandleCommandJoinTeam` [L:163]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerController::HandleCommandJoinTeam
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPlayerCanAcquireHookParams, Sharp.Shared.Enums.EAcquireResult> Sharp.Shared.Managers.IHookManager.PlayerCanAcquire` [L:110]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPlayerCanAcquireHookParams, Sharp.Shared.Enums.EAcquireResult> Sharp.Shared.Managers.IHookManager.PlayerCanAcquire` [L:151]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayer_ItemServices::CanAcquire
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPlayerDispatchTraceAttackHookParams, long> Sharp.Shared.Managers.IHookManager.PlayerDispatchTraceAttack` [L:169]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPlayerDispatchTraceAttackHookParams, long> Sharp.Shared.Managers.IHookManager.PlayerDispatchTraceAttack` [L:244]
   - Modifiers: public, abstract, readonly
   - Summary: CBaseEntity::DispatchTraceAttack (PlayerPawn Only)
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPlayerGetMaxSpeedHookParams, float> Sharp.Shared.Managers.IHookManager.PlayerGetMaxSpeed` [L:104]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPlayerGetMaxSpeedHookParams, float> Sharp.Shared.Managers.IHookManager.PlayerGetMaxSpeed` [L:140]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn::GetPlayerMaxSpeed
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPlayerRunCommandHookParams, Sharp.Shared.HookParams.EmptyHookReturn> Sharp.Shared.Managers.IHookManager.PlayerRunCommand` [L:133]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPlayerRunCommandHookParams, Sharp.Shared.HookParams.EmptyHookReturn> Sharp.Shared.Managers.IHookManager.PlayerRunCommand` [L:191]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn->MovementService::RunCommand
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPlayerWeaponCanEquipHookParams, bool> Sharp.Shared.Managers.IHookManager.PlayerWeaponCanEquip` [L:95]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPlayerWeaponCanEquipHookParams, bool> Sharp.Shared.Managers.IHookManager.PlayerWeaponCanEquip` [L:126]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn->WeaponService::CanEquip
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPlayerWeaponCanSwitchHookParams, bool> Sharp.Shared.Managers.IHookManager.PlayerWeaponCanSwitch` [L:84]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPlayerWeaponCanSwitchHookParams, bool> Sharp.Shared.Managers.IHookManager.PlayerWeaponCanSwitch` [L:110]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn->WeaponService::WeaponCanSwitch
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPlayerWeaponCanUseHookParams, bool> Sharp.Shared.Managers.IHookManager.PlayerWeaponCanUse` [L:79]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPlayerWeaponCanUseHookParams, bool> Sharp.Shared.Managers.IHookManager.PlayerWeaponCanUse` [L:100]
   - Modifiers: public, abstract, readonly
   - Summary: CCSPlayerPawn->WeaponService::WeaponCanUse
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPointServerCommandHookParams, Sharp.Shared.HookParams.EmptyHookReturn> Sharp.Shared.Managers.IHookManager.PointServerCommand` [L:196]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPointServerCommandHookParams, Sharp.Shared.HookParams.EmptyHookReturn> Sharp.Shared.Managers.IHookManager.PointServerCommand` [L:281]
   - Modifiers: public, abstract, readonly
   - Summary: CPointServerCommand::InputCommand
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPostEventAbstractHookParams, Sharp.Shared.Units.NetworkReceiver> Sharp.Shared.Managers.IHookManager.PostEventAbstract` [L:214]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPostEventAbstractHookParams, Sharp.Shared.Units.NetworkReceiver> Sharp.Shared.Managers.IHookManager.PostEventAbstract` [L:317]
   - Modifiers: public, abstract, readonly
   - Summary: IGameEventSystem::PostEventAbstract
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPrintStatusHookParams, Sharp.Shared.HookParams.EmptyHookReturn> Sharp.Shared.Managers.IHookManager.PrintStatus` [L:202]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IPrintStatusHookParams, Sharp.Shared.HookParams.EmptyHookReturn> Sharp.Shared.Managers.IHookManager.PrintStatus` [L:292]
   - Modifiers: public, abstract, readonly
   - Summary: 'status' Command When client is null means it is sent by server
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.ISoundEventHookParams, Sharp.Shared.Types.SoundOpEventGuid> Sharp.Shared.Managers.IHookManager.SoundEvent` [L:147]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.ISoundEventHookParams, Sharp.Shared.Types.SoundOpEventGuid> Sharp.Shared.Managers.IHookManager.SoundEvent` [L:217]
   - Modifiers: public, abstract, readonly
   - Summary: SoundOpGameSystem::DoStartSoundEvent
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.ITerminateRoundHookParams, Sharp.Shared.HookParams.EmptyHookReturn> Sharp.Shared.Managers.IHookManager.TerminateRound` [L:219]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.ITerminateRoundHookParams, Sharp.Shared.HookParams.EmptyHookReturn> Sharp.Shared.Managers.IHookManager.TerminateRound` [L:328]
   - Modifiers: public, abstract, readonly
   - Summary: CCSGameRules::TerminateRound
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.ITextMsgHookParams, Sharp.Shared.Units.NetworkReceiver> Sharp.Shared.Managers.IHookManager.TextMsg` [L:208]
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.ITextMsgHookParams, Sharp.Shared.Units.NetworkReceiver> Sharp.Shared.Managers.IHookManager.TextMsg` [L:305]
   - Modifiers: public, abstract, readonly
-  - Summary: NetworkMessages::CUserMsgTextMSG
 
 #### Methods
 - `Sharp.Shared.Hooks.IDetourHook Sharp.Shared.Managers.IHookManager.CreateDetourHook()` [L:35]
@@ -459,7 +464,7 @@ Inheritance: object → System.Delegate → System.MulticastDelegate → **Deleg
   - Summary: Create VMThook
 
 #### Obsolete Members
-- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IClientConnectHookParams, bool> Sharp.Shared.Managers.IHookManager.ClientConnect` [L:60] — Use ConnectClient instead, will be removed in the future
+- `Sharp.Shared.Managers.IHookType<Sharp.Shared.HookParams.IClientConnectHookParams, bool> Sharp.Shared.Managers.IHookManager.ClientConnect` [L:65] — Use ConnectClient instead, will be removed in the future
 
 
 ### interface IHookType<TParams, THookReturn>
@@ -467,21 +472,21 @@ Inheritance: object → System.Delegate → System.MulticastDelegate → **Deleg
 - FullName: `Sharp.Shared.Managers.IHookType<TParams, THookReturn>`
 - Kind: interface
 - Modifiers: public
-- Source: Sharp.Shared/Managers/HookManager.cs:351
+- Source: Sharp.Shared/Managers/HookManager.cs:460
 - Generated: false
 - Constraint: `where TParams : class, Sharp.Shared.HookParams.IFunctionParams`
 
 #### Methods
-- `void Sharp.Shared.Managers.IHookType<out TParams, THookReturn>.InstallHookPost(System.Action<out TParams, Sharp.Shared.Types.HookReturnValue<THookReturn>> post, [int priority = 0])` [L:363]
+- `void Sharp.Shared.Managers.IHookType<out TParams, THookReturn>.InstallHookPost(System.Action<out TParams, Sharp.Shared.Types.HookReturnValue<THookReturn>> post, [int priority = 0])` [L:472]
   - Modifiers: public, abstract
   - Summary: Listen to this Hook's Post Higher priority value means higher priority
-- `void Sharp.Shared.Managers.IHookType<out TParams, THookReturn>.InstallHookPre(System.Func<out TParams, Sharp.Shared.Types.HookReturnValue<THookReturn>, Sharp.Shared.Types.HookReturnValue<THookReturn>> pre, [int priority = 0])` [L:357]
+- `void Sharp.Shared.Managers.IHookType<out TParams, THookReturn>.InstallHookPre(System.Func<out TParams, Sharp.Shared.Types.HookReturnValue<THookReturn>, Sharp.Shared.Types.HookReturnValue<THookReturn>> pre, [int priority = 0])` [L:466]
   - Modifiers: public, abstract
   - Summary: Listen to this Hook's Pre Higher priority value means higher priority
-- `void Sharp.Shared.Managers.IHookType<out TParams, THookReturn>.RemoveHookPost(System.Action<out TParams, Sharp.Shared.Types.HookReturnValue<THookReturn>> post)` [L:373]
+- `void Sharp.Shared.Managers.IHookType<out TParams, THookReturn>.RemoveHookPost(System.Action<out TParams, Sharp.Shared.Types.HookReturnValue<THookReturn>> post)` [L:482]
   - Modifiers: public, abstract
   - Summary: Stop listening to this Hook's Post
-- `void Sharp.Shared.Managers.IHookType<out TParams, THookReturn>.RemoveHookPre(System.Func<out TParams, Sharp.Shared.Types.HookReturnValue<THookReturn>, Sharp.Shared.Types.HookReturnValue<THookReturn>> pre)` [L:368]
+- `void Sharp.Shared.Managers.IHookType<out TParams, THookReturn>.RemoveHookPre(System.Func<out TParams, Sharp.Shared.Types.HookReturnValue<THookReturn>, Sharp.Shared.Types.HookReturnValue<THookReturn>> pre)` [L:477]
   - Modifiers: public, abstract
   - Summary: Stop listening to this Hook's Pre
 

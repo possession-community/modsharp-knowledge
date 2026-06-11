@@ -17,8 +17,8 @@ Inheritance: object → **CodeWriter**
 - `Sharp.Generator.Sdk.Utils.CodeWriter.CodeWriter()` [L:27]
 
 #### Methods
-- `IDisposable Sharp.Generator.Sdk.Utils.CodeWriter.BeginScope()` [L:50]
-- `IDisposable Sharp.Generator.Sdk.Utils.CodeWriter.BeginScope(string line)` [L:43]
+- `System.IDisposable Sharp.Generator.Sdk.Utils.CodeWriter.BeginScope()` [L:50]
+- `System.IDisposable Sharp.Generator.Sdk.Utils.CodeWriter.BeginScope(string line)` [L:43]
 - `override string Sharp.Generator.Sdk.Utils.CodeWriter.ToString()` [L:70]
   - Modifiers: public, override
 - `void Sharp.Generator.Sdk.Utils.CodeWriter.Append(string line)` [L:34]
@@ -40,7 +40,7 @@ Inheritance: object → **CodeWriter**
 Inheritance: object → **MethodSymbolExtensions**
 
 #### Methods
-- `static Sharp.Generator.Sdk.Utils.MethodSymbolParamContext Sharp.Generator.Sdk.Utils.MethodSymbolExtensions.GetParams(IMethodSymbol symbol)` [L:287]
+- `static Sharp.Generator.Sdk.Utils.MethodSymbolParamContext Sharp.Generator.Sdk.Utils.MethodSymbolExtensions.GetParams(Microsoft.CodeAnalysis.IMethodSymbol symbol)` [L:287]
   - Modifiers: public, static, this
 
 
@@ -74,10 +74,10 @@ Inheritance: object → **MethodSymbolParam**
 Inheritance: object → **MethodSymbolParamContext**
 
 #### Constructors
-- `Sharp.Generator.Sdk.Utils.MethodSymbolParamContext.MethodSymbolParamContext(List<Sharp.Generator.Sdk.Utils.MethodSymbolParam> @params, string returnType)` [L:99]
+- `Sharp.Generator.Sdk.Utils.MethodSymbolParamContext.MethodSymbolParamContext(System.Collections.Generic.List<Sharp.Generator.Sdk.Utils.MethodSymbolParam> @params, string returnType)` [L:99]
 
 #### Properties
-- `List<Sharp.Generator.Sdk.Utils.MethodSymbolParam> Sharp.Generator.Sdk.Utils.MethodSymbolParamContext.Params` [L:96]
+- `System.Collections.Generic.List<Sharp.Generator.Sdk.Utils.MethodSymbolParam> Sharp.Generator.Sdk.Utils.MethodSymbolParamContext.Params` [L:96]
   - Modifiers: public, readonly
 - `string Sharp.Generator.Sdk.Utils.MethodSymbolParamContext.ReturnType` [L:97]
   - Modifiers: public, readonly
@@ -101,9 +101,9 @@ Inheritance: object → **MethodSymbolParamContext**
 Inheritance: object → **NamedTypeSymbolExtensions**
 
 #### Methods
-- `static INamedTypeSymbol? Sharp.Generator.Sdk.Utils.NamedTypeSymbolExtensions.GetFinalBaseType(INamedTypeSymbol symbol)` [L:29]
+- `static Microsoft.CodeAnalysis.INamedTypeSymbol? Sharp.Generator.Sdk.Utils.NamedTypeSymbolExtensions.GetFinalBaseType(Microsoft.CodeAnalysis.INamedTypeSymbol symbol)` [L:29]
   - Modifiers: public, static, this
-- `static bool Sharp.Generator.Sdk.Utils.NamedTypeSymbolExtensions.IsAssignableFrom(INamedTypeSymbol symbol, string name)` [L:43]
+- `static bool Sharp.Generator.Sdk.Utils.NamedTypeSymbolExtensions.IsAssignableFrom(Microsoft.CodeAnalysis.INamedTypeSymbol symbol, string name)` [L:43]
   - Modifiers: public, static, this
 
 
@@ -118,7 +118,7 @@ Inheritance: object → **NamedTypeSymbolExtensions**
 Inheritance: object → **SyntaxNodeExtensions**
 
 #### Methods
-- `static string Sharp.Generator.Sdk.Utils.SyntaxNodeExtensions.GetNameSpace(SyntaxNode syntax)` [L:73]
+- `static string Sharp.Generator.Sdk.Utils.SyntaxNodeExtensions.GetNameSpace(Microsoft.CodeAnalysis.SyntaxNode syntax)` [L:73]
   - Modifiers: public, static, this
 
 

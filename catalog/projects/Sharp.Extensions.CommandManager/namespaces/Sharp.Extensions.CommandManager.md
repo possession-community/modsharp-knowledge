@@ -14,10 +14,10 @@ Types: 4 (0 generated)
 Inheritance: object → **DependencyInjection**
 
 #### Methods
-- `static IServiceCollection Sharp.Extensions.CommandManager.DependencyInjection.AddCommandManager(IServiceCollection services)` [L:47]
+- `static Microsoft.Extensions.DependencyInjection.IServiceCollection Sharp.Extensions.CommandManager.DependencyInjection.AddCommandManager(Microsoft.Extensions.DependencyInjection.IServiceCollection services)` [L:47]
   - Modifiers: public, static, this
   - Summary: Add CommandManager to the service collection. requires register  before add this
-- `static IServiceCollection Sharp.Extensions.CommandManager.DependencyInjection.AddCommandManager(IServiceCollection services, Sharp.Shared.ISharedSystem shared)` [L:33]
+- `static Microsoft.Extensions.DependencyInjection.IServiceCollection Sharp.Extensions.CommandManager.DependencyInjection.AddCommandManager(Microsoft.Extensions.DependencyInjection.IServiceCollection services, Sharp.Shared.ISharedSystem shared)` [L:33]
   - Modifiers: public, static, this
   - Summary: Add CommandManager to the service collection.
 

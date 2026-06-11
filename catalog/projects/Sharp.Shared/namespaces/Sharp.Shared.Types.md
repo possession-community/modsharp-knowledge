@@ -1048,7 +1048,7 @@ Inheritance: object → System.ValueType → **TakeDamageInfo**
 - `Sharp.Shared.Types.Vector Sharp.Shared.Types.TakeDamageInfo.ReportedPosition` [L:39]
   - Attributes: `[FieldOffset(32)]`
 - `bool Sharp.Shared.Types.TakeDamageInfo.InTakeDamageFlow` [L:133]
-  - Attributes: `[FieldOffset(280)]`
+  - Attributes: `[FieldOffset(272)]`
 - `bool Sharp.Shared.Types.TakeDamageInfo.IsPawn` [L:110]
   - Attributes: `[FieldOffset(233)]`
 - `bool Sharp.Shared.Types.TakeDamageInfo.IsWorld` [L:113]
@@ -1113,33 +1113,40 @@ Inheritance: object → System.ValueType → **TakeDamageInfo**
 - FullName: `Sharp.Shared.Types.TakeDamageResult`
 - Kind: struct
 - Modifiers: public
-- Source: Sharp.Shared/Types/TakeDamageResult.cs:26
+- Source: Sharp.Shared/Types/TakeDamageResult.cs:27
 - Generated: false
-- Attributes: `[StructLayout(2, Size = 40)]`
+- Attributes: `[StructLayout(2, Size = 80)]`
 
 Inheritance: object → System.ValueType → **TakeDamageResult**
 
 #### Fields
-- `Sharp.Shared.Types.TakeDamageInfo* Sharp.Shared.Types.TakeDamageResult.OriginatingInfo` [L:29]
+- `Sharp.Shared.Types.TakeDamageInfo* Sharp.Shared.Types.TakeDamageResult.OriginatingInfo` [L:30]
   - Attributes: `[FieldOffset(0)]`
-- `bool Sharp.Shared.Types.TakeDamageResult.SuppressFlinch` [L:56]
-  - Attributes: `[FieldOffset(37)]`
-- `bool Sharp.Shared.Types.TakeDamageResult.WasDamageSuppressed` [L:53]
-  - Attributes: `[FieldOffset(36)]`
-- `float Sharp.Shared.Types.TakeDamageResult.PreModifiedDamage` [L:41]
-  - Attributes: `[FieldOffset(20)]`
-- `float Sharp.Shared.Types.TakeDamageResult.m_flTotalledPreModifiedDamage` [L:50]
+- `bool Sharp.Shared.Types.TakeDamageResult.SuppressFlinch` [L:65]
+  - Attributes: `[FieldOffset(65)]`
+- `bool Sharp.Shared.Types.TakeDamageResult.WasDamageSuppressed` [L:62]
+  - Attributes: `[FieldOffset(64)]`
+- `float Sharp.Shared.Types.TakeDamageResult.DamageDealt` [L:41]
   - Attributes: `[FieldOffset(32)]`
-- `int Sharp.Shared.Types.TakeDamageResult.DamageDealt` [L:38]
-  - Attributes: `[FieldOffset(16)]`
-- `int Sharp.Shared.Types.TakeDamageResult.HealthBefore` [L:35]
-  - Attributes: `[FieldOffset(12)]`
-- `int Sharp.Shared.Types.TakeDamageResult.HealthLost` [L:32]
-  - Attributes: `[FieldOffset(8)]`
-- `int Sharp.Shared.Types.TakeDamageResult.TotalledDamageDealt` [L:47]
+- `float Sharp.Shared.Types.TakeDamageResult.NewDamageAccumulatorValue` [L:56]
+  - Attributes: `[FieldOffset(52)]`
+- `float Sharp.Shared.Types.TakeDamageResult.PreModifiedDamage` [L:44]
+  - Attributes: `[FieldOffset(36)]`
+- `float Sharp.Shared.Types.TakeDamageResult.TotalledDamageDealt` [L:50]
+  - Attributes: `[FieldOffset(44)]`
+- `float Sharp.Shared.Types.TakeDamageResult.TotalledPreModifiedDamage` [L:53]
+  - Attributes: `[FieldOffset(48)]`
+- `int Sharp.Shared.Types.TakeDamageResult.HealthBefore` [L:38]
   - Attributes: `[FieldOffset(28)]`
-- `int Sharp.Shared.Types.TakeDamageResult.TotalledHealthLost` [L:44]
+- `int Sharp.Shared.Types.TakeDamageResult.HealthLost` [L:35]
   - Attributes: `[FieldOffset(24)]`
+- `int Sharp.Shared.Types.TakeDamageResult.TotalledHealthLost` [L:47]
+  - Attributes: `[FieldOffset(40)]`
+- `ulong Sharp.Shared.Types.TakeDamageResult.DamageFlags` [L:59]
+  - Attributes: `[FieldOffset(56)]`
+
+#### Obsolete Members
+- `float Sharp.Shared.Types.TakeDamageResult.m_flTotalledPreModifiedDamage` [L:71] — Use TotalledPreModifiedDamage instead
 
 
 ### record struct TeamRewardInfo : System.ValueType, System.IEquatable<Sharp.Shared.Types.TeamRewardInfo>
@@ -1417,21 +1424,21 @@ Inheritance: object → System.ValueType → **Vector**
 - `float Sharp.Shared.Types.Vector.this[int key]` [L:85]
 
 #### Methods
-- `CMsgQAngle Sharp.Shared.Types.Vector.ToMsgQAngle()` [L:365]
-- `CMsgVector Sharp.Shared.Types.Vector.ToMsgVector()` [L:353]
-- `CMsgVector2D Sharp.Shared.Types.Vector.ToMsgVector2D()` [L:362]
-- `Sharp.Shared.Types.Vector Sharp.Shared.Types.Vector.AnglesTo(Sharp.Shared.Types.Vector position)` [L:309]
+- `CMsgQAngle Sharp.Shared.Types.Vector.ToMsgQAngle()` [L:367]
+- `CMsgVector Sharp.Shared.Types.Vector.ToMsgVector()` [L:355]
+- `CMsgVector2D Sharp.Shared.Types.Vector.ToMsgVector2D()` [L:364]
+- `Sharp.Shared.Types.Vector Sharp.Shared.Types.Vector.AnglesTo(Sharp.Shared.Types.Vector position)` [L:311]
   - Summary: Calculates the Euler angles required to look at a specific position.
 - `Sharp.Shared.Types.Vector Sharp.Shared.Types.Vector.AnglesToVectorForward()` [L:150]
-- `Sharp.Shared.Types.Vector Sharp.Shared.Types.Vector.Cross(Sharp.Shared.Types.Vector rhs)` [L:246]
-- `Sharp.Shared.Types.Vector Sharp.Shared.Types.Vector.DirectionToAngles()` [L:297]
+- `Sharp.Shared.Types.Vector Sharp.Shared.Types.Vector.Cross(Sharp.Shared.Types.Vector rhs)` [L:248]
+- `Sharp.Shared.Types.Vector Sharp.Shared.Types.Vector.DirectionToAngles()` [L:299]
   - Summary: Converts a direction vector into Euler angles.
-- `Sharp.Shared.Types.Vector Sharp.Shared.Types.Vector.VectorToAngles()` [L:316]
-- `Sharp.Shared.Types.Vector2D Sharp.Shared.Types.Vector.AsVector2D()` [L:249]
-- `bool Sharp.Shared.Types.Vector.Equals(Sharp.Shared.Types.Vector other)` [L:348]
+- `Sharp.Shared.Types.Vector Sharp.Shared.Types.Vector.VectorToAngles()` [L:318]
+- `Sharp.Shared.Types.Vector2D Sharp.Shared.Types.Vector.AsVector2D()` [L:251]
+- `bool Sharp.Shared.Types.Vector.Equals(Sharp.Shared.Types.Vector other)` [L:350]
 - `bool Sharp.Shared.Types.Vector.IsValid()` [L:180]
 - `bool Sharp.Shared.Types.Vector.IsZero([float tolerance = 0.01])` [L:183]
-- `float Sharp.Shared.Types.Vector.DistTo(Sharp.Shared.Types.Vector other)` [L:211]
+- `float Sharp.Shared.Types.Vector.DistTo(Sharp.Shared.Types.Vector other)` [L:213]
 - `float Sharp.Shared.Types.Vector.DistToSqr(Sharp.Shared.Types.Vector other)` [L:204]
   - Summary: Calculates the squared distance to another vector.
 - `float Sharp.Shared.Types.Vector.Dot(Sharp.Shared.Types.Vector other)` [L:186]
@@ -1439,25 +1446,25 @@ Inheritance: object → System.ValueType → **Vector**
 - `float Sharp.Shared.Types.Vector.Length2D()` [L:195]
 - `float Sharp.Shared.Types.Vector.Length2DSqr()` [L:198]
 - `float Sharp.Shared.Types.Vector.LengthSqr()` [L:192]
-- `int Sharp.Shared.Types.Vector.CompareTo(Sharp.Shared.Types.Vector rhs)` [L:279]
-- `int Sharp.Shared.Types.Vector.CompareTo(object? obj)` [L:266]
+- `int Sharp.Shared.Types.Vector.CompareTo(Sharp.Shared.Types.Vector rhs)` [L:281]
+- `int Sharp.Shared.Types.Vector.CompareTo(object? obj)` [L:268]
 - `override bool Sharp.Shared.Types.Vector.Equals(object? obj)` [L:59]
   - Modifiers: public, override
 - `override int Sharp.Shared.Types.Vector.GetHashCode()` [L:69]
   - Modifiers: public, override
-- `override string Sharp.Shared.Types.Vector.ToString()` [L:260]
+- `override string Sharp.Shared.Types.Vector.ToString()` [L:262]
   - Modifiers: public, override
-- `static float Sharp.Shared.Types.Vector.DotProduct(in Sharp.Shared.Types.Vector a, in Sharp.Shared.Types.Vector b)` [L:285]
+- `static float Sharp.Shared.Types.Vector.DotProduct(in Sharp.Shared.Types.Vector a, in Sharp.Shared.Types.Vector b)` [L:287]
   - Modifiers: public, static
   - Summary: Calculates the Dot Product.
-- `static float Sharp.Shared.Types.Vector.Magnitude(in Sharp.Shared.Types.Vector v)` [L:291]
+- `static float Sharp.Shared.Types.Vector.Magnitude(in Sharp.Shared.Types.Vector v)` [L:293]
   - Modifiers: public, static
   - Summary: Calculates the Magnitude (Length).
 - `void Sharp.Shared.Types.Vector.AnglesToVector(out Sharp.Shared.Types.Vector forward, out Sharp.Shared.Types.Vector right, out Sharp.Shared.Types.Vector up)` [L:158]
 - `void Sharp.Shared.Types.Vector.AnglesToVectorSource2(out Sharp.Shared.Types.Vector forward, out Sharp.Shared.Types.Vector right, out Sharp.Shared.Types.Vector up)` [L:169]
-- `void Sharp.Shared.Types.Vector.Negate()` [L:239]
+- `void Sharp.Shared.Types.Vector.Negate()` [L:241]
   - Summary: Negates the vector (inverts its direction).
-- `void Sharp.Shared.Types.Vector.Normalize()` [L:217]
+- `void Sharp.Shared.Types.Vector.Normalize()` [L:219]
   - Summary: Normalizes the vector (makes it a unit vector with length 1).
 
 #### Operators
@@ -1488,38 +1495,38 @@ Inheritance: object → System.ValueType → **Vector**
 - FullName: `Sharp.Shared.Types.Vector2D`
 - Kind: struct
 - Modifiers: public
-- Source: Sharp.Shared/Types/Vector.cs:373
+- Source: Sharp.Shared/Types/Vector.cs:375
 - Generated: false
 - Attributes: `[StructLayout(0)]`
 
 Inheritance: object → System.ValueType → **Vector2D**
 
 #### Constructors
-- `Sharp.Shared.Types.Vector2D.Vector2D(Sharp.Shared.Types.Vector other)` [L:384]
-- `Sharp.Shared.Types.Vector2D.Vector2D(float x, float y)` [L:378]
+- `Sharp.Shared.Types.Vector2D.Vector2D(Sharp.Shared.Types.Vector other)` [L:386]
+- `Sharp.Shared.Types.Vector2D.Vector2D(float x, float y)` [L:380]
 
 #### Properties
-- `float Sharp.Shared.Types.Vector2D.X` [L:375]
-- `float Sharp.Shared.Types.Vector2D.Y` [L:376]
+- `float Sharp.Shared.Types.Vector2D.X` [L:377]
+- `float Sharp.Shared.Types.Vector2D.Y` [L:378]
 
 #### Methods
-- `CMsgVector2D Sharp.Shared.Types.Vector2D.ToMsgVector2D()` [L:444]
-- `bool Sharp.Shared.Types.Vector2D.Equals(Sharp.Shared.Types.Vector2D other)` [L:440]
-- `bool Sharp.Shared.Types.Vector2D.IsValid()` [L:390]
-- `float Sharp.Shared.Types.Vector2D.Dot(Sharp.Shared.Types.Vector2D other)` [L:399]
-- `float Sharp.Shared.Types.Vector2D.Length()` [L:396]
-- `float Sharp.Shared.Types.Vector2D.LengthSqr()` [L:393]
-- `int Sharp.Shared.Types.Vector2D.CompareTo(Sharp.Shared.Types.Vector2D rhs)` [L:418]
-- `int Sharp.Shared.Types.Vector2D.CompareTo(object? obj)` [L:405]
-- `override bool Sharp.Shared.Types.Vector2D.Equals(object? obj)` [L:430]
+- `CMsgVector2D Sharp.Shared.Types.Vector2D.ToMsgVector2D()` [L:446]
+- `bool Sharp.Shared.Types.Vector2D.Equals(Sharp.Shared.Types.Vector2D other)` [L:442]
+- `bool Sharp.Shared.Types.Vector2D.IsValid()` [L:392]
+- `float Sharp.Shared.Types.Vector2D.Dot(Sharp.Shared.Types.Vector2D other)` [L:401]
+- `float Sharp.Shared.Types.Vector2D.Length()` [L:398]
+- `float Sharp.Shared.Types.Vector2D.LengthSqr()` [L:395]
+- `int Sharp.Shared.Types.Vector2D.CompareTo(Sharp.Shared.Types.Vector2D rhs)` [L:420]
+- `int Sharp.Shared.Types.Vector2D.CompareTo(object? obj)` [L:407]
+- `override bool Sharp.Shared.Types.Vector2D.Equals(object? obj)` [L:432]
   - Modifiers: public, override
-- `override int Sharp.Shared.Types.Vector2D.GetHashCode()` [L:427]
+- `override int Sharp.Shared.Types.Vector2D.GetHashCode()` [L:429]
   - Modifiers: public, override
 
 #### Operators
-- `static bool Sharp.Shared.Types.Vector2D.operator !=(Sharp.Shared.Types.Vector2D a, Sharp.Shared.Types.Vector2D b)` [L:424]
+- `static bool Sharp.Shared.Types.Vector2D.operator !=(Sharp.Shared.Types.Vector2D a, Sharp.Shared.Types.Vector2D b)` [L:426]
   - Modifiers: public, static
-- `static bool Sharp.Shared.Types.Vector2D.operator ==(Sharp.Shared.Types.Vector2D a, Sharp.Shared.Types.Vector2D b)` [L:421]
+- `static bool Sharp.Shared.Types.Vector2D.operator ==(Sharp.Shared.Types.Vector2D a, Sharp.Shared.Types.Vector2D b)` [L:423]
   - Modifiers: public, static
 
 
@@ -1528,39 +1535,39 @@ Inheritance: object → System.ValueType → **Vector2D**
 - FullName: `Sharp.Shared.Types.Vector4D`
 - Kind: struct
 - Modifiers: public
-- Source: Sharp.Shared/Types/Vector.cs:449
+- Source: Sharp.Shared/Types/Vector.cs:451
 - Generated: false
 - Attributes: `[StructLayout(0)]`
 
 Inheritance: object → System.ValueType → **Vector4D**
 
 #### Constructors
-- `Sharp.Shared.Types.Vector4D.Vector4D(Sharp.Shared.Types.Vector4D other)` [L:464]
-- `Sharp.Shared.Types.Vector4D.Vector4D(float x, float y, float z, float w)` [L:456]
+- `Sharp.Shared.Types.Vector4D.Vector4D(Sharp.Shared.Types.Vector4D other)` [L:466]
+- `Sharp.Shared.Types.Vector4D.Vector4D(float x, float y, float z, float w)` [L:458]
 
 #### Properties
-- `float Sharp.Shared.Types.Vector4D.W` [L:454]
-- `float Sharp.Shared.Types.Vector4D.X` [L:451]
-- `float Sharp.Shared.Types.Vector4D.Y` [L:452]
-- `float Sharp.Shared.Types.Vector4D.Z` [L:453]
+- `float Sharp.Shared.Types.Vector4D.W` [L:456]
+- `float Sharp.Shared.Types.Vector4D.X` [L:453]
+- `float Sharp.Shared.Types.Vector4D.Y` [L:454]
+- `float Sharp.Shared.Types.Vector4D.Z` [L:455]
 
 #### Methods
-- `CMsgVector Sharp.Shared.Types.Vector4D.ToMsgVector()` [L:512]
-- `CMsgVector2D Sharp.Shared.Types.Vector4D.ToMsgVector2D()` [L:521]
-- `bool Sharp.Shared.Types.Vector4D.Equals(Sharp.Shared.Types.Vector4D other)` [L:506]
-- `bool Sharp.Shared.Types.Vector4D.IsValid()` [L:472]
-- `float Sharp.Shared.Types.Vector4D.Dot(Sharp.Shared.Types.Vector4D other)` [L:481]
-- `float Sharp.Shared.Types.Vector4D.Length()` [L:478]
-- `float Sharp.Shared.Types.Vector4D.LengthSqr()` [L:475]
-- `override bool Sharp.Shared.Types.Vector4D.Equals(object? obj)` [L:496]
+- `CMsgVector Sharp.Shared.Types.Vector4D.ToMsgVector()` [L:514]
+- `CMsgVector2D Sharp.Shared.Types.Vector4D.ToMsgVector2D()` [L:523]
+- `bool Sharp.Shared.Types.Vector4D.Equals(Sharp.Shared.Types.Vector4D other)` [L:508]
+- `bool Sharp.Shared.Types.Vector4D.IsValid()` [L:474]
+- `float Sharp.Shared.Types.Vector4D.Dot(Sharp.Shared.Types.Vector4D other)` [L:483]
+- `float Sharp.Shared.Types.Vector4D.Length()` [L:480]
+- `float Sharp.Shared.Types.Vector4D.LengthSqr()` [L:477]
+- `override bool Sharp.Shared.Types.Vector4D.Equals(object? obj)` [L:498]
   - Modifiers: public, override
-- `override int Sharp.Shared.Types.Vector4D.GetHashCode()` [L:493]
+- `override int Sharp.Shared.Types.Vector4D.GetHashCode()` [L:495]
   - Modifiers: public, override
 
 #### Operators
-- `static bool Sharp.Shared.Types.Vector4D.operator !=(Sharp.Shared.Types.Vector4D a, Sharp.Shared.Types.Vector4D b)` [L:490]
+- `static bool Sharp.Shared.Types.Vector4D.operator !=(Sharp.Shared.Types.Vector4D a, Sharp.Shared.Types.Vector4D b)` [L:492]
   - Modifiers: public, static
-- `static bool Sharp.Shared.Types.Vector4D.operator ==(Sharp.Shared.Types.Vector4D a, Sharp.Shared.Types.Vector4D b)` [L:484]
+- `static bool Sharp.Shared.Types.Vector4D.operator ==(Sharp.Shared.Types.Vector4D a, Sharp.Shared.Types.Vector4D b)` [L:486]
   - Modifiers: public, static
 
 

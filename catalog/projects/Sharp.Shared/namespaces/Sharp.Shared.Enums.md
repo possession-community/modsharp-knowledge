@@ -1,7 +1,7 @@
 # Sharp.Shared.Enums
 
 Project: Sharp.Shared
-Types: 74 (0 generated)
+Types: 75 (0 generated)
 
 ### enum AnimLoopMode : System.Enum
 
@@ -2605,6 +2605,103 @@ Inheritance: object → System.ValueType → System.Enum → **RenderMode**
   - Modifiers: public, static, const
 - `Sharp.Shared.Enums.RenderMode.TransAlpha = 1` [L:25]
   - Modifiers: public, static, const
+
+
+### enum ResourceBlockType : System.Enum
+
+- FullName: `Sharp.Shared.Enums.ResourceBlockType`
+- Kind: enum
+- Modifiers: public
+- Source: Sharp.Shared/Enums/ResourceBlockType.cs:5
+- Generated: false
+
+Inheritance: object → System.ValueType → System.Enum → **ResourceBlockType**
+
+#### Enum Members
+- `Sharp.Shared.Enums.ResourceBlockType.AGRP = 1347569473` [L:85]
+  - Modifiers: public, static, const
+  - Summary: Animation Group. Contains animation group resource data.
+- `Sharp.Shared.Enums.ResourceBlockType.ANIM = 1296649793` [L:75]
+  - Modifiers: public, static, const
+  - Summary: Animation Data. Contains skeletal animation data.
+- `Sharp.Shared.Enums.ResourceBlockType.ASEQ = 1363497793` [L:80]
+  - Modifiers: public, static, const
+  - Summary: Animation Sequence. Contains animation sequence group data.
+- `Sharp.Shared.Enums.ResourceBlockType.CTRL = 1280463939` [L:55]
+  - Modifiers: public, static, const
+  - Summary: Control Data. Contains configuration and control data in KV3 format for sounds, models, and other resources.
+- `Sharp.Shared.Enums.ResourceBlockType.DATA = 1096040772` [L:35]
+  - Modifiers: public, static, const
+  - Summary: Resource Data. The main data block containing the resource's primary content.
+- `Sharp.Shared.Enums.ResourceBlockType.DSTF = 1179931460` [L:125]
+  - Modifiers: public, static, const
+  - Summary: Distance Field. Contains distance field data in KV3 format.
+- `Sharp.Shared.Enums.ResourceBlockType.FLCI = 1229147206` [L:120]
+  - Modifiers: public, static, const
+  - Summary: File/Line/Column Information. Contains source location data (file, line, column) for compiled vdata files.
+- `Sharp.Shared.Enums.ResourceBlockType.INSG = 1196641865` [L:95]
+  - Modifiers: public, static, const
+  - Summary: Input Signature. Contains shader input layout and signature data for materials.
+- `Sharp.Shared.Enums.ResourceBlockType.LaCo = 1866686796` [L:105]
+  - Modifiers: public, static, const
+  - Summary: Layout Content. Contains parsed VXML AST data for Panorama layouts.
+- `Sharp.Shared.Enums.ResourceBlockType.MADJ = 1245987149` [L:145]
+  - Modifiers: public, static, const
+  - Summary: Mesh Adjacency Buffer.
+- `Sharp.Shared.Enums.ResourceBlockType.MBUF = 1179992653` [L:70]
+  - Modifiers: public, static, const
+  - Summary: Mesh Buffer. An alternative mesh vertex and index buffer format.
+- `Sharp.Shared.Enums.ResourceBlockType.MDAT = 1413563469` [L:60]
+  - Modifiers: public, static, const
+  - Summary: Mesh Data. Contains mesh geometry data including hitbox sets and material groups.
+- `Sharp.Shared.Enums.ResourceBlockType.MIDX = 1480870221` [L:140]
+  - Modifiers: public, static, const
+  - Summary: Mesh Index Buffer. Contains index buffer data for meshes.
+- `Sharp.Shared.Enums.ResourceBlockType.MRPH = 1213223501` [L:65]
+  - Modifiers: public, static, const
+  - Summary: Morph Data. Contains morph target (flex/blend shape) data for meshes.
+- `Sharp.Shared.Enums.ResourceBlockType.MVTX = 1481922125` [L:135]
+  - Modifiers: public, static, const
+  - Summary: Mesh Vertex Buffer. Contains vertex buffer data for meshes.
+- `Sharp.Shared.Enums.ResourceBlockType.NTRO = 1330795598` [L:30]
+  - Modifiers: public, static, const
+  - Summary: Resource Introspection Manifest. Contains structure and enum definitions for the resource data.
+- `Sharp.Shared.Enums.ResourceBlockType.PHYS = 1398360144` [L:90]
+  - Modifiers: public, static, const
+  - Summary: Physics Aggregate Data. Contains physics collision meshes and constraint data.
+- `Sharp.Shared.Enums.ResourceBlockType.RED2 = 843334994` [L:25]
+  - Modifiers: public, static, const
+  - Summary: Resource Edit Info 2. An updated version of  stored in KV3 format.
+- `Sharp.Shared.Enums.ResourceBlockType.REDI = 1229210962` [L:20]
+  - Modifiers: public, static, const
+  - Summary: Resource Edit Info. Contains dependency and compilation metadata for the resource.
+- `Sharp.Shared.Enums.ResourceBlockType.RERL = 1280460114` [L:15]
+  - Modifiers: public, static, const
+  - Summary: Resource External Reference List. Contains a list of external resource references.
+- `Sharp.Shared.Enums.ResourceBlockType.SNAP = 1346457171` [L:50]
+  - Modifiers: public, static, const
+  - Summary: Particle Snapshot. Contains snapshot data for particle systems.
+- `Sharp.Shared.Enums.ResourceBlockType.SPRV = 1448235091` [L:115]
+  - Modifiers: public, static, const
+  - Summary: SPIR-V Shader. Contains compiled SPIR-V shader bytecode for S&box.
+- `Sharp.Shared.Enums.ResourceBlockType.STAT = 1413567571` [L:110]
+  - Modifiers: public, static, const
+  - Summary: Statistics. Contains compiled JavaScript metadata (e.g., public methods) for Panorama scripts.
+- `Sharp.Shared.Enums.ResourceBlockType.SrMa = 1632465491` [L:100]
+  - Modifiers: public, static, const
+  - Summary: Source Map. Contains source mapping data for Panorama CSS files.
+- `Sharp.Shared.Enums.ResourceBlockType.TBUF = 1179992660` [L:130]
+  - Modifiers: public, static, const
+  - Summary: Tools Buffer. Contains vertex buffer data for unused attributes (tools only).
+- `Sharp.Shared.Enums.ResourceBlockType.Undefined = 0` [L:10]
+  - Modifiers: public, static, const
+  - Summary: Undefined or unknown block type.
+- `Sharp.Shared.Enums.ResourceBlockType.VBIB = 1112097366` [L:40]
+  - Modifiers: public, static, const
+  - Summary: Vertex and Index Buffer Information Block. Contains mesh vertex and index buffer data.
+- `Sharp.Shared.Enums.ResourceBlockType.VXVS = 1398167638` [L:45]
+  - Modifiers: public, static, const
+  - Summary: Voxel Visibility. Contains voxel-based visibility data.
 
 
 ### enum ResourceStatus : System.Enum

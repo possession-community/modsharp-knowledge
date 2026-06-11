@@ -117,49 +117,49 @@ Types: 15 (0 generated)
 - Generated: false
 
 #### Properties
-- `Sharp.Shared.Enums.SignOnState Sharp.Shared.Objects.IGameClient.SignOnState` [L:110]
+- `Sharp.Shared.Enums.SignOnState Sharp.Shared.Objects.IGameClient.SignOnState` [L:118]
   - Modifiers: public, abstract, readonly
   - Summary: Client sign-on state
-- `Sharp.Shared.Units.EntityIndex Sharp.Shared.Objects.IGameClient.ControllerIndex` [L:140]
+- `Sharp.Shared.Units.EntityIndex Sharp.Shared.Objects.IGameClient.ControllerIndex` [L:148]
   - Modifiers: public, abstract, readonly
   - Summary: Controller entity index
-- `Sharp.Shared.Units.PlayerSlot Sharp.Shared.Objects.IGameClient.Slot` [L:135]
+- `Sharp.Shared.Units.PlayerSlot Sharp.Shared.Objects.IGameClient.Slot` [L:143]
   - Modifiers: public, abstract, readonly
   - Summary: Client engine slot (PlayerSlot)
-- `Sharp.Shared.Units.SteamID Sharp.Shared.Objects.IGameClient.SteamId` [L:130]
+- `Sharp.Shared.Units.SteamID Sharp.Shared.Objects.IGameClient.SteamId` [L:138]
   - Modifiers: public, abstract, readonly
   - Summary: Steam ID (64-bit)
-- `Sharp.Shared.Units.UserID Sharp.Shared.Objects.IGameClient.UserId` [L:125]
+- `Sharp.Shared.Units.UserID Sharp.Shared.Objects.IGameClient.UserId` [L:133]
   - Modifiers: public, abstract, readonly
   - Summary: User ID
-- `bool Sharp.Shared.Objects.IGameClient.IsAuthenticated` [L:155]
+- `bool Sharp.Shared.Objects.IGameClient.IsAuthenticated` [L:163]
   - Modifiers: public, abstract, readonly
   - Summary: Whether Steam ID has been authenticated by Steam servers
-- `bool Sharp.Shared.Objects.IGameClient.IsConnected` [L:165]
+- `bool Sharp.Shared.Objects.IGameClient.IsConnected` [L:173]
   - Modifiers: public, abstract, readonly
   - Summary: Whether this client is connected
-- `bool Sharp.Shared.Objects.IGameClient.IsFakeClient` [L:115]
+- `bool Sharp.Shared.Objects.IGameClient.IsFakeClient` [L:123]
   - Modifiers: public, abstract, readonly
   - Summary: Whether this is a fake client
-- `bool Sharp.Shared.Objects.IGameClient.IsHltv` [L:120]
+- `bool Sharp.Shared.Objects.IGameClient.IsHltv` [L:128]
   - Modifiers: public, abstract, readonly
   - Summary: Whether this is HLTV
-- `bool Sharp.Shared.Objects.IGameClient.IsInGame` [L:170]
+- `bool Sharp.Shared.Objects.IGameClient.IsInGame` [L:178]
   - Modifiers: public, abstract, readonly
   - Summary: Whether this client is in-game
-- `bool Sharp.Shared.Objects.IGameClient.IsValid` [L:160]
+- `bool Sharp.Shared.Objects.IGameClient.IsValid` [L:168]
   - Modifiers: public, abstract, readonly
   - Summary: Whether this client pointer is valid
-- `bool Sharp.Shared.Objects.IGameClient.PerfectWorld` [L:150]
+- `bool Sharp.Shared.Objects.IGameClient.PerfectWorld` [L:158]
   - Modifiers: public, abstract, readonly
   - Summary: Whether client is Perfect World user or has low violence mode enabled
-- `float Sharp.Shared.Objects.IGameClient.TimeConnected` [L:177]
+- `float Sharp.Shared.Objects.IGameClient.TimeConnected` [L:185]
   - Modifiers: public, abstract, readonly
   - Summary: For players: time since joining server (persists across map changes)For bots/HLTV: always returns server uptime
-- `string Sharp.Shared.Objects.IGameClient.Name` [L:145]
+- `string Sharp.Shared.Objects.IGameClient.Name` [L:153]
   - Modifiers: public, abstract, readonly
   - Summary: Player name
-- `string? Sharp.Shared.Objects.IGameClient.Address` [L:183]
+- `string? Sharp.Shared.Objects.IGameClient.Address` [L:191]
   - Modifiers: public, abstract, readonly
   - Summary: Client IP address and port Always null for bots/HLTV
 
@@ -170,12 +170,12 @@ Types: 15 (0 generated)
 - `Sharp.Shared.Objects.IKeyValues? Sharp.Shared.Objects.IGameClient.GetConVars()` [L:87]
   - Modifiers: public, abstract
   - Summary: Get client ConVars as KeyValues object
-- `bool Sharp.Shared.Objects.IGameClient.Equals(object? obj)` [L:187]
+- `bool Sharp.Shared.Objects.IGameClient.Equals(object? obj)` [L:195]
   - Modifiers: public, abstract
 - `float Sharp.Shared.Objects.IGameClient.GetTimeConnected()` [L:57]
   - Modifiers: public, abstract
   - Summary: Get time since client connected
-- `int Sharp.Shared.Objects.IGameClient.GetHashCode()` [L:185]
+- `int Sharp.Shared.Objects.IGameClient.GetHashCode()` [L:193]
   - Modifiers: public, abstract
 - `string? Sharp.Shared.Objects.IGameClient.GetAddress(bool withPort)` [L:52]
   - Modifiers: public, abstract
@@ -201,6 +201,9 @@ Types: 15 (0 generated)
 - `void Sharp.Shared.Objects.IGameClient.Print(Sharp.Shared.Enums.HudPrintChannel channel, string message, [string? param1 = null], [string? param2 = null], [string? param3 = null], [string? param4 = null])` [L:100]
   - Modifiers: public, abstract
   - Summary: Print message to this player
+- `void Sharp.Shared.Objects.IGameClient.PrintCenterHtml(string message, [int duration = 1])` [L:113]
+  - Modifiers: public, abstract
+  - Summary: Print a hud message with limited html format support to this player.
 - `void Sharp.Shared.Objects.IGameClient.SayChatMessage(bool teamOnly, string message)` [L:46]
   - Modifiers: public, abstract
   - Summary: Send chat message as this client
@@ -481,89 +484,89 @@ Types: 15 (0 generated)
 - FullName: `Sharp.Shared.Objects.IKeyValues`
 - Kind: interface
 - Modifiers: public
-- Source: Sharp.Shared/Objects/IKeyValues.cs:26
+- Source: Sharp.Shared/Objects/IKeyValues.cs:27
 - Generated: false
 
 #### Methods
-- `Sharp.Shared.Enums.KeyValuesDataType Sharp.Shared.Objects.IKeyValues.GetDataType([string? name = null])` [L:126]
+- `Sharp.Shared.Enums.KeyValuesDataType Sharp.Shared.Objects.IKeyValues.GetDataType([string? name = null])` [L:127]
   - Modifiers: public, abstract
   - Summary: Get data type of value
-- `Sharp.Shared.Objects.IKeyValues Sharp.Shared.Objects.IKeyValues.AddKey(string name)` [L:121]
+- `Sharp.Shared.Objects.IKeyValues Sharp.Shared.Objects.IKeyValues.AddKey(string name)` [L:122]
   - Modifiers: public, abstract
   - Summary: Add new key
-- `Sharp.Shared.Objects.IKeyValues Sharp.Shared.Objects.IKeyValues.Clone()` [L:40]
+- `Sharp.Shared.Objects.IKeyValues Sharp.Shared.Objects.IKeyValues.Clone()` [L:41]
   - Modifiers: public, abstract
   - Summary: Clone this KeyValues instance
-- `Sharp.Shared.Objects.IKeyValues? Sharp.Shared.Objects.IKeyValues.FindKey(string name, [bool bCreate = false])` [L:111]
+- `Sharp.Shared.Objects.IKeyValues? Sharp.Shared.Objects.IKeyValues.FindKey(string name, [bool bCreate = false])` [L:112]
   - Modifiers: public, abstract
   - Summary: Find key by name, optionally create if not found
-- `Sharp.Shared.Objects.IKeyValues? Sharp.Shared.Objects.IKeyValues.FindLastSubKey()` [L:89]
+- `Sharp.Shared.Objects.IKeyValues? Sharp.Shared.Objects.IKeyValues.FindLastSubKey()` [L:90]
   - Modifiers: public, abstract
   - Summary: Get last sub-key (includes both keys and key-value pairs)
-- `Sharp.Shared.Objects.IKeyValues? Sharp.Shared.Objects.IKeyValues.GetFirstSubKey()` [L:84]
+- `Sharp.Shared.Objects.IKeyValues? Sharp.Shared.Objects.IKeyValues.GetFirstSubKey()` [L:85]
   - Modifiers: public, abstract
   - Summary: Get first sub-key (includes both keys and key-value pairs)
-- `Sharp.Shared.Objects.IKeyValues? Sharp.Shared.Objects.IKeyValues.GetFirstTrueSubKey()` [L:99]
+- `Sharp.Shared.Objects.IKeyValues? Sharp.Shared.Objects.IKeyValues.GetFirstTrueSubKey()` [L:100]
   - Modifiers: public, abstract
   - Summary: Get first sub-key (keys only, not key-value pairs)
-- `Sharp.Shared.Objects.IKeyValues? Sharp.Shared.Objects.IKeyValues.GetNextKey()` [L:94]
+- `Sharp.Shared.Objects.IKeyValues? Sharp.Shared.Objects.IKeyValues.GetNextKey()` [L:95]
   - Modifiers: public, abstract
   - Summary: Get next key
-- `Sharp.Shared.Objects.IKeyValues? Sharp.Shared.Objects.IKeyValues.GetNextTrueSubKey()` [L:104]
+- `Sharp.Shared.Objects.IKeyValues? Sharp.Shared.Objects.IKeyValues.GetNextTrueSubKey()` [L:105]
   - Modifiers: public, abstract
   - Summary: Get next sub-key (keys only, not key-value pairs)
-- `bool Sharp.Shared.Objects.IKeyValues.FindAndDeleteSubKey(string name)` [L:116]
+- `bool Sharp.Shared.Objects.IKeyValues.FindAndDeleteSubKey(string name)` [L:117]
   - Modifiers: public, abstract
   - Summary: Find and delete sub-key by name
-- `bool Sharp.Shared.Objects.IKeyValues.GetBool([string? name = null], [bool defaultValue = false])` [L:138]
+- `bool Sharp.Shared.Objects.IKeyValues.GetBool([string? name = null], [bool defaultValue = false])` [L:139]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues.IsEmpty([string? name = null])` [L:140]
+- `bool Sharp.Shared.Objects.IKeyValues.IsEmpty([string? name = null])` [L:141]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues.LoadFromFile(string filename, [string? pathId = null])` [L:50]
+- `bool Sharp.Shared.Objects.IKeyValues.LoadFromFile(string filename, [string? pathId = null])` [L:51]
   - Modifiers: public, abstract
   - Summary: Load from file
-- `bool Sharp.Shared.Objects.IKeyValues.LoadFromString(string buffer)` [L:60]
+- `bool Sharp.Shared.Objects.IKeyValues.LoadFromString(string buffer)` [L:61]
   - Modifiers: public, abstract
   - Summary: Load from string
-- `bool Sharp.Shared.Objects.IKeyValues.SaveToFile(string filename, [string? pathId = null], [bool allowEmptyString = false])` [L:55]
+- `bool Sharp.Shared.Objects.IKeyValues.SaveToFile(string filename, [string? pathId = null], [bool allowEmptyString = false])` [L:56]
   - Modifiers: public, abstract
   - Summary: Save to file
-- `bool Sharp.Shared.Objects.IKeyValues.SaveToString(int size, out string result, [int indent = 0], [bool sort = false], [bool allowEmptyString = false])` [L:65]
+- `bool Sharp.Shared.Objects.IKeyValues.SaveToString(int size, out string result, [int indent = 0], [bool sort = false], [bool allowEmptyString = false])` [L:66]
   - Modifiers: public, abstract
   - Summary: Export to string
-- `float Sharp.Shared.Objects.IKeyValues.GetFloat([string? name = null], [float defaultValue = 0])` [L:132]
+- `float Sharp.Shared.Objects.IKeyValues.GetFloat([string? name = null], [float defaultValue = 0])` [L:133]
   - Modifiers: public, abstract
-- `int Sharp.Shared.Objects.IKeyValues.GetInt([string? name = null], [int defaultValue = 0])` [L:128]
+- `int Sharp.Shared.Objects.IKeyValues.GetInt([string? name = null], [int defaultValue = 0])` [L:129]
   - Modifiers: public, abstract
-- `nint Sharp.Shared.Objects.IKeyValues.GetPtr([string? name = null])` [L:136]
+- `nint Sharp.Shared.Objects.IKeyValues.GetPtr([string? name = null])` [L:137]
   - Modifiers: public, abstract
-- `string Sharp.Shared.Objects.IKeyValues.GetSectionName()` [L:74]
+- `string Sharp.Shared.Objects.IKeyValues.GetSectionName()` [L:75]
   - Modifiers: public, abstract
   - Summary: Get current section name
-- `string Sharp.Shared.Objects.IKeyValues.GetString([string? name = null], [string defaultValue = ""])` [L:134]
+- `string Sharp.Shared.Objects.IKeyValues.GetString([string? name = null], [string defaultValue = ""])` [L:135]
   - Modifiers: public, abstract
-- `ulong Sharp.Shared.Objects.IKeyValues.GetUint64([string? name = null], [ulong defaultValue = 0])` [L:130]
+- `ulong Sharp.Shared.Objects.IKeyValues.GetUint64([string? name = null], [ulong defaultValue = 0])` [L:131]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues.Clear()` [L:45]
+- `void Sharp.Shared.Objects.IKeyValues.Clear()` [L:46]
   - Modifiers: public, abstract
   - Summary: Clear all keys and sub-keys
-- `void Sharp.Shared.Objects.IKeyValues.DeleteThis()` [L:35]
+- `void Sharp.Shared.Objects.IKeyValues.DeleteThis()` [L:36]
   - Modifiers: public, abstract
   - Summary: Destroy this instance
-- `void Sharp.Shared.Objects.IKeyValues.SetBool(string name, bool value)` [L:152]
+- `void Sharp.Shared.Objects.IKeyValues.SetBool(string name, bool value)` [L:153]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues.SetFloat(string name, float value)` [L:148]
+- `void Sharp.Shared.Objects.IKeyValues.SetFloat(string name, float value)` [L:149]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues.SetInt(string name, int value)` [L:144]
+- `void Sharp.Shared.Objects.IKeyValues.SetInt(string name, int value)` [L:145]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues.SetPtr(string name, nint value)` [L:150]
+- `void Sharp.Shared.Objects.IKeyValues.SetPtr(string name, nint value)` [L:151]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues.SetSectionName(string name)` [L:79]
+- `void Sharp.Shared.Objects.IKeyValues.SetSectionName(string name)` [L:80]
   - Modifiers: public, abstract
   - Summary: Set section name
-- `void Sharp.Shared.Objects.IKeyValues.SetString(string name, string value)` [L:142]
+- `void Sharp.Shared.Objects.IKeyValues.SetString(string name, string value)` [L:143]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues.SetUint64(string name, ulong value)` [L:146]
+- `void Sharp.Shared.Objects.IKeyValues.SetUint64(string name, ulong value)` [L:147]
   - Modifiers: public, abstract
 
 
@@ -572,131 +575,137 @@ Types: 15 (0 generated)
 - FullName: `Sharp.Shared.Objects.IKeyValues3`
 - Kind: interface
 - Modifiers: public
-- Source: Sharp.Shared/Objects/IKeyValues.cs:155
+- Source: Sharp.Shared/Objects/IKeyValues.cs:156
 - Generated: false
 
 #### Methods
-- `Sharp.Shared.Enums.KeyValues3SubType Sharp.Shared.Objects.IKeyValues3.GetSubType()` [L:199]
+- `Sharp.Shared.Enums.KeyValues3SubType Sharp.Shared.Objects.IKeyValues3.GetSubType()` [L:217]
   - Modifiers: public, abstract
-- `Sharp.Shared.Enums.KeyValues3Type Sharp.Shared.Objects.IKeyValues3.GetKvType()` [L:169]
+- `Sharp.Shared.Enums.KeyValues3Type Sharp.Shared.Objects.IKeyValues3.GetKvType()` [L:187]
   - Modifiers: public, abstract
-- `Sharp.Shared.Objects.IKeyValues3? Sharp.Shared.Objects.IKeyValues3.AddArrayElementToTail()` [L:205]
+- `Sharp.Shared.Objects.IKeyValues3? Sharp.Shared.Objects.IKeyValues3.AddArrayElementToTail()` [L:223]
   - Modifiers: public, abstract
-- `Sharp.Shared.Objects.IKeyValues3? Sharp.Shared.Objects.IKeyValues3.FindMember(string name)` [L:215]
+- `Sharp.Shared.Objects.IKeyValues3? Sharp.Shared.Objects.IKeyValues3.FindMember(string name)` [L:233]
   - Modifiers: public, abstract
-- `Sharp.Shared.Objects.IKeyValues3? Sharp.Shared.Objects.IKeyValues3.FindOrCreateMember(string name, out bool create)` [L:217]
+- `Sharp.Shared.Objects.IKeyValues3? Sharp.Shared.Objects.IKeyValues3.FindOrCreateMember(string name, out bool create)` [L:235]
   - Modifiers: public, abstract
-- `Sharp.Shared.Objects.IKeyValues3? Sharp.Shared.Objects.IKeyValues3.GetArrayElement(int index)` [L:203]
+- `Sharp.Shared.Objects.IKeyValues3? Sharp.Shared.Objects.IKeyValues3.GetArrayElement(int index)` [L:221]
   - Modifiers: public, abstract
-- `Sharp.Shared.Objects.IKeyValues3? Sharp.Shared.Objects.IKeyValues3.GetMember(int index)` [L:211]
+- `Sharp.Shared.Objects.IKeyValues3? Sharp.Shared.Objects.IKeyValues3.GetMember(int index)` [L:229]
   - Modifiers: public, abstract
-- `Sharp.Shared.Types.Color32 Sharp.Shared.Objects.IKeyValues3.GetColor()` [L:246]
+- `Sharp.Shared.Types.Color32 Sharp.Shared.Objects.IKeyValues3.GetColor()` [L:266]
   - Modifiers: public, abstract
-- `Sharp.Shared.Types.Matrix3x4 Sharp.Shared.Objects.IKeyValues3.GetMatrix()` [L:252]
+- `Sharp.Shared.Types.Matrix3x4 Sharp.Shared.Objects.IKeyValues3.GetMatrix()` [L:272]
   - Modifiers: public, abstract
-- `Sharp.Shared.Types.Vector Sharp.Shared.Objects.IKeyValues3.GetQAngle()` [L:250]
+- `Sharp.Shared.Types.Vector Sharp.Shared.Objects.IKeyValues3.GetQAngle()` [L:270]
   - Modifiers: public, abstract
-- `Sharp.Shared.Types.Vector Sharp.Shared.Objects.IKeyValues3.GetVector()` [L:248]
+- `Sharp.Shared.Types.Vector Sharp.Shared.Objects.IKeyValues3.GetVector()` [L:268]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.GetBool([bool defaultValue = false])` [L:222]
+- `System.ReadOnlySpan<byte> Sharp.Shared.Objects.IKeyValues3.GetBinaryBlob()` [L:264]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.IsArray()` [L:193]
+- `bool Sharp.Shared.Objects.IKeyValues3.GetBool([bool defaultValue = false])` [L:240]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.IsBinaryBlob()` [L:191]
+- `bool Sharp.Shared.Objects.IKeyValues3.IsArray()` [L:211]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.IsBool()` [L:175]
+- `bool Sharp.Shared.Objects.IKeyValues3.IsBinaryBlob()` [L:209]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.IsDouble()` [L:187]
+- `bool Sharp.Shared.Objects.IKeyValues3.IsBool()` [L:193]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.IsInt()` [L:177]
+- `bool Sharp.Shared.Objects.IKeyValues3.IsDouble()` [L:205]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.IsIntegral()` [L:185]
+- `bool Sharp.Shared.Objects.IKeyValues3.IsInt()` [L:195]
+  - Modifiers: public, abstract
+- `bool Sharp.Shared.Objects.IKeyValues3.IsIntegral()` [L:203]
   - Modifiers: public, abstract
   - Summary: IsInt || IsUInt
-- `bool Sharp.Shared.Objects.IKeyValues3.IsInvalid()` [L:171]
+- `bool Sharp.Shared.Objects.IKeyValues3.IsInvalid()` [L:189]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.IsNull()` [L:173]
+- `bool Sharp.Shared.Objects.IKeyValues3.IsNull()` [L:191]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.IsNullOrInvalid()` [L:197]
+- `bool Sharp.Shared.Objects.IKeyValues3.IsNullOrInvalid()` [L:215]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.IsString()` [L:189]
+- `bool Sharp.Shared.Objects.IKeyValues3.IsString()` [L:207]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.IsTable()` [L:195]
+- `bool Sharp.Shared.Objects.IKeyValues3.IsTable()` [L:213]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.IsUInt()` [L:179]
+- `bool Sharp.Shared.Objects.IKeyValues3.IsUInt()` [L:197]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.LoadFromBuffer(byte[] buffer, out string error)` [L:167]
+- `bool Sharp.Shared.Objects.IKeyValues3.LoadFromBuffer(byte[] buffer, out string error)` [L:185]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.LoadFromCompiledFile(string file, string pathId, out string error)` [L:165]
+- `bool Sharp.Shared.Objects.IKeyValues3.LoadFromCompiledFile(string file, string pathId, Sharp.Shared.Enums.ResourceBlockType block, out string error)` [L:183]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.LoadFromFile(string file, string pathId, out string error)` [L:163]
+  - Summary: Load the given datablock type from the given compiled resource
+- `bool Sharp.Shared.Objects.IKeyValues3.LoadFromCompiledFile(string file, string pathId, out string error)` [L:173]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.Objects.IKeyValues3.RemoveMember(string name)` [L:219]
+  - Summary: Load the  type from the given compiled resource
+- `bool Sharp.Shared.Objects.IKeyValues3.LoadFromFile(string file, string pathId, out string error)` [L:164]
   - Modifiers: public, abstract
-- `byte Sharp.Shared.Objects.IKeyValues3.GetUInt8([byte defaultValue = 0])` [L:232]
+- `bool Sharp.Shared.Objects.IKeyValues3.RemoveMember(string name)` [L:237]
   - Modifiers: public, abstract
-- `double Sharp.Shared.Objects.IKeyValues3.GetDouble([double defaultValue = 0])` [L:242]
+- `byte Sharp.Shared.Objects.IKeyValues3.GetUInt8([byte defaultValue = 0])` [L:250]
   - Modifiers: public, abstract
-- `float Sharp.Shared.Objects.IKeyValues3.GetFloat([float defaultValue = 0])` [L:240]
+- `double Sharp.Shared.Objects.IKeyValues3.GetDouble([double defaultValue = 0])` [L:260]
   - Modifiers: public, abstract
-- `int Sharp.Shared.Objects.IKeyValues3.GetArrayElementCount()` [L:201]
+- `float Sharp.Shared.Objects.IKeyValues3.GetFloat([float defaultValue = 0])` [L:258]
   - Modifiers: public, abstract
-- `int Sharp.Shared.Objects.IKeyValues3.GetInt32([int defaultValue = 0])` [L:228]
+- `int Sharp.Shared.Objects.IKeyValues3.GetArrayElementCount()` [L:219]
   - Modifiers: public, abstract
-- `int Sharp.Shared.Objects.IKeyValues3.GetMemberCount()` [L:209]
+- `int Sharp.Shared.Objects.IKeyValues3.GetInt32([int defaultValue = 0])` [L:246]
   - Modifiers: public, abstract
-- `long Sharp.Shared.Objects.IKeyValues3.GetInt64([long defaultValue = 0])` [L:230]
+- `int Sharp.Shared.Objects.IKeyValues3.GetMemberCount()` [L:227]
   - Modifiers: public, abstract
-- `sbyte Sharp.Shared.Objects.IKeyValues3.GetInt8([sbyte defaultValue = 0])` [L:224]
+- `long Sharp.Shared.Objects.IKeyValues3.GetInt64([long defaultValue = 0])` [L:248]
   - Modifiers: public, abstract
-- `short Sharp.Shared.Objects.IKeyValues3.GetInt16([short defaultValue = 0])` [L:226]
+- `sbyte Sharp.Shared.Objects.IKeyValues3.GetInt8([sbyte defaultValue = 0])` [L:242]
   - Modifiers: public, abstract
-- `string Sharp.Shared.Objects.IKeyValues3.GetMemberName(int index)` [L:213]
+- `short Sharp.Shared.Objects.IKeyValues3.GetInt16([short defaultValue = 0])` [L:244]
   - Modifiers: public, abstract
-- `string Sharp.Shared.Objects.IKeyValues3.GetString([string defaultValue = ""])` [L:244]
+- `string Sharp.Shared.Objects.IKeyValues3.GetMemberName(int index)` [L:231]
   - Modifiers: public, abstract
-- `uint Sharp.Shared.Objects.IKeyValues3.GetUInt32([uint defaultValue = 0])` [L:236]
+- `string Sharp.Shared.Objects.IKeyValues3.GetString([string defaultValue = ""])` [L:262]
   - Modifiers: public, abstract
-- `ulong Sharp.Shared.Objects.IKeyValues3.GetUInt64([ulong defaultValue = 0])` [L:238]
+- `uint Sharp.Shared.Objects.IKeyValues3.GetUInt32([uint defaultValue = 0])` [L:254]
   - Modifiers: public, abstract
-- `ushort Sharp.Shared.Objects.IKeyValues3.GetUInt16([ushort defaultValue = 0])` [L:234]
+- `ulong Sharp.Shared.Objects.IKeyValues3.GetUInt64([ulong defaultValue = 0])` [L:256]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.DeleteThis()` [L:161]
+- `ushort Sharp.Shared.Objects.IKeyValues3.GetUInt16([ushort defaultValue = 0])` [L:252]
+  - Modifiers: public, abstract
+- `void Sharp.Shared.Objects.IKeyValues3.DeleteThis()` [L:162]
   - Modifiers: public, abstract
   - Summary: Destroy this instance Only instances created by  can be destroyed
-- `void Sharp.Shared.Objects.IKeyValues3.RemoveArrayElement(int index)` [L:207]
+- `void Sharp.Shared.Objects.IKeyValues3.RemoveArrayElement(int index)` [L:225]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetBool(bool value)` [L:255]
+- `void Sharp.Shared.Objects.IKeyValues3.SetBool(bool value)` [L:275]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetColor(Sharp.Shared.Types.Color32 value)` [L:279]
+- `void Sharp.Shared.Objects.IKeyValues3.SetColor(Sharp.Shared.Types.Color32 value)` [L:299]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetDouble(double value)` [L:275]
+- `void Sharp.Shared.Objects.IKeyValues3.SetDouble(double value)` [L:295]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetFloat(float value)` [L:273]
+- `void Sharp.Shared.Objects.IKeyValues3.SetFloat(float value)` [L:293]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetInt16(short value)` [L:259]
+- `void Sharp.Shared.Objects.IKeyValues3.SetInt16(short value)` [L:279]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetInt32(int value)` [L:261]
+- `void Sharp.Shared.Objects.IKeyValues3.SetInt32(int value)` [L:281]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetInt64(long value)` [L:263]
+- `void Sharp.Shared.Objects.IKeyValues3.SetInt64(long value)` [L:283]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetInt8(sbyte value)` [L:257]
+- `void Sharp.Shared.Objects.IKeyValues3.SetInt8(sbyte value)` [L:277]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetMatrix(Sharp.Shared.Types.Matrix3x4 value)` [L:285]
+- `void Sharp.Shared.Objects.IKeyValues3.SetMatrix(Sharp.Shared.Types.Matrix3x4 value)` [L:305]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetQAngle(Sharp.Shared.Types.Vector value)` [L:283]
+- `void Sharp.Shared.Objects.IKeyValues3.SetQAngle(Sharp.Shared.Types.Vector value)` [L:303]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetString(string value)` [L:277]
+- `void Sharp.Shared.Objects.IKeyValues3.SetString(string value)` [L:297]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetUInt16(ushort value)` [L:267]
+- `void Sharp.Shared.Objects.IKeyValues3.SetUInt16(ushort value)` [L:287]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetUInt32(uint value)` [L:269]
+- `void Sharp.Shared.Objects.IKeyValues3.SetUInt32(uint value)` [L:289]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetUInt64(ulong value)` [L:271]
+- `void Sharp.Shared.Objects.IKeyValues3.SetUInt64(ulong value)` [L:291]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetUInt8(byte value)` [L:265]
+- `void Sharp.Shared.Objects.IKeyValues3.SetUInt8(byte value)` [L:285]
   - Modifiers: public, abstract
-- `void Sharp.Shared.Objects.IKeyValues3.SetVector(Sharp.Shared.Types.Vector value)` [L:281]
+- `void Sharp.Shared.Objects.IKeyValues3.SetVector(Sharp.Shared.Types.Vector value)` [L:301]
   - Modifiers: public, abstract
 
 

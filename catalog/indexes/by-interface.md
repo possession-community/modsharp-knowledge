@@ -115,6 +115,7 @@ Types grouped by each interface they implement.
 - `CCSUsrMsg_VotePass` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CCSUsrMsg_VoteSetup` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CCSUsrMsg_VoteStart` → ../projects/Sharp.Shared/namespaces/_global.md
+- `CCSUsrMsg_WeaponMagDrop` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CCSUsrMsg_WeaponSound` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CCSUsrMsg_XRankGet` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CCSUsrMsg_XRankUpd` → ../projects/Sharp.Shared/namespaces/_global.md
@@ -328,6 +329,9 @@ Types grouped by each interface they implement.
 - `CMsgSource2NetworkFlowQuality` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CMsgSource2PerfIntervalSample` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CMsgSource2PerfIntervalSample.Types.Tag` → ../projects/Sharp.Shared/namespaces/_global.md
+- `CMsgSource2PlayStatsPackedRecordList` → ../projects/Sharp.Shared/namespaces/_global.md
+- `CMsgSource2PlayStatsPackedRecordList.Types.FieldDef` → ../projects/Sharp.Shared/namespaces/_global.md
+- `CMsgSource2PlayStatsPackedRecordList.Types.SteamIDList` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CMsgSource2SystemSpecs` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CMsgSource2VProfLiteReport` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CMsgSource2VProfLiteReportItem` → ../projects/Sharp.Shared/namespaces/_global.md
@@ -451,8 +455,12 @@ Types grouped by each interface they implement.
 - `CSVCMsg_UserMessage` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CSVCMsg_VoiceData` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CSVCMsg_VoiceInit` → ../projects/Sharp.Shared/namespaces/_global.md
+- `CSource2Metrics_FetchMapData_Request` → ../projects/Sharp.Shared/namespaces/_global.md
+- `CSource2Metrics_FetchMapData_Response` → ../projects/Sharp.Shared/namespaces/_global.md
+- `CSource2Metrics_FetchMapData_Response.Types.MapData` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CSource2Metrics_MatchPerfSummary_Notification` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CSource2Metrics_MatchPerfSummary_Notification.Types.Client` → ../projects/Sharp.Shared/namespaces/_global.md
+- `CSource2Metrics_RecordPlayStats_Notification` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CSubtickMoveStep` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserCmdBasePB` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMessageAchievementEvent` → ../projects/Sharp.Shared/namespaces/_global.md
@@ -519,6 +527,7 @@ Types grouped by each interface they implement.
 - `CUserMsg_ParticleManager.Types.ClearModellistOverride` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMsg_ParticleManager.Types.CreateParticle` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMsg_ParticleManager.Types.CreatePhysicsSim` → ../projects/Sharp.Shared/namespaces/_global.md
+- `CUserMsg_ParticleManager.Types.CreateSmokeGrid` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMsg_ParticleManager.Types.DestroyParticle` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMsg_ParticleManager.Types.DestroyParticleInvolving` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMsg_ParticleManager.Types.DestroyParticleNamed` → ../projects/Sharp.Shared/namespaces/_global.md
@@ -532,6 +541,7 @@ Types grouped by each interface they implement.
 - `CUserMsg_ParticleManager.Types.SetControlPointModel` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMsg_ParticleManager.Types.SetControlPointSnapshot` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMsg_ParticleManager.Types.SetMaterialOverride` → ../projects/Sharp.Shared/namespaces/_global.md
+- `CUserMsg_ParticleManager.Types.SetOverrideTexture` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMsg_ParticleManager.Types.SetParticleClusterGrowth` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMsg_ParticleManager.Types.SetParticleFoWProperties` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMsg_ParticleManager.Types.SetParticleNamedValueContext` → ../projects/Sharp.Shared/namespaces/_global.md
@@ -1049,6 +1059,10 @@ Types grouped by each interface they implement.
 ## `Google.Protobuf.IMessage<CCSUsrMsg_VoteStart>`
 
 - `CCSUsrMsg_VoteStart` → ../projects/Sharp.Shared/namespaces/_global.md
+
+## `Google.Protobuf.IMessage<CCSUsrMsg_WeaponMagDrop>`
+
+- `CCSUsrMsg_WeaponMagDrop` → ../projects/Sharp.Shared/namespaces/_global.md
 
 ## `Google.Protobuf.IMessage<CCSUsrMsg_WeaponSound>`
 
@@ -1902,6 +1916,18 @@ Types grouped by each interface they implement.
 
 - `CMsgSource2PerfIntervalSample` → ../projects/Sharp.Shared/namespaces/_global.md
 
+## `Google.Protobuf.IMessage<CMsgSource2PlayStatsPackedRecordList.Types.FieldDef>`
+
+- `CMsgSource2PlayStatsPackedRecordList.Types.FieldDef` → ../projects/Sharp.Shared/namespaces/_global.md
+
+## `Google.Protobuf.IMessage<CMsgSource2PlayStatsPackedRecordList.Types.SteamIDList>`
+
+- `CMsgSource2PlayStatsPackedRecordList.Types.SteamIDList` → ../projects/Sharp.Shared/namespaces/_global.md
+
+## `Google.Protobuf.IMessage<CMsgSource2PlayStatsPackedRecordList>`
+
+- `CMsgSource2PlayStatsPackedRecordList` → ../projects/Sharp.Shared/namespaces/_global.md
+
 ## `Google.Protobuf.IMessage<CMsgSource2SystemSpecs>`
 
 - `CMsgSource2SystemSpecs` → ../projects/Sharp.Shared/namespaces/_global.md
@@ -2394,6 +2420,18 @@ Types grouped by each interface they implement.
 
 - `CSVCMsg_VoiceInit` → ../projects/Sharp.Shared/namespaces/_global.md
 
+## `Google.Protobuf.IMessage<CSource2Metrics_FetchMapData_Request>`
+
+- `CSource2Metrics_FetchMapData_Request` → ../projects/Sharp.Shared/namespaces/_global.md
+
+## `Google.Protobuf.IMessage<CSource2Metrics_FetchMapData_Response.Types.MapData>`
+
+- `CSource2Metrics_FetchMapData_Response.Types.MapData` → ../projects/Sharp.Shared/namespaces/_global.md
+
+## `Google.Protobuf.IMessage<CSource2Metrics_FetchMapData_Response>`
+
+- `CSource2Metrics_FetchMapData_Response` → ../projects/Sharp.Shared/namespaces/_global.md
+
 ## `Google.Protobuf.IMessage<CSource2Metrics_MatchPerfSummary_Notification.Types.Client>`
 
 - `CSource2Metrics_MatchPerfSummary_Notification.Types.Client` → ../projects/Sharp.Shared/namespaces/_global.md
@@ -2401,6 +2439,10 @@ Types grouped by each interface they implement.
 ## `Google.Protobuf.IMessage<CSource2Metrics_MatchPerfSummary_Notification>`
 
 - `CSource2Metrics_MatchPerfSummary_Notification` → ../projects/Sharp.Shared/namespaces/_global.md
+
+## `Google.Protobuf.IMessage<CSource2Metrics_RecordPlayStats_Notification>`
+
+- `CSource2Metrics_RecordPlayStats_Notification` → ../projects/Sharp.Shared/namespaces/_global.md
 
 ## `Google.Protobuf.IMessage<CSubtickMoveStep>`
 
@@ -2662,6 +2704,10 @@ Types grouped by each interface they implement.
 
 - `CUserMsg_ParticleManager.Types.CreatePhysicsSim` → ../projects/Sharp.Shared/namespaces/_global.md
 
+## `Google.Protobuf.IMessage<CUserMsg_ParticleManager.Types.CreateSmokeGrid>`
+
+- `CUserMsg_ParticleManager.Types.CreateSmokeGrid` → ../projects/Sharp.Shared/namespaces/_global.md
+
 ## `Google.Protobuf.IMessage<CUserMsg_ParticleManager.Types.DestroyParticle>`
 
 - `CUserMsg_ParticleManager.Types.DestroyParticle` → ../projects/Sharp.Shared/namespaces/_global.md
@@ -2713,6 +2759,10 @@ Types grouped by each interface they implement.
 ## `Google.Protobuf.IMessage<CUserMsg_ParticleManager.Types.SetMaterialOverride>`
 
 - `CUserMsg_ParticleManager.Types.SetMaterialOverride` → ../projects/Sharp.Shared/namespaces/_global.md
+
+## `Google.Protobuf.IMessage<CUserMsg_ParticleManager.Types.SetOverrideTexture>`
+
+- `CUserMsg_ParticleManager.Types.SetOverrideTexture` → ../projects/Sharp.Shared/namespaces/_global.md
 
 ## `Google.Protobuf.IMessage<CUserMsg_ParticleManager.Types.SetParticleClusterGrowth>`
 
@@ -2990,6 +3040,20 @@ Types grouped by each interface they implement.
 
 - `XpProgressData` → ../projects/Sharp.Shared/namespaces/_global.md
 
+## `Microsoft.CodeAnalysis.IIncrementalGenerator`
+
+- `Sharp.Generator.BaseEntityGenerator` → ../projects/Sharp.Generator/namespaces/Sharp.Generator.md
+- `Sharp.Generator.CreateNativeObjectGenerator` → ../projects/Sharp.Generator/namespaces/Sharp.Generator.md
+- `Sharp.Generator.GameEventCreateGenerator` → ../projects/Sharp.Generator/namespaces/Sharp.Generator.md
+- `Sharp.Generator.GameEventGenerator` → ../projects/Sharp.Generator/namespaces/Sharp.Generator.md
+- `Sharp.Generator.ModuleManagerGenerator` → ../projects/Sharp.Generator/namespaces/Sharp.Generator.md
+- `Sharp.Generator.NativeGenerator` → ../projects/Sharp.Generator/namespaces/Sharp.Generator.md
+- `Sharp.Generator.NativeObjectGenerator` → ../projects/Sharp.Generator/namespaces/Sharp.Generator.md
+- `Sharp.Generator.NativeSchemaFieldGenerator` → ../projects/Sharp.Generator/namespaces/Sharp.Generator.md
+- `Sharp.Generator.NativeVirtualObjectGenerator` → ../projects/Sharp.Generator/namespaces/Sharp.Generator.md
+- `Sharp.Generator.Sdk.SignatureCallGenerator` → ../projects/Sharp.Generator.Sdk/namespaces/Sharp.Generator.Sdk.md
+- `Sharp.Generator.Sdk.VirtualCallGenerator` → ../projects/Sharp.Generator.Sdk/namespaces/Sharp.Generator.Sdk.md
+
 ## `Sharp.Modules.ClientPreferences.Shared.IClientPreference`
 
 - `Sharp.Modules.ClientPreferences.Core.ClientPreferences` → ../projects/Sharp.Modules.ClientPreferences/namespaces/Sharp.Modules.ClientPreferences.Core.md
@@ -3146,6 +3210,7 @@ Types grouped by each interface they implement.
 
 ## `Sharp.Shared.GameObjects.IPlayerPawnComponent`
 
+- `Sharp.Shared.GameObjects.IAimPunchService` → ../projects/Sharp.Shared/namespaces/Sharp.Shared.GameObjects.md
 - `Sharp.Shared.GameObjects.IBulletService` → ../projects/Sharp.Shared/namespaces/Sharp.Shared.GameObjects.md
 - `Sharp.Shared.GameObjects.IBuyService` → ../projects/Sharp.Shared/namespaces/Sharp.Shared.GameObjects.md
 - `Sharp.Shared.GameObjects.ICameraService` → ../projects/Sharp.Shared/namespaces/Sharp.Shared.GameObjects.md

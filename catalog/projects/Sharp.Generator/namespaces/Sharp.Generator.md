@@ -3,7 +3,7 @@
 Project: Sharp.Generator
 Types: 9 (0 generated)
 
-### class BaseEntityGenerator : IIncrementalGenerator
+### class BaseEntityGenerator : Microsoft.CodeAnalysis.IIncrementalGenerator
 
 - FullName: `Sharp.Generator.BaseEntityGenerator`
 - Kind: class
@@ -12,13 +12,13 @@ Types: 9 (0 generated)
 - Generated: false
 - Attributes: `[Generator]`
 
-Inheritance: IIncrementalGenerator → **BaseEntityGenerator**
+Inheritance: object → **BaseEntityGenerator**
 
 #### Methods
-- `void Sharp.Generator.BaseEntityGenerator.Initialize(IncrementalGeneratorInitializationContext context)` [L:32]
+- `void Sharp.Generator.BaseEntityGenerator.Initialize(Microsoft.CodeAnalysis.IncrementalGeneratorInitializationContext context)` [L:32]
 
 
-### class CreateNativeObjectGenerator : IIncrementalGenerator
+### class CreateNativeObjectGenerator : Microsoft.CodeAnalysis.IIncrementalGenerator
 
 - FullName: `Sharp.Generator.CreateNativeObjectGenerator`
 - Kind: class
@@ -27,13 +27,13 @@ Inheritance: IIncrementalGenerator → **BaseEntityGenerator**
 - Generated: false
 - Attributes: `[Generator]`
 
-Inheritance: IIncrementalGenerator → **CreateNativeObjectGenerator**
+Inheritance: object → **CreateNativeObjectGenerator**
 
 #### Methods
-- `void Sharp.Generator.CreateNativeObjectGenerator.Initialize(IncrementalGeneratorInitializationContext context)` [L:32]
+- `void Sharp.Generator.CreateNativeObjectGenerator.Initialize(Microsoft.CodeAnalysis.IncrementalGeneratorInitializationContext context)` [L:32]
 
 
-### class GameEventCreateGenerator : IIncrementalGenerator
+### class GameEventCreateGenerator : Microsoft.CodeAnalysis.IIncrementalGenerator
 
 - FullName: `Sharp.Generator.GameEventCreateGenerator`
 - Kind: class
@@ -42,13 +42,13 @@ Inheritance: IIncrementalGenerator → **CreateNativeObjectGenerator**
 - Generated: false
 - Attributes: `[Generator]`
 
-Inheritance: IIncrementalGenerator → **GameEventCreateGenerator**
+Inheritance: object → **GameEventCreateGenerator**
 
 #### Methods
-- `void Sharp.Generator.GameEventCreateGenerator.Initialize(IncrementalGeneratorInitializationContext context)` [L:32]
+- `void Sharp.Generator.GameEventCreateGenerator.Initialize(Microsoft.CodeAnalysis.IncrementalGeneratorInitializationContext context)` [L:32]
 
 
-### class GameEventGenerator : IIncrementalGenerator
+### class GameEventGenerator : Microsoft.CodeAnalysis.IIncrementalGenerator
 
 - FullName: `Sharp.Generator.GameEventGenerator`
 - Kind: class
@@ -57,13 +57,13 @@ Inheritance: IIncrementalGenerator → **GameEventCreateGenerator**
 - Generated: false
 - Attributes: `[Generator]`
 
-Inheritance: IIncrementalGenerator → **GameEventGenerator**
+Inheritance: object → **GameEventGenerator**
 
 #### Methods
-- `void Sharp.Generator.GameEventGenerator.Initialize(IncrementalGeneratorInitializationContext context)` [L:31]
+- `void Sharp.Generator.GameEventGenerator.Initialize(Microsoft.CodeAnalysis.IncrementalGeneratorInitializationContext context)` [L:31]
 
 
-### class ModuleManagerGenerator : IIncrementalGenerator
+### class ModuleManagerGenerator : Microsoft.CodeAnalysis.IIncrementalGenerator
 
 - FullName: `Sharp.Generator.ModuleManagerGenerator`
 - Kind: class
@@ -72,13 +72,13 @@ Inheritance: IIncrementalGenerator → **GameEventGenerator**
 - Generated: false
 - Attributes: `[Generator]`
 
-Inheritance: IIncrementalGenerator → **ModuleManagerGenerator**
+Inheritance: object → **ModuleManagerGenerator**
 
 #### Methods
-- `void Sharp.Generator.ModuleManagerGenerator.Initialize(IncrementalGeneratorInitializationContext context)` [L:35]
+- `void Sharp.Generator.ModuleManagerGenerator.Initialize(Microsoft.CodeAnalysis.IncrementalGeneratorInitializationContext context)` [L:35]
 
 
-### class NativeGenerator : IIncrementalGenerator
+### class NativeGenerator : Microsoft.CodeAnalysis.IIncrementalGenerator
 
 - FullName: `Sharp.Generator.NativeGenerator`
 - Kind: class
@@ -87,13 +87,13 @@ Inheritance: IIncrementalGenerator → **ModuleManagerGenerator**
 - Generated: false
 - Attributes: `[Generator]`
 
-Inheritance: IIncrementalGenerator → **NativeGenerator**
+Inheritance: object → **NativeGenerator**
 
 #### Methods
-- `void Sharp.Generator.NativeGenerator.Initialize(IncrementalGeneratorInitializationContext context)` [L:31]
+- `void Sharp.Generator.NativeGenerator.Initialize(Microsoft.CodeAnalysis.IncrementalGeneratorInitializationContext context)` [L:31]
 
 
-### class NativeObjectGenerator : IIncrementalGenerator
+### class NativeObjectGenerator : Microsoft.CodeAnalysis.IIncrementalGenerator
 
 - FullName: `Sharp.Generator.NativeObjectGenerator`
 - Kind: class
@@ -102,13 +102,13 @@ Inheritance: IIncrementalGenerator → **NativeGenerator**
 - Generated: false
 - Attributes: `[Generator]`
 
-Inheritance: IIncrementalGenerator → **NativeObjectGenerator**
+Inheritance: object → **NativeObjectGenerator**
 
 #### Methods
-- `void Sharp.Generator.NativeObjectGenerator.Initialize(IncrementalGeneratorInitializationContext context)` [L:51]
+- `void Sharp.Generator.NativeObjectGenerator.Initialize(Microsoft.CodeAnalysis.IncrementalGeneratorInitializationContext context)` [L:51]
 
 
-### class NativeSchemaFieldGenerator : IIncrementalGenerator
+### class NativeSchemaFieldGenerator : Microsoft.CodeAnalysis.IIncrementalGenerator
 
 - FullName: `Sharp.Generator.NativeSchemaFieldGenerator`
 - Kind: class
@@ -117,13 +117,13 @@ Inheritance: IIncrementalGenerator → **NativeObjectGenerator**
 - Generated: false
 - Attributes: `[Generator]`
 
-Inheritance: IIncrementalGenerator → **NativeSchemaFieldGenerator**
+Inheritance: object → **NativeSchemaFieldGenerator**
 
 #### Methods
-- `void Sharp.Generator.NativeSchemaFieldGenerator.Initialize(IncrementalGeneratorInitializationContext context)` [L:71]
+- `void Sharp.Generator.NativeSchemaFieldGenerator.Initialize(Microsoft.CodeAnalysis.IncrementalGeneratorInitializationContext context)` [L:71]
 
 
-### class NativeVirtualObjectGenerator : IIncrementalGenerator
+### class NativeVirtualObjectGenerator : Microsoft.CodeAnalysis.IIncrementalGenerator
 
 - FullName: `Sharp.Generator.NativeVirtualObjectGenerator`
 - Kind: class
@@ -132,9 +132,9 @@ Inheritance: IIncrementalGenerator → **NativeSchemaFieldGenerator**
 - Generated: false
 - Attributes: `[Generator]`
 
-Inheritance: IIncrementalGenerator → **NativeVirtualObjectGenerator**
+Inheritance: object → **NativeVirtualObjectGenerator**
 
 #### Methods
-- `void Sharp.Generator.NativeVirtualObjectGenerator.Initialize(IncrementalGeneratorInitializationContext context)` [L:49]
+- `void Sharp.Generator.NativeVirtualObjectGenerator.Initialize(Microsoft.CodeAnalysis.IncrementalGeneratorInitializationContext context)` [L:49]
 
 

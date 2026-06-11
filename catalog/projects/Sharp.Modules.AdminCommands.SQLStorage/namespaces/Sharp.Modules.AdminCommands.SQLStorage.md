@@ -14,7 +14,7 @@ Types: 1 (0 generated)
 Inheritance: object → **SqlStorage**
 
 #### Constructors
-- `Sharp.Modules.AdminCommands.SQLStorage.SqlStorage.SqlStorage(Sharp.Shared.ISharedSystem sharedSystem, string dllPath, string sharpPath, System.Version version, IConfiguration coreConfiguration, bool hotReload)` [L:41]
+- `Sharp.Modules.AdminCommands.SQLStorage.SqlStorage.SqlStorage(Sharp.Shared.ISharedSystem sharedSystem, string dllPath, string sharpPath, System.Version version, Microsoft.Extensions.Configuration.IConfiguration coreConfiguration, bool hotReload)` [L:41]
 
 #### Properties
 - `string Sharp.Modules.AdminCommands.SQLStorage.SqlStorage.DisplayAuthor` [L:31]

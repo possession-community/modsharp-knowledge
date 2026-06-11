@@ -14,7 +14,7 @@ Types: 1 (0 generated)
 Inheritance: object → **AdminFlatFile**
 
 #### Constructors
-- `Sharp.Modules.AdminFlatFile.AdminFlatFile.AdminFlatFile(Sharp.Shared.ISharedSystem sharedSystem, string dllPath, string sharpPath, System.Version version, IConfiguration coreConfiguration, bool hotReload)` [L:44]
+- `Sharp.Modules.AdminFlatFile.AdminFlatFile.AdminFlatFile(Sharp.Shared.ISharedSystem sharedSystem, string dllPath, string sharpPath, System.Version version, Microsoft.Extensions.Configuration.IConfiguration coreConfiguration, bool hotReload)` [L:44]
 
 #### Properties
 - `string Sharp.Modules.AdminFlatFile.AdminFlatFile.DisplayAuthor` [L:38]

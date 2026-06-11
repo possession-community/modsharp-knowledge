@@ -3,7 +3,7 @@
 Project: Sharp.Generator.Sdk
 Types: 2 (0 generated)
 
-### class SignatureCallGenerator : IIncrementalGenerator
+### class SignatureCallGenerator : Microsoft.CodeAnalysis.IIncrementalGenerator
 
 - FullName: `Sharp.Generator.Sdk.SignatureCallGenerator`
 - Kind: class
@@ -12,13 +12,13 @@ Types: 2 (0 generated)
 - Generated: false
 - Attributes: `[Generator]`
 
-Inheritance: IIncrementalGenerator → **SignatureCallGenerator**
+Inheritance: object → **SignatureCallGenerator**
 
 #### Methods
-- `void Sharp.Generator.Sdk.SignatureCallGenerator.Initialize(IncrementalGeneratorInitializationContext context)` [L:35]
+- `void Sharp.Generator.Sdk.SignatureCallGenerator.Initialize(Microsoft.CodeAnalysis.IncrementalGeneratorInitializationContext context)` [L:35]
 
 
-### class VirtualCallGenerator : IIncrementalGenerator
+### class VirtualCallGenerator : Microsoft.CodeAnalysis.IIncrementalGenerator
 
 - FullName: `Sharp.Generator.Sdk.VirtualCallGenerator`
 - Kind: class
@@ -27,9 +27,9 @@ Inheritance: IIncrementalGenerator → **SignatureCallGenerator**
 - Generated: false
 - Attributes: `[Generator]`
 
-Inheritance: IIncrementalGenerator → **VirtualCallGenerator**
+Inheritance: object → **VirtualCallGenerator**
 
 #### Methods
-- `void Sharp.Generator.Sdk.VirtualCallGenerator.Initialize(IncrementalGeneratorInitializationContext context)` [L:35]
+- `void Sharp.Generator.Sdk.VirtualCallGenerator.Initialize(Microsoft.CodeAnalysis.IncrementalGeneratorInitializationContext context)` [L:35]
 
 

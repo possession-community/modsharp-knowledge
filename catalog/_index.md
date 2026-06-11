@@ -1,6 +1,6 @@
 # ModSharp API Catalog
 
-Source Commit: c0d26d3e60a98ae43bb2e1fb8194adb5aa5c92ad
+Source Commit: 9fc61be319b64488ee98eb323675b7d3d7b56e6c
 
 > Generation timestamp is kept in `.meta/generated-at` (gitignored) to keep committed files stable across re-runs on the same source commit.
 
@@ -14,7 +14,7 @@ Start with Sharp.Shared when writing a plugin:
 
 | Project | Types | Generated | Details |
 |---|---|---|---|
-| **Sharp.Shared** | 1073 | 64 | projects/Sharp.Shared/_index.md |
+| **Sharp.Shared** | 1087 | 66 | projects/Sharp.Shared/_index.md |
 | Sharp.Core | 30 | 0 | projects/Sharp.Core/_index.md |
 | Sharp.Extensions.CommandManager | 4 | 0 | projects/Sharp.Extensions.CommandManager/_index.md |
 | Sharp.Extensions.EntityHookManager | 6 | 0 | projects/Sharp.Extensions.EntityHookManager/_index.md |
@@ -56,8 +56,8 @@ Start with Sharp.Shared when writing a plugin:
 ## Statistics
 
 - Projects: 26
-- PublicTypes: 1197
-- GeneratedTypes: 64
-- PublicMethods: 9213
+- PublicTypes: 1211
+- GeneratedTypes: 66
+- PublicMethods: 9334
 - Namespaces: 54
 

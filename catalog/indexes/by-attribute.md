@@ -49,6 +49,7 @@ Types grouped by the attributes applied to them.
 - `CMsgSource1LegacyGameEvent.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CMsgSource1LegacyGameEventList.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CMsgSource2PerfIntervalSample.Types` → ../projects/Sharp.Shared/namespaces/_global.md
+- `CMsgSource2PlayStatsPackedRecordList.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CMsgTEFireBullets.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CMsg_CVars.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CPreMatchInfoData.Types` → ../projects/Sharp.Shared/namespaces/_global.md
@@ -60,6 +61,7 @@ Types grouped by the attributes applied to them.
 - `CSVCMsg_PacketEntities.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CSVCMsg_SendTable.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CSVCMsg_Sounds.Types` → ../projects/Sharp.Shared/namespaces/_global.md
+- `CSource2Metrics_FetchMapData_Response.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CSource2Metrics_MatchPerfSummary_Notification.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMessageCameraTransition.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMessageRequestDiagnostic.Types` → ../projects/Sharp.Shared/namespaces/_global.md
@@ -133,6 +135,7 @@ Types grouped by the attributes applied to them.
 - `CMsgSource1LegacyGameEvent.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CMsgSource1LegacyGameEventList.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CMsgSource2PerfIntervalSample.Types` → ../projects/Sharp.Shared/namespaces/_global.md
+- `CMsgSource2PlayStatsPackedRecordList.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CMsgTEFireBullets.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CMsg_CVars.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CPreMatchInfoData.Types` → ../projects/Sharp.Shared/namespaces/_global.md
@@ -144,6 +147,7 @@ Types grouped by the attributes applied to them.
 - `CSVCMsg_PacketEntities.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CSVCMsg_SendTable.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CSVCMsg_Sounds.Types` → ../projects/Sharp.Shared/namespaces/_global.md
+- `CSource2Metrics_FetchMapData_Response.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CSource2Metrics_MatchPerfSummary_Notification.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMessageCameraTransition.Types` → ../projects/Sharp.Shared/namespaces/_global.md
 - `CUserMessageRequestDiagnostic.Types` → ../projects/Sharp.Shared/namespaces/_global.md
@@ -298,6 +302,10 @@ Types grouped by the attributes applied to them.
 ## `[NetClass("CCSPlayer_ActionTrackingServices")]`
 
 - `Sharp.Shared.GameObjects.IPlayerActionTrackingService` → ../projects/Sharp.Shared/namespaces/Sharp.Shared.GameObjects.md
+
+## `[NetClass("CCSPlayer_AimPunchServices")]`
+
+- `Sharp.Shared.GameObjects.IAimPunchService` → ../projects/Sharp.Shared/namespaces/Sharp.Shared.GameObjects.md
 
 ## `[NetClass("CCSPlayer_BulletServices")]`
 
@@ -595,13 +603,13 @@ Types grouped by the attributes applied to them.
 
 - `Sharp.Shared.Types.SubTickMove` → ../projects/Sharp.Shared/namespaces/Sharp.Shared.Types.md
 
-## `[StructLayout(2, Size = 40)]`
-
-- `Sharp.Shared.Types.TakeDamageResult` → ../projects/Sharp.Shared/namespaces/Sharp.Shared.Types.md
-
 ## `[StructLayout(2, Size = 48)]`
 
 - `Sharp.Shared.Types.TraceShapeRay` → ../projects/Sharp.Shared/namespaces/Sharp.Shared.Types.md
+
+## `[StructLayout(2, Size = 80)]`
+
+- `Sharp.Shared.Types.TakeDamageResult` → ../projects/Sharp.Shared/namespaces/Sharp.Shared.Types.md
 
 ## `[TypeConverter(Sharp.Shared.Units.EntityIndex.EntityIndexTypeConverter)]`
 

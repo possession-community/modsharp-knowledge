@@ -14,7 +14,7 @@ Types: 1 (0 generated)
 Inheritance: object → **AdminCommands**
 
 #### Constructors
-- `Sharp.Modules.AdminCommands.AdminCommands.AdminCommands(Sharp.Shared.ISharedSystem shared, string dllPath, string sharpPath, System.Version version, IConfiguration configuration, bool hotReload)` [L:67]
+- `Sharp.Modules.AdminCommands.AdminCommands.AdminCommands(Sharp.Shared.ISharedSystem shared, string dllPath, string sharpPath, System.Version version, Microsoft.Extensions.Configuration.IConfiguration configuration, bool hotReload)` [L:67]
 
 #### Fields
 - `static readonly string Sharp.Modules.AdminCommands.AdminCommands.AssemblyName` [L:41]

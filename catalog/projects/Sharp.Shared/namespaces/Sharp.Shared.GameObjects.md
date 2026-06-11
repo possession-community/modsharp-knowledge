@@ -1,7 +1,7 @@
 # Sharp.Shared.GameObjects
 
 Project: Sharp.Shared
-Types: 41 (0 generated)
+Types: 42 (0 generated)
 
 ### interface IAdditionalMatchStats : Sharp.Shared.GameObjects.IAdditionalPerRoundStats
 
@@ -70,6 +70,30 @@ Types: 41 (0 generated)
 - `int Sharp.Shared.GameObjects.IAdditionalPerRoundStats.NumChickensKilled` [L:104]
   - Modifiers: public, abstract
 - `int Sharp.Shared.GameObjects.IAdditionalPerRoundStats.NumTeammatesFlashed` [L:124]
+  - Modifiers: public, abstract
+
+
+### interface IAimPunchService : Sharp.Shared.GameObjects.IPlayerPawnComponent
+
+- FullName: `Sharp.Shared.GameObjects.IAimPunchService`
+- Kind: interface
+- Modifiers: public
+- Source: Sharp.Shared/GameObjects/IAimPunchService.cs:26
+- Generated: false
+- Attributes: `[NetClass("CCSPlayer_AimPunchServices")]`
+
+#### Properties
+- `Sharp.Shared.Types.Vector Sharp.Shared.GameObjects.IAimPunchService.PredictableBaseAngle` [L:31]
+  - Modifiers: public, abstract
+- `Sharp.Shared.Types.Vector Sharp.Shared.GameObjects.IAimPunchService.PredictableBaseAngleVel` [L:32]
+  - Modifiers: public, abstract
+- `Sharp.Shared.Types.Vector Sharp.Shared.GameObjects.IAimPunchService.UnpredictableBaseAngle` [L:36]
+  - Modifiers: public, abstract
+- `float Sharp.Shared.GameObjects.IAimPunchService.PredictableBaseTickInterpAmount` [L:29]
+  - Modifiers: public, abstract
+- `int Sharp.Shared.GameObjects.IAimPunchService.PredictableBaseTick` [L:28]
+  - Modifiers: public, abstract
+- `int Sharp.Shared.GameObjects.IAimPunchService.UnpredictableBaseTick` [L:34]
   - Modifiers: public, abstract
 
 
@@ -622,14 +646,14 @@ Types: 41 (0 generated)
 - FullName: `Sharp.Shared.GameObjects.IModelState`
 - Kind: interface
 - Modifiers: public
-- Source: Sharp.Shared/GameObjects/IBodyComponent.cs:79
+- Source: Sharp.Shared/GameObjects/IBodyComponent.cs:77
 - Generated: false
 - Attributes: `[NetClass("CModelState")]`
 
 #### Properties
-- `string Sharp.Shared.GameObjects.IModelState.ModelName` [L:81]
+- `string Sharp.Shared.GameObjects.IModelState.ModelName` [L:79]
   - Modifiers: public, abstract, readonly
-- `ulong Sharp.Shared.GameObjects.IModelState.MeshGroupMask` [L:83]
+- `ulong Sharp.Shared.GameObjects.IModelState.MeshGroupMask` [L:81]
   - Modifiers: public, abstract, readonly
 
 
@@ -910,11 +934,9 @@ Types: 41 (0 generated)
 - Attributes: `[NetClass("CSkeletonInstance")]`
 
 #### Properties
-- `bool Sharp.Shared.GameObjects.ISkeletonInstance.DisableSolidCollisionsForHierarchy` [L:73]
+- `bool Sharp.Shared.GameObjects.ISkeletonInstance.DisableSolidCollisionsForHierarchy` [L:71]
   - Modifiers: public, abstract
-- `bool Sharp.Shared.GameObjects.ISkeletonInstance.IsAnimationEnabled` [L:71]
-  - Modifiers: public, abstract
-- `uint Sharp.Shared.GameObjects.ISkeletonInstance.MaterialGroup` [L:75]
+- `uint Sharp.Shared.GameObjects.ISkeletonInstance.MaterialGroup` [L:73]
   - Modifiers: public, abstract
 
 #### Methods
@@ -1071,40 +1093,34 @@ Types: 41 (0 generated)
 - Summary: WeaponServices is only for CCSPlayerPawn
 
 #### Properties
-- `Sharp.Shared.GameEntities.IBaseWeapon? Sharp.Shared.GameObjects.IWeaponService.ActiveWeapon` [L:85]
+- `Sharp.Shared.GameEntities.IBaseWeapon? Sharp.Shared.GameObjects.IWeaponService.ActiveWeapon` [L:75]
   - Modifiers: public, abstract, readonly
   - Summary: ActiveWeapon
-- `Sharp.Shared.GameEntities.IBaseWeapon? Sharp.Shared.GameObjects.IWeaponService.LastWeapon` [L:95]
+- `Sharp.Shared.GameEntities.IBaseWeapon? Sharp.Shared.GameObjects.IWeaponService.LastWeapon` [L:85]
   - Modifiers: public, abstract, readonly
   - Summary: Last used Weapon
-- `Sharp.Shared.Types.CEntityHandle<Sharp.Shared.GameEntities.IBaseWeapon> Sharp.Shared.GameObjects.IWeaponService.ActiveWeaponHandle` [L:90]
+- `Sharp.Shared.Types.CEntityHandle<Sharp.Shared.GameEntities.IBaseWeapon> Sharp.Shared.GameObjects.IWeaponService.ActiveWeaponHandle` [L:80]
   - Modifiers: public, abstract
   - Summary: m_hActiveWeapon
-- `Sharp.Shared.Types.CEntityHandle<Sharp.Shared.GameEntities.IBaseWeapon> Sharp.Shared.GameObjects.IWeaponService.LastWeaponHandle` [L:100]
+- `Sharp.Shared.Types.CEntityHandle<Sharp.Shared.GameEntities.IBaseWeapon> Sharp.Shared.GameObjects.IWeaponService.LastWeaponHandle` [L:90]
   - Modifiers: public, abstract
   - Summary: m_hLastWeapon
-- `Sharp.Shared.Types.CEntityHandle<Sharp.Shared.GameEntities.IBaseWeapon> Sharp.Shared.GameObjects.IWeaponService.SavedWeaponHandle` [L:53]
+- `Sharp.Shared.Types.CEntityHandle<Sharp.Shared.GameEntities.IBaseWeapon> Sharp.Shared.GameObjects.IWeaponService.SavedWeaponHandle` [L:43]
   - Modifiers: public, abstract
   - Summary: m_hSavedWeapon
-- `bool Sharp.Shared.GameObjects.IWeaponService.DisableAutoDeploy` [L:68]
+- `bool Sharp.Shared.GameObjects.IWeaponService.DisableAutoDeploy` [L:58]
   - Modifiers: public, abstract
   - Summary: m_bDisableAutoDeploy
-- `bool Sharp.Shared.GameObjects.IWeaponService.IsHoldingLookAtWeapon` [L:48]
-  - Modifiers: public, abstract, readonly
-  - Summary: m_bIsHoldingLookAtWeapon
-- `bool Sharp.Shared.GameObjects.IWeaponService.IsLookingAtWeapon` [L:43]
-  - Modifiers: public, abstract, readonly
-  - Summary: m_bIsLookingAtWeapon
-- `bool Sharp.Shared.GameObjects.IWeaponService.IsPickingUpGroundWeapon` [L:73]
+- `bool Sharp.Shared.GameObjects.IWeaponService.IsPickingUpGroundWeapon` [L:63]
   - Modifiers: public, abstract
   - Summary: m_bIsPickingUpGroundWeapon
-- `bool Sharp.Shared.GameObjects.IWeaponService.IsPickingUpItemWithUse` [L:58]
+- `bool Sharp.Shared.GameObjects.IWeaponService.IsPickingUpItemWithUse` [L:48]
   - Modifiers: public, abstract
   - Summary: m_bIsPickingUpItemWithUse
-- `bool Sharp.Shared.GameObjects.IWeaponService.PickedUpWeapon` [L:63]
+- `bool Sharp.Shared.GameObjects.IWeaponService.PickedUpWeapon` [L:53]
   - Modifiers: public, abstract
   - Summary: m_bPickedUpWeapon
-- `bool Sharp.Shared.GameObjects.IWeaponService.PreventWeaponPickup` [L:110]
+- `bool Sharp.Shared.GameObjects.IWeaponService.PreventWeaponPickup` [L:100]
   - Modifiers: public, abstract
   - Summary: m_bPreventWeaponPickup
 - `float Sharp.Shared.GameObjects.IWeaponService.NextAttack` [L:38]
@@ -1112,10 +1128,10 @@ Types: 41 (0 generated)
   - Summary: m_flNextAttack
 
 #### Methods
-- `Sharp.Shared.CStrike.ISchemaArray<ushort> Sharp.Shared.GameObjects.IWeaponService.GetAmmo()` [L:105]
+- `Sharp.Shared.CStrike.ISchemaArray<ushort> Sharp.Shared.GameObjects.IWeaponService.GetAmmo()` [L:95]
   - Modifiers: public, abstract
   - Summary: m_iAmmo[32]
-- `Sharp.Shared.CStrike.ISchemaList<Sharp.Shared.Types.CEntityHandle<Sharp.Shared.GameEntities.IBaseWeapon>> Sharp.Shared.GameObjects.IWeaponService.GetMyWeapons()` [L:80]
+- `Sharp.Shared.CStrike.ISchemaList<Sharp.Shared.Types.CEntityHandle<Sharp.Shared.GameEntities.IBaseWeapon>> Sharp.Shared.GameObjects.IWeaponService.GetMyWeapons()` [L:70]
   - Modifiers: public, abstract
   - Summary: m_hMyWeapons
 
